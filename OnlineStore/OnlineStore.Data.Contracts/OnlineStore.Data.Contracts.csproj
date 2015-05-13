@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="DeletableEntity.cs" />
     <Compile Include="IDeletableEntity.cs" />
+    <Compile Include="IDeletableEntityRepository.cs" />
+    <Compile Include="IGenericRepository.cs" />
     <Compile Include="OrderStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RatingTypes.cs" />

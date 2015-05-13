@@ -57,8 +57,14 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OnlineStoreDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DeletableEntityRepository.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlineStore.Data.Contracts\OnlineStore.Data.Contracts.csproj">
+      <Project>{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}</Project>
+      <Name>OnlineStore.Data.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlineStore.Models\OnlineStore.Data.Models.csproj">
       <Project>{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}</Project>
       <Name>OnlineStore.Data.Models</Name>
