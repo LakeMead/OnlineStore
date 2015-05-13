@@ -15,6 +15,14 @@
 
         private ICollection<Label> labels;
 
+        private ICollection<Review> reviews;
+
+        private ICollection<Rating> ratings;
+
+        private ICollection<WishProduct> wishProducts;
+
+        private ICollection<Order> orders;
+
         public Product()
         {
             this.createdOn = DateTime.Now;
@@ -22,6 +30,10 @@
             this.colors = new HashSet<Color>();
             this.comments = new HashSet<Comment>();
             this.labels = new HashSet<Label>();
+            this.reviews = new HashSet<Review>();
+            this.ratings = new HashSet<Rating>();
+            this.wishProducts = new HashSet<WishProduct>();
+            this.orders = new HashSet<Order>();
         }
 
         public int Id { get; set; }
@@ -50,16 +62,40 @@
             set { this.colors = value; }
         }
 
-        public ICollection<Comment> Comments
+        public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
         }
 
-        public ICollection<Label> Labels
+        public virtual ICollection<Label> Labels
         {
             get { return this.labels; }
             set { this.labels = value; }
+        }
+
+        public virtual ICollection<Review> Reviews
+        {
+            get { return this.reviews; }
+            set { this.reviews = value; }
+        }
+
+        public virtual ICollection<Rating> Ratings
+        {
+            get { return this.ratings; }
+            set { this.ratings = value; }
+        }
+
+        public virtual ICollection<WishProduct> WishProducts
+        {
+            get { return this.wishProducts; }
+            set { this.wishProducts = value; }
+        }
+
+        public virtual ICollection<Order> Orders
+        {
+            get { return this.orders; }
+            set { this.orders = value; }
         }
     }
 }

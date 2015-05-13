@@ -67,6 +67,12 @@
     <Compile Include="User.cs" />
     <Compile Include="WishProduct.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineStore.Data.Contracts\OnlineStore.Data.Contracts.csproj">
+      <Project>{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}</Project>
+      <Name>OnlineStore.Data.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

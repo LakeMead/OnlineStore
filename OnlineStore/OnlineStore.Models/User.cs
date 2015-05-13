@@ -11,15 +11,42 @@
     {
         private ICollection<Comment> comments;
 
+        private ICollection<Review> reviews;
+
+        private ICollection<Rating> ratings;
+
+        private ICollection<WishProduct> wishProducts;
+
         public User()
         {
             this.comments = new HashSet<Comment>();
+            this.reviews = new HashSet<Review>();
+            this.ratings = new HashSet<Rating>();
+            this.wishProducts = new HashSet<WishProduct>();
         }
 
-        public ICollection<Comment> Comments
+        public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
+        }
+
+        public virtual ICollection<Review> Reviews
+        {
+            get { return this.reviews; }
+            set { this.reviews = value; }
+        }
+
+        public virtual ICollection<Rating> Ratings
+        {
+            get { return this.ratings; }
+            set { this.ratings = value; }
+        }
+
+        public virtual ICollection<WishProduct> WishProducts
+        {
+            get { return this.wishProducts; }
+            set { this.wishProducts = value; }
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)

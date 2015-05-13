@@ -13,9 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{37
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Web", "OnlineStore.Web\OnlineStore.Web.csproj", "{AB91AE8F-D016-4A91-97A1-201C106D04F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Models", "OnlineStore.Models\OnlineStore.Models.csproj", "{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data.Models", "OnlineStore.Models\OnlineStore.Data.Models.csproj", "{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data", "OnlineStore.Data\OnlineStore.Data.csproj", "{7ED9F623-08F8-4B87-BD15-395F6395920E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data.Contracts", "OnlineStore.Data.Contracts\OnlineStore.Data.Contracts.csproj", "{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{7ED9F623-08F8-4B87-BD15-395F6395920E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ED9F623-08F8-4B87-BD15-395F6395920E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ED9F623-08F8-4B87-BD15-395F6395920E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +49,6 @@ Global
 		{AB91AE8F-D016-4A91-97A1-201C106D04F8} = {80B50DE0-6072-4B48-8E40-4105B307208E}
 		{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D} = {C8C647FC-1531-4CF6-A868-B7DCA76978CA}
 		{7ED9F623-08F8-4B87-BD15-395F6395920E} = {C8C647FC-1531-4CF6-A868-B7DCA76978CA}
+		{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B} = {C8C647FC-1531-4CF6-A868-B7DCA76978CA}
 	EndGlobalSection
 EndGlobal
