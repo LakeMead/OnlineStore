@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
 
-    public class Product
+    using OnlineStore.Data.Contracts;
+
+    public class Product : DeletableEntity
     {
         private DateTime createdOn;
 

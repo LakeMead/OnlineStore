@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
 
-    public class Label
+    using OnlineStore.Data.Contracts;
+
+    public class Label : DeletableEntity
     {
         private DateTime createdOn;
 

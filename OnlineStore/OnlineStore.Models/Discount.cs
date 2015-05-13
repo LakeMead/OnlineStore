@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
 
-    public class Discount
+    using OnlineStore.Data.Contracts;
+
+    public class Discount : DeletableEntity
     {
         private ICollection<Product> products;
 

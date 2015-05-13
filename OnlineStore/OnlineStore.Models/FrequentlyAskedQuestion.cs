@@ -1,6 +1,8 @@
 ﻿namespace OnlineStore.Models
 {
-    public class FrequentlyAskedQuestion
+    using OnlineStore.Data.Contracts;
+
+    public class FrequentlyAskedQuestion : DeletableEntity
     {
         public int Id { get; set; }
 

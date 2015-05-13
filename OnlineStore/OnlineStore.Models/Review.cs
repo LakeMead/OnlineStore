@@ -4,7 +4,9 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Review
+    using OnlineStore.Data.Contracts;
+
+    public class Review : DeletableEntity
     {
         private DateTime createdOn;
 

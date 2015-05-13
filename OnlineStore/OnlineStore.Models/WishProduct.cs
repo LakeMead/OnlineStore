@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
 
-    public class WishProduct
+    using OnlineStore.Data.Contracts;
+
+    public class WishProduct : DeletableEntity
     {
         private ICollection<User> users;
 

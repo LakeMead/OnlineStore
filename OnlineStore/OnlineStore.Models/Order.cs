@@ -4,7 +4,7 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class Order
+    public class Order : DeletableEntity
     {
         private ICollection<Product> products;
 

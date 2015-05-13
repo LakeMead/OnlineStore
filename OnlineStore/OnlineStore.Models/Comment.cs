@@ -2,7 +2,9 @@
 {
     using System;
 
-    public class Comment
+    using OnlineStore.Data.Contracts;
+
+    public class Comment : DeletableEntity
     {
         private DateTime createdOn;
 

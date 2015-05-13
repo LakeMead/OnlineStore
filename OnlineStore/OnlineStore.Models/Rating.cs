@@ -1,6 +1,8 @@
 ﻿namespace OnlineStore.Models
 {
-    public class Rating
+    using OnlineStore.Data.Contracts;
+
+    public class Rating : DeletableEntity
     {
         public int Id { get; set; }
 

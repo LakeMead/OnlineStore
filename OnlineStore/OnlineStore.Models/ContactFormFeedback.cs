@@ -1,6 +1,8 @@
 ﻿namespace OnlineStore.Models
 {
-    public class ContactFormFeedback
+    using OnlineStore.Data.Contracts;
+
+    public class ContactFormFeedback : DeletableEntity
     {
         public int Id { get; set; }
 

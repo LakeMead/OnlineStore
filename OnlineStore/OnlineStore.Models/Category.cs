@@ -4,7 +4,9 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class Category
+    using OnlineStore.Data.Contracts;
+
+    public class Category : DeletableEntity
     {
         private ICollection<Product> products;
 
