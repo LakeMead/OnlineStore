@@ -237,6 +237,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineStore.Data\OnlineStore.Data.csproj">
+      <Project>{7ED9F623-08F8-4B87-BD15-395F6395920E}</Project>
+      <Name>OnlineStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Models\OnlineStore.Data.Models.csproj">
+      <Project>{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}</Project>
+      <Name>OnlineStore.Data.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

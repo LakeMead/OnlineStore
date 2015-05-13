@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace OnlineStore.Web.Controllers
 {
+    using OnlineStore.Data;
+
+    using Color = OnlineStore.Models.Color;
+
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View();
+            var context = new OnlineStoreDbContext();
+            context.Colors.Add(new Color { Name = "Blue" });
+            return this.View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return this.View();
         }
 
         public ActionResult Contact()

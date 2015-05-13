@@ -1,6 +1,8 @@
 ﻿namespace OnlineStore.Models
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Review
     {
@@ -11,6 +13,7 @@
             this.createdOn = DateTime.Now;
         }
 
+        [ForeignKey("Rating")]
         public int Id { get; set; }
 
         public string Content { get; set; }
@@ -28,9 +31,6 @@
             get { return this.createdOn; }
             set { this.createdOn = value; }
         }
-
-        // TODO: needs to be optional
-        public int RatingId { get; set; }
 
         public virtual Rating Rating { get; set; }
     }

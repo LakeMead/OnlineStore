@@ -14,7 +14,6 @@
 
         public virtual Product Product { get; set; }
 
-        // TODO: needs to be optional
         public int ReviewId { get; set; }
 
         public virtual Review Review { get; set; }
