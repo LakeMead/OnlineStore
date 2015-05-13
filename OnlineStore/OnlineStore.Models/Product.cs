@@ -13,12 +13,15 @@
 
         private ICollection<Comment> comments;
 
+        private ICollection<Label> labels;
+
         public Product()
         {
             this.createdOn = DateTime.Now;
             this.categories = new HashSet<Category>();
             this.colors = new HashSet<Color>();
             this.comments = new HashSet<Comment>();
+            this.labels = new HashSet<Label>();
         }
 
         public int Id { get; set; }
@@ -51,6 +54,12 @@
         {
             get { return this.comments; }
             set { this.comments = value; }
+        }
+
+        public ICollection<Label> Labels
+        {
+            get { return this.labels; }
+            set { this.labels = value; }
         }
     }
 }
