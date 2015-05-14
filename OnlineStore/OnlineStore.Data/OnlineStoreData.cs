@@ -100,7 +100,6 @@
             get { return this.GetRepository<StaticPageSection>(); }
         }
 
-
         public int SaveChanges()
         {
             return this.context.SaveChanges();
@@ -122,7 +121,7 @@
         {
             if (!this.repositories.ContainsKey(typeof(T)))
             {
-                Type type = typeof(DeletableEntityRepository<T>);
+                var type = typeof(DeletableEntityRepository<T>);
 
                 this.repositories.Add(typeof(T), Activator.CreateInstance(type, this.context));
             }

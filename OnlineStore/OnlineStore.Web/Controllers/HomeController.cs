@@ -1,10 +1,9 @@
-﻿using System.Web.Mvc;
-
-namespace OnlineStore.Web.Controllers
+﻿namespace OnlineStore.Web.Controllers
 {
-    using OnlineStore.Data;
+    using System.Web.Mvc;
 
-    using Color = OnlineStore.Models.Color;
+    using OnlineStore.Data;
+    using OnlineStore.Models;
 
     public class HomeController : Controller
     {
@@ -17,16 +16,16 @@ namespace OnlineStore.Web.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            this.ViewBag.Message = "Your application description page.";
 
             return this.View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            this.ViewBag.Message = "Your contact page.";
 
-            return View();
+            return this.View();
         }
     }
 }
