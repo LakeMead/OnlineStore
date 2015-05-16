@@ -11,6 +11,7 @@ namespace OnlineStore.Web
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security.Cookies;
+    using Microsoft.Owin.Security.Google;
 
     using OnlineStore.Data;
     using OnlineStore.Data.Models;
@@ -69,11 +70,11 @@ namespace OnlineStore.Web
             ////   appId: "",
             ////   appSecret: "");
 
-            ////app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            ////{
-            ////    ClientId = "",
-            ////    ClientSecret = ""
-            ////});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "1025339984678-vt459h62u0h7aq9r17ujvmiptao3q04a.apps.googleusercontent.com",
+                ClientSecret = "gBLQZmcRr0gqbCAbpAp0VlBH"
+            });
         }
     }
 }

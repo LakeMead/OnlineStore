@@ -6,6 +6,7 @@
     using OnlineStore.Data;
     using OnlineStore.Data.Models;
 
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
