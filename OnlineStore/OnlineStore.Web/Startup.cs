@@ -66,9 +66,9 @@ namespace OnlineStore.Web
             ////   consumerKey: "",
             ////   consumerSecret: "");
 
-            ////app.UseFacebookAuthentication(
-            ////   appId: "",
-            ////   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1671434263084317",
+               appSecret: "f6ee78054f0e601cf50adc68b3c6f4e5");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
