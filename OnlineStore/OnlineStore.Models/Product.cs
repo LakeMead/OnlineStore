@@ -46,6 +46,12 @@
 
         public decimal Price { get; set; }
 
+        public int Quantity { get; set; }
+
+        public int DiscountId { get; set; }
+
+        public virtual Discount Discount { get; set; }
+
         public DateTime CreatedOn
         {
             get { return this.createdOn; }

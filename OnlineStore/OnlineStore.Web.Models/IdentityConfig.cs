@@ -1,4 +1,4 @@
-﻿namespace OnlineStore.Web
+﻿namespace OnlineStore.Web.Models
 {
     using System;
     using System.Security.Claims;
@@ -9,8 +9,6 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
     using Microsoft.Owin.Security;
-
-    using OnlineStore.Web.Models;
 
     public class EmailService : IIdentityMessageService
     {

@@ -2,10 +2,10 @@
 {
     public enum RatingTypes
     {
-        VeryBad = 0,
-        Bad = 1,
-        Good = 2,
-        VeryGood = 3,
-        Excellent = 4
+        VeryBad = 1,
+        Bad = 2,
+        Good = 3,
+        VeryGood = 4,
+        Excellent = 5
     }
 }

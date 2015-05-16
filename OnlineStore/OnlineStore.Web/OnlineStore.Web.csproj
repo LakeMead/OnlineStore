@@ -49,6 +49,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mvc.Expressions">
       <HintPath>..\packages\System.Web.Mvc.Expressions.0.7\lib\System.Web.Mvc.Expressions.dll</HintPath>
     </Reference>
@@ -72,10 +76,6 @@
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
@@ -158,18 +158,11 @@
   <ItemGroup>
     <Compile Include="Config\BundleConfig.cs" />
     <Compile Include="Config\FilterConfig.cs" />
-    <Compile Include="Config\IdentityConfig.cs" />
     <Compile Include="Config\RouteConfig.cs" />
     <Compile Include="Config\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -248,6 +241,14 @@
     <ProjectReference Include="..\OnlineStore.Models\OnlineStore.Data.Models.csproj">
       <Project>{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}</Project>
       <Name>OnlineStore.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Web.Controllers\OnlineStore.Web.Controllers.csproj">
+      <Project>{6d13ecc1-9e1c-41e5-986b-c45bef5f28d2}</Project>
+      <Name>OnlineStore.Web.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Web.Models\OnlineStore.Web.Models.csproj">
+      <Project>{FC9D2B92-79A8-4C28-AC78-6CB9051B8CA5}</Project>
+      <Name>OnlineStore.Web.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
