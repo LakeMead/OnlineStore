@@ -1,5 +1,6 @@
 ﻿namespace OnlineStore.Web.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
 
     using OnlineStore.Data;
@@ -10,8 +11,10 @@
         public ActionResult Index()
         {
             var context = new OnlineStoreDbContext();
-            context.Colors.Add(new Color { Name = "Blue" });
-            return this.View();
+            //context.Colors.Add(new Color { Name = "Blue" });
+            context.SaveChanges();
+            var a = context.Colors.ToList();
+            return this.View(a);
         }
 
         public ActionResult About()
