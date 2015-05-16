@@ -9,8 +9,6 @@
     {
         private DateTime createdOn;
 
-        private ICollection<Category> categories;
-
         private ICollection<Color> colors;
 
         private ICollection<Comment> comments;
@@ -28,7 +26,6 @@
         public Product()
         {
             this.createdOn = DateTime.Now;
-            this.categories = new HashSet<Category>();
             this.colors = new HashSet<Color>();
             this.comments = new HashSet<Comment>();
             this.labels = new HashSet<Label>();
@@ -48,9 +45,13 @@
 
         public int Quantity { get; set; }
 
-        public int DiscountId { get; set; }
+        public int? DiscountId { get; set; }
 
         public virtual Discount Discount { get; set; }
+        
+        public int CategoryId { get; set; }
+        
+        public virtual Category Category {get; set; }
 
         public string ImagePath { get; set; }
 
@@ -58,12 +59,6 @@
         {
             get { return this.createdOn; }
             set { this.createdOn = value; }
-        }
-
-        public virtual ICollection<Category> Categories
-        {
-            get { return this.categories; }
-            set { this.categories = value; }
         }
 
         public virtual ICollection<Color> Colors
