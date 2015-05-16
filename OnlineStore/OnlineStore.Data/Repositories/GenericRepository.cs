@@ -10,9 +10,9 @@
 
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        protected readonly DbContext Context;
+        protected readonly IOnlineStoreDbContext Context;
 
-        public GenericRepository(DbContext context)
+        public GenericRepository(IOnlineStoreDbContext context)
         {
             this.Context = context;
             this.DbSet = this.Context.Set<T>();

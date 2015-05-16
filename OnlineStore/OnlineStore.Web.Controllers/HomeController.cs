@@ -6,12 +6,14 @@
     using OnlineStore.Data;
     using OnlineStore.Data.Models;
 
+    [RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
             var context = new OnlineStoreDbContext();
-            //context.Colors.Add(new Color { Name = "Blue" });
+
+            context.Colors.Add(new Color { Name = "Blueblue" });
             context.SaveChanges();
             var a = context.Colors.ToList();
             return this.View(a);
