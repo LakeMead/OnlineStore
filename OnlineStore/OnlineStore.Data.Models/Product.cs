@@ -1,14 +1,11 @@
 ﻿namespace OnlineStore.Data.Models
 {
-    using System;
     using System.Collections.Generic;
 
     using OnlineStore.Data.Contracts;
 
     public class Product : DeletableEntity
     {
-        private DateTime createdOn;
-
         private ICollection<Category> categories;
 
         private ICollection<Color> colors;
@@ -27,7 +24,6 @@
 
         public Product()
         {
-            this.createdOn = DateTime.Now;
             this.categories = new HashSet<Category>();
             this.colors = new HashSet<Color>();
             this.comments = new HashSet<Comment>();
@@ -53,12 +49,6 @@
         public virtual Discount Discount { get; set; }
 
         public string ImagePath { get; set; }
-
-        public DateTime CreatedOn
-        {
-            get { return this.createdOn; }
-            set { this.createdOn = value; }
-        }
 
         public virtual ICollection<Category> Categories
         {
