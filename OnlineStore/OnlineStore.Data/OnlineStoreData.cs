@@ -1,14 +1,13 @@
-﻿namespace EverlastingStudent.Data
+﻿namespace OnlineStore.Data
 {
     using System;
     using System.Collections.Generic;
 
-    using OnlineStore.Data;
     using OnlineStore.Data.Contracts;
+    using OnlineStore.Data.Models;
     using OnlineStore.Data.Repositories;
-    using OnlineStore.Models;
 
-    using Attribute = OnlineStore.Models.Attribute;
+    using Attribute = OnlineStore.Data.Models.Attribute;
 
     public class OnlineStoreData : IOnlineStoreData
     {

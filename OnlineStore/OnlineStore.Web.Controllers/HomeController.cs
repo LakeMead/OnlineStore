@@ -3,7 +3,7 @@
     using System.Web.Mvc;
 
     using OnlineStore.Data;
-    using OnlineStore.Models;
+    using OnlineStore.Data.Models;
 
     public class HomeController : Controller
     {

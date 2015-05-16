@@ -1,7 +1,7 @@
 ﻿namespace OnlineStore.Data
 {
     using OnlineStore.Data.Contracts;
-    using OnlineStore.Models;
+    using OnlineStore.Data.Models;
 
     public interface IOnlineStoreData
     {

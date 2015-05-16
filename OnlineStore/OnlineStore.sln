@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{37
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Web", "OnlineStore.Web\OnlineStore.Web.csproj", "{AB91AE8F-D016-4A91-97A1-201C106D04F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data.Models", "OnlineStore.Models\OnlineStore.Data.Models.csproj", "{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data", "OnlineStore.Data\OnlineStore.Data.csproj", "{7ED9F623-08F8-4B87-BD15-395F6395920E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data.Contracts", "OnlineStore.Data.Contracts\OnlineStore.Data.Contracts.csproj", "{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}"
@@ -22,6 +20,19 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Web.Controllers", "OnlineStore.Web.Controllers\OnlineStore.Web.Controllers.csproj", "{6D13ECC1-9E1C-41E5-986B-C45BEF5F28D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Web.Models", "OnlineStore.Web.Models\OnlineStore.Web.Models.csproj", "{FC9D2B92-79A8-4C28-AC78-6CB9051B8CA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D2A69F2A-3D42-4EFE-8973-52AC0105B580}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Common", "OnlineStore.Common\OnlineStore.Common.csproj", "{24384460-173E-4774-804D-97DDD61CAD01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Web.Config", "OnlineStore.Web.Config\OnlineStore.Web.Config.csproj", "{C204D1CC-2086-410E-858C-5BEEDD9288CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data.Models", "OnlineStore.Data.Models\OnlineStore.Data.Models.csproj", "{CE0DFB35-29AF-4B46-8559-F35335E02E67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +44,6 @@ Global
 		{AB91AE8F-D016-4A91-97A1-201C106D04F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB91AE8F-D016-4A91-97A1-201C106D04F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB91AE8F-D016-4A91-97A1-201C106D04F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7ED9F623-08F8-4B87-BD15-395F6395920E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7ED9F623-08F8-4B87-BD15-395F6395920E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ED9F623-08F8-4B87-BD15-395F6395920E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,16 +60,29 @@ Global
 		{FC9D2B92-79A8-4C28-AC78-6CB9051B8CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC9D2B92-79A8-4C28-AC78-6CB9051B8CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC9D2B92-79A8-4C28-AC78-6CB9051B8CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24384460-173E-4774-804D-97DDD61CAD01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24384460-173E-4774-804D-97DDD61CAD01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24384460-173E-4774-804D-97DDD61CAD01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24384460-173E-4774-804D-97DDD61CAD01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C204D1CC-2086-410E-858C-5BEEDD9288CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C204D1CC-2086-410E-858C-5BEEDD9288CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C204D1CC-2086-410E-858C-5BEEDD9288CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C204D1CC-2086-410E-858C-5BEEDD9288CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE0DFB35-29AF-4B46-8559-F35335E02E67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0DFB35-29AF-4B46-8559-F35335E02E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0DFB35-29AF-4B46-8559-F35335E02E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0DFB35-29AF-4B46-8559-F35335E02E67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AB91AE8F-D016-4A91-97A1-201C106D04F8} = {80B50DE0-6072-4B48-8E40-4105B307208E}
-		{B4BF6D8F-BFD0-4AFF-AB6C-D3D5E475959D} = {C8C647FC-1531-4CF6-A868-B7DCA76978CA}
 		{7ED9F623-08F8-4B87-BD15-395F6395920E} = {C8C647FC-1531-4CF6-A868-B7DCA76978CA}
 		{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B} = {C8C647FC-1531-4CF6-A868-B7DCA76978CA}
 		{6D13ECC1-9E1C-41E5-986B-C45BEF5F28D2} = {80B50DE0-6072-4B48-8E40-4105B307208E}
 		{FC9D2B92-79A8-4C28-AC78-6CB9051B8CA5} = {80B50DE0-6072-4B48-8E40-4105B307208E}
+		{C204D1CC-2086-410E-858C-5BEEDD9288CE} = {80B50DE0-6072-4B48-8E40-4105B307208E}
+		{CE0DFB35-29AF-4B46-8559-F35335E02E67} = {C8C647FC-1531-4CF6-A868-B7DCA76978CA}
 	EndGlobalSection
 EndGlobal

@@ -4,7 +4,7 @@
 
     using Microsoft.AspNet.Identity.EntityFramework;
 
-    using OnlineStore.Models;
+    using OnlineStore.Data.Models;
 
     public class OnlineStoreDbContext : IdentityDbContext<User>, IOnlineStoreDbContext
     {

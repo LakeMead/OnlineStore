@@ -3,7 +3,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
 
-    using OnlineStore.Models;
+    using OnlineStore.Data.Models;
 
     public interface IOnlineStoreDbContext
     {

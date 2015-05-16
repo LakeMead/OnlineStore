@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
+    using OnlineStore.Web.Config.IdentityConfig;
     using OnlineStore.Web.Models;
 
     [Authorize]
