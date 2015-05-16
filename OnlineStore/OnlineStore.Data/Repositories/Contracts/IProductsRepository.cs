@@ -24,6 +24,6 @@
 
         IQueryable<Product> GetMostOrdered();
 
-        IQueryable<Product> GetFiltered(int colorId, int categoryId, int labelId, decimal minPrice, decimal maxPrice);
+        IQueryable<Product> GetFiltered(int? colorId, int? categoryId, int? labelId, decimal? minPrice, decimal? maxPrice);
     }
 }

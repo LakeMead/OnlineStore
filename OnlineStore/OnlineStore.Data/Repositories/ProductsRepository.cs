@@ -63,14 +63,12 @@ namespace OnlineStore.Data.Repositories
 
         public IQueryable<Product> GetFiltered(int? colorId, int? categoryId, int? labelId, decimal? minPrice, decimal? maxPrice)
         {
-            string query = String.Empty;
+            var colorFilter = colorId == null ? this.Context.Products : this.GetByColorId(colorId.Value);
+            var categoryFilter = categoryId == null ? colorFilter : colorFilter.Where(c => c.CategoryId == categoryId);
+            var labelFilter = labelId == null ? categoryFilter : categoryFilter.Where(p => p.Labels.Select(l => l.Id).Contains(labelId.Value));
+            var minPriceFilter = minPrice == null ? labelFilter : labelFilter.Where(p => p.Price >= minPrice && p.Price <= maxPrice);
 
-            if (colorId != null)
-            {
-                    
-            }
-
-            return this.Context.Products.Where(p => p.Colors.Select(c => c.Id).Contains(colorId));
+            return minPriceFilter;
         }
     }
 }
