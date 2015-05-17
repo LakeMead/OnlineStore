@@ -1,4 +1,7 @@
-﻿namespace OnlineStore.Data
+﻿using System.Data.Entity;
+using OnlineStore.Data.Migrations;
+
+namespace OnlineStore.Data
 {
     using System;
     using System.Collections.Generic;
@@ -17,6 +20,7 @@
         public OnlineStoreData(IOnlineStoreDbContext context)
         {
             this.context = context;
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<OnlineStoreDbContext, Configuration>());
         }
 
         public IOnlineStoreDbContext Context
