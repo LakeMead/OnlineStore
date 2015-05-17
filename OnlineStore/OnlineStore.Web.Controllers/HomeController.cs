@@ -4,7 +4,6 @@
     using System.Web.Mvc;
 
     using OnlineStore.Data;
-    using OnlineStore.Data.Models;
 
     [RequireHttps]
     public class HomeController : Controller
@@ -18,7 +17,8 @@
 
         public ActionResult Index()
         {
-               var a = this.data.Colors.All().ToList();            return this.View(a);
+            var a = this.data.Colors.All().ToList(); 
+            return this.View(a);
         }
 
         public ActionResult About()

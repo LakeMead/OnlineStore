@@ -5,8 +5,6 @@
     using System.Web.Optimization;
     using System.Web.Routing;
 
-    using Ninject;
-
     using OnlineStore.Web.Config;
 
     public class MvcApplication : HttpApplication

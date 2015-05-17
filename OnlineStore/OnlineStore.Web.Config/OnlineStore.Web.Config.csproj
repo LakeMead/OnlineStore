@@ -104,7 +104,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="NinjectConfig\NinjectDependencyResolver.cs" />
     <Compile Include="NinjectConfig\NinjectWebCommon.cs" />
     <Compile Include="BundleConfig.cs" />
@@ -113,6 +112,8 @@
     <Compile Include="IdentityConfig\MessageServices\EmailService.cs" />
     <Compile Include="IdentityConfig\ApplicationSignInManager.cs" />
     <Compile Include="IdentityConfig\MessageServices\SmsService.cs" />
+    <Compile Include="NinjectConfig\Registries\Contracts\INinjectRegistry.cs" />
+    <Compile Include="NinjectConfig\Registries\DataBindingRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteConfig.cs" />
   </ItemGroup>
