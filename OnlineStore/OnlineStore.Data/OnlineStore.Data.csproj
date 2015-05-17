@@ -65,6 +65,7 @@
     <Compile Include="Repositories\Contracts\ICommentRepository.cs" />
     <Compile Include="Repositories\Contracts\ILabelRepository.cs" />
     <Compile Include="Repositories\Contracts\IOrderRepository.cs" />
+    <Compile Include="Repositories\Contracts\IRatingRepository.cs" />
     <Compile Include="Repositories\Contracts\IUserRepository.cs" />
     <Compile Include="Repositories\Contracts\IProductsRepository.cs" />
     <Compile Include="Repositories\DeletableEntityRepository.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Repositories\LabelRepository.cs" />
     <Compile Include="Repositories\OrderRepository.cs" />
     <Compile Include="Repositories\ProductsRepository.cs" />
+    <Compile Include="Repositories\RatingRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
