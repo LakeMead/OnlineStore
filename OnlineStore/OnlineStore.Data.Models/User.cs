@@ -19,20 +19,35 @@
 
         private ICollection<Rating> ratings;
 
+        private ICollection<Order> orders;
+
         private ICollection<WishProduct> wishProducts;
 
         public User()
         {
             this.comments = new HashSet<Comment>();
+            this.orders = new HashSet<Order>();
             this.reviews = new HashSet<Review>();
             this.ratings = new HashSet<Rating>();
             this.wishProducts = new HashSet<WishProduct>();
         }
 
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public string Address { get; set; }
+
         public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
+        }
+
+        public virtual ICollection<Order> Orders
+        {
+            get { return this.orders; }
+            set { this.orders = value; }
         }
 
         public virtual ICollection<Review> Reviews
