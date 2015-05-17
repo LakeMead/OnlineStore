@@ -14,7 +14,7 @@
 
         public IQueryable<Comment> GetByAuthorId(string id)
         {
-            return this.Context.Comments.Where(c => c.AuthorId.Equals(id));
+            return this.Context.Comments.Where(c => c.AuthorId == id);
         }
 
         public IQueryable<Comment> GetByProductId(int id)
