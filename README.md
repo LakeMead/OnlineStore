@@ -5,7 +5,7 @@
 
 ###Technologies and techniques used:
 -	ASP.NET MVC framework
--	Razor template
+-	Razor view engine
 -	Microsoft SQL Server
 -	Entity Framework 6
 
