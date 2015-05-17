@@ -1,6 +1,5 @@
 ﻿namespace OnlineStore.Data.Repositories
 {
-    using System;
     using System.Linq;
 
     using OnlineStore.Data.Models;
@@ -17,24 +16,24 @@
             return this.Context.Orders.Where(o => o.UserId == id);
         }
 
-        public IQueryable<User> GetAllWishProducts(string id)
+        public IQueryable<WishProduct> GetAllWishProducts(string id)
         {
-            throw new NotImplementedException();
+            return this.Context.WishProducts.Where(wp => wp.UserId == id);
         }
 
-        public IQueryable<User> GetLastRegistered()
-        {
-            throw new NotImplementedException();
-        }
+        //public IQueryable<User> GetLastRegistered()
+        //{
+        //    return this.All().OrderByDescending(u => u.CreatedOn);
+        //}
 
         public IQueryable<User> SortedByOrdersCount()
         {
-            throw new NotImplementedException();
+            return this.All().OrderByDescending(u => u.Orders.Count);
         }
 
         public User GetByUsername(string username)
         {
-            throw new NotImplementedException();
+            return this.All().FirstOrDefault(u => u.UserName == username);
         }
     }
 }

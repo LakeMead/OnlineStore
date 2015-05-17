@@ -9,9 +9,9 @@
     {
         IQueryable<Order> GetAllOrderedProducts(string id);
 
-        IQueryable<User> GetAllWishProducts(string id);
+        IQueryable<WishProduct> GetAllWishProducts(string id);
 
-        IQueryable<User> GetLastRegistered();
+        //IQueryable<User> GetLastRegistered();
 
         IQueryable<User> SortedByOrdersCount();
 
