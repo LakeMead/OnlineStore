@@ -25,6 +25,7 @@
 
         public User()
         {
+            this.CreatedOn = DateTime.Now;
             this.comments = new HashSet<Comment>();
             this.orders = new HashSet<Order>();
             this.reviews = new HashSet<Review>();
