@@ -106,7 +106,7 @@ namespace OnlineStore.Data
 
         public IUserRepository Users
         {
-            get { return (IUserRepository)this.GetRepository<User>(); }
+            get { return (IUserRepository)this.GetDeletableEntityRepository<User>(); }
         }
 
         public int SaveChanges()

@@ -6,18 +6,15 @@
     using OnlineStore.Data;
 
     [RequireHttps]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private IOnlineStoreData data;
-
-        public HomeController(IOnlineStoreData data)
+        public HomeController(IOnlineStoreData data) : base (data)
         {
-            this.data = data;
         }
 
         public ActionResult Index()
         {
-            var a = this.data.Colors.All().ToList(); 
+            var a = this.Data.Colors.All().ToList(); 
             return this.View(a);
         }
 

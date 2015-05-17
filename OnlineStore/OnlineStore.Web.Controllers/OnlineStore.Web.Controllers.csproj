@@ -97,6 +97,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseController.cs" />
     <Compile Include="AccountController.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="ManageController.cs" />
