@@ -6,6 +6,7 @@ using OnlineStore.Web.Config;
 namespace OnlineStore.Web.Config
 {
     using System;
+    using System.Linq;
     using System.Web;
     using System.Web.Mvc;
 
@@ -15,6 +16,7 @@ namespace OnlineStore.Web.Config
     using Ninject.Web.Common;
 
     using OnlineStore.Data;
+    using OnlineStore.Web.Config.Registries.Contracts;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +63,8 @@ namespace OnlineStore.Web.Config
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+
+                DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
                 return kernel;
             }
             catch
@@ -76,8 +80,15 @@ namespace OnlineStore.Web.Config
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IOnlineStoreDbContext>().To<OnlineStoreDbContext>();
-            kernel.Bind<IOnlineStoreData>().To<OnlineStoreData>(); 
+            var registries = typeof(INinjectRegistry).Assembly
+                 .GetExportedTypes()
+                 .Where(t => t.IsClass && !t.IsAbstract && typeof(INinjectRegistry).IsAssignableFrom(t));
+
+            foreach (var registry in registries)
+            {
+                var registryInstance = (INinjectRegistry)Activator.CreateInstance(registry);
+                registryInstance.Register(kernel);
+            }
         }        
     }
 }
