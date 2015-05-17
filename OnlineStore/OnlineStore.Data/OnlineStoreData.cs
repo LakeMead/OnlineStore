@@ -9,6 +9,7 @@ namespace OnlineStore.Data
     using OnlineStore.Data.Contracts;
     using OnlineStore.Data.Models;
     using OnlineStore.Data.Repositories;
+    using OnlineStore.Data.Repositories.Contracts;
 
     using Attribute = OnlineStore.Data.Models.Attribute;
 
@@ -28,14 +29,14 @@ namespace OnlineStore.Data
             get { return this.context; }
         }
 
-        public IDeletableEntityRepository<Order> Orders
+        public IOrderRepository Orders
         {
-            get { return this.GetDeletableEntityRepository<Order>(); }
+            get { return (IOrderRepository)this.GetDeletableEntityRepository<Order>(); }
         }
 
-        public IDeletableEntityRepository<Product> Products
+        public IProductsRepository Products
         {
-            get { return this.GetDeletableEntityRepository<Product>(); }
+            get { return (IProductsRepository)this.GetDeletableEntityRepository<Product>(); }
         }
 
         public IDeletableEntityRepository<Category> Categories
@@ -43,9 +44,9 @@ namespace OnlineStore.Data
             get { return this.GetDeletableEntityRepository<Category>(); }
         }
 
-        public IDeletableEntityRepository<Label> Labels
+        public ILabelRepository Labels
         {
-            get { return this.GetDeletableEntityRepository<Label>(); }
+            get { return (ILabelRepository)this.GetDeletableEntityRepository<Label>(); }
         }
 
         public IGenericRepository<Color> Colors
@@ -58,14 +59,14 @@ namespace OnlineStore.Data
             get { return this.GetDeletableEntityRepository<Review>(); }
         }
 
-        public IDeletableEntityRepository<Comment> Comments
+        public ICommentRepository Comments
         {
-            get { return this.GetDeletableEntityRepository<Comment>(); }
+            get { return (ICommentRepository)this.GetDeletableEntityRepository<Comment>(); }
         }
 
-        public IDeletableEntityRepository<Rating> Ratings
+        public IRatingRepository Ratings
         {
-            get { return this.GetDeletableEntityRepository<Rating>(); }
+            get { return (IRatingRepository)this.GetDeletableEntityRepository<Rating>(); }
         }
 
         public IDeletableEntityRepository<Attribute> Attributes
@@ -78,9 +79,9 @@ namespace OnlineStore.Data
             get { return this.GetDeletableEntityRepository<Discount>(); }
         }
 
-        public IDeletableEntityRepository<WishProduct> WishProducts
+        public IWishProductRepository WishProducts
         {
-            get { return this.GetDeletableEntityRepository<WishProduct>(); }
+            get { return (IWishProductRepository)this.GetDeletableEntityRepository<WishProduct>(); }
         }
 
         public IDeletableEntityRepository<ContactFormFeedback> ContactFormFeedbacks
@@ -101,6 +102,11 @@ namespace OnlineStore.Data
         public IGenericRepository<StaticPageSection> StaticPageSections
         {
             get { return this.GetRepository<StaticPageSection>(); }
+        }
+
+        public IUserRepository Users
+        {
+            get { return (IUserRepository)this.GetRepository<User>(); }
         }
 
         public int SaveChanges()
@@ -125,6 +131,41 @@ namespace OnlineStore.Data
             if (!this.repositories.ContainsKey(typeof(T)))
             {
                 var type = typeof(DeletableEntityRepository<T>);
+
+                if (typeof(T).IsAssignableFrom(typeof(Order)))
+                {
+                    type = typeof(OrderRepository);
+                }
+
+                if (typeof(T).IsAssignableFrom(typeof(Product)))
+                {
+                    type = typeof(ProductsRepository);
+                }
+
+                if (typeof(T).IsAssignableFrom(typeof(Label)))
+                {
+                    type = typeof(LabelRepository);
+                }
+
+                if (typeof(T).IsAssignableFrom(typeof(Comment)))
+                {
+                    type = typeof(CommentRepository);
+                }
+
+                if (typeof(T).IsAssignableFrom(typeof(Rating)))
+                {
+                    type = typeof(RatingRepository);
+                }
+
+                if (typeof(T).IsAssignableFrom(typeof(WishProduct)))
+                {
+                    type = typeof(WishProductRepository);
+                }
+
+                if (typeof(T).IsAssignableFrom(typeof(User)))
+                {
+                    type = typeof(UserRepository);
+                }
 
                 this.repositories.Add(typeof(T), Activator.CreateInstance(type, this.context));
             }

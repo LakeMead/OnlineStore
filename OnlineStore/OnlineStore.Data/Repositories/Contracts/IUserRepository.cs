@@ -11,7 +11,7 @@
 
         IQueryable<WishProduct> GetAllWishProducts(string id);
 
-        ////IQueryable<User> GetLastRegistered();
+        IQueryable<User> GetLastRegistered();
 
         IQueryable<User> SortedByOrdersCount();
 
