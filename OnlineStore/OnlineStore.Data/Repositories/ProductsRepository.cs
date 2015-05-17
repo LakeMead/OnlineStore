@@ -49,6 +49,11 @@
             return this.Context.Products.Where(p => p.DiscountId != null);
         }
 
+        public IQueryable<Product> GetByDiscountId(int id)
+        {
+            return this.Context.Products.Where(p => p.DiscountId == id);
+        }
+
         public IQueryable<Product> GetMostRated()
         {
             return this.Context.Products.OrderByDescending(p => p.Ratings.Select(r => r.Type));
@@ -57,6 +62,11 @@
         public IQueryable<Product> GetMostOrdered()
         {
             return this.Context.Products.OrderByDescending(p => p.Orders.Count(o => o.OrderStatus == OrderStatus.Delivered));
+        }
+
+        public IQueryable<Product> GetByOrderId(int id)
+        {
+            return this.Context.Products.Where(p => p.Orders.Select(o => o.Id).Contains(id));
         }
 
         public IQueryable<Product> GetFiltered(int? colorId, int? categoryId, int? labelId, decimal? minPrice, decimal? maxPrice)

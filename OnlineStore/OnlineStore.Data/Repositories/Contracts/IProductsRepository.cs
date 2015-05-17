@@ -20,9 +20,13 @@
 
         IQueryable<Product> GetDiscounted();
 
+        IQueryable<Product> GetByDiscountId(int id);
+
         IQueryable<Product> GetMostRated();
 
         IQueryable<Product> GetMostOrdered();
+
+        IQueryable<Product> GetByOrderId(int id);
 
         IQueryable<Product> GetFiltered(int? colorId, int? categoryId, int? labelId, decimal? minPrice, decimal? maxPrice);
     }
