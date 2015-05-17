@@ -68,6 +68,7 @@
     <Compile Include="Repositories\Contracts\IRatingRepository.cs" />
     <Compile Include="Repositories\Contracts\IUserRepository.cs" />
     <Compile Include="Repositories\Contracts\IProductsRepository.cs" />
+    <Compile Include="Repositories\Contracts\IWishProductRepository.cs" />
     <Compile Include="Repositories\DeletableEntityRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\LabelRepository.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Repositories\ProductsRepository.cs" />
     <Compile Include="Repositories\RatingRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\WishProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnlineStore.Common\OnlineStore.Common.csproj">
