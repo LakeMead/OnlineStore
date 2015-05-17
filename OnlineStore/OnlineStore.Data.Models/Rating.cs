@@ -8,6 +8,7 @@
 
     public class Rating : DeletableEntity, IAuditInfo
     {
+        [Key]
         public int Id { get; set; }
 
         public RatingType Type { get; set; }
@@ -17,6 +18,7 @@
 
         public virtual User Author { get; set; }
 
+        [Required]
         public int ProductId { get; set; }
 
         public virtual Product Product { get; set; }

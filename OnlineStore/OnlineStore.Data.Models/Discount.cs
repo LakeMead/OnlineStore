@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     using OnlineStore.Data.Contracts;
 
@@ -14,15 +16,19 @@
             this.products = new HashSet<Product>();
         }
 
+        [Key]
         public int Id { get; set; }
 
+        [StringLength(50, MinimumLength = 5)]
+        public string Title { get; set; }
+
+        [Index]
         public double Percent { get; set; }
 
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
 
-        // TODO: I am not sure about this one - to be checked with the team
         public bool IsActive { get; set; }
 
         public DateTime CreatedOn { get; set; }

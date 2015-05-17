@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     using OnlineStore.Data.Contracts;
 
@@ -32,14 +34,22 @@
             this.orders = new HashSet<Order>();
         }
 
+        [Key]
         public int Id { get; set; }
 
+        [Index]
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
         public string Name { get; set; }
 
+        [Required]
+        [StringLength(1000, MinimumLength = 5)]
         public string Description { get; set; }
 
+        [Index]
         public decimal Price { get; set; }
 
+        [Index]
         public int Quantity { get; set; }
 
         public int? DiscountId { get; set; }

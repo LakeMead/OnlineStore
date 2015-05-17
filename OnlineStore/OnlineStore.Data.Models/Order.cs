@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     using OnlineStore.Common.Enumerations;
     using OnlineStore.Data.Contracts;
@@ -15,11 +17,13 @@
             this.products = new HashSet<Product>();
         }
 
-        // TODO: add more functionality?!?
+        [Key]
         public int Id { get; set; }
 
+        [Index]
         public OrderStatus OrderStatus { get; set; }
 
+        [Required]
         public string UserId { get; set; }
 
         public virtual User User { get; set; }

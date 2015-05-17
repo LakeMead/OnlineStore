@@ -13,8 +13,8 @@
         {
             var context = new OnlineStoreDbContext();
 
-            context.Colors.Add(new Color { Name = "Blueblue" });
-            context.SaveChanges();
+            //context.Colors.Add(new Color { Name = "Blueblue" });
+            //context.SaveChanges();
             var a = context.Colors.ToList();
             return this.View(a);
         }
