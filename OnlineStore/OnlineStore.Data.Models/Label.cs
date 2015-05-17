@@ -5,15 +5,12 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class Label : DeletableEntity
+    public class Label : DeletableEntity, IAuditInfo
     {
-        private DateTime createdOn;
-
         private ICollection<Product> products;
 
         public Label()
         {
-            this.createdOn = DateTime.Now;
             this.products = new HashSet<Product>();
         }
 
@@ -21,13 +18,13 @@
 
         public string Content { get; set; }
 
-        public DateTime CreatedOn
-        {
-            get { return this.createdOn; }
-            set { this.createdOn = value; }
-        }
+        public DateTime CreatedOn { get; set; }
 
-        public ICollection<Product> Products
+        public bool PreserveCreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
+
+        public virtual ICollection<Product> Products
         {
             get { return this.products; }
             set { this.products = value; }

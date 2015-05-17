@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuditInfo.cs" />
     <Compile Include="DeletableEntity.cs" />
+    <Compile Include="IAuditInfo.cs" />
     <Compile Include="IDeletableEntity.cs" />
     <Compile Include="IDeletableEntityRepository.cs" />
     <Compile Include="IGenericRepository.cs" />

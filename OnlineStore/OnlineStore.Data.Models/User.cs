@@ -11,7 +11,7 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class User : IdentityUser, IDeletableEntity
+    public class User : IdentityUser, IDeletableEntity, IAuditInfo
     {
         private ICollection<Comment> comments;
 
@@ -37,6 +37,18 @@
         public string LastName { get; set; }
 
         public string Address { get; set; }
+
+        [Editable(false)]
+        public bool IsDeleted { get; set; }
+
+        [Editable(false)]
+        public DateTime? DeletedOn { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
+        public bool PreserveCreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
 
         public virtual ICollection<Comment> Comments
         {
@@ -67,12 +79,6 @@
             get { return this.wishProducts; }
             set { this.wishProducts = value; }
         }
-
-        [Editable(false)]
-        public bool IsDeleted { get; set; }
-
-        [Editable(false)]
-        public DateTime? DeletedOn { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

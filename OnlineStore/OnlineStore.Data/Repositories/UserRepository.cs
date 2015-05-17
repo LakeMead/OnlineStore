@@ -21,10 +21,10 @@
             return this.Context.WishProducts.Where(wp => wp.UserId == id);
         }
 
-        //public IQueryable<User> GetLastRegistered()
-        //{
-        //    return this.All().OrderByDescending(u => u.CreatedOn);
-        //}
+        ////public IQueryable<User> GetLastRegistered()
+        ////{
+        ////    return this.All().OrderByDescending(u => u.CreatedOn);
+        ////}
 
         public IQueryable<User> SortedByOrdersCount()
         {

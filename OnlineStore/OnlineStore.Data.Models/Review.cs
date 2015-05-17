@@ -5,15 +5,8 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class Review : DeletableEntity
+    public class Review : DeletableEntity, IAuditInfo
     {
-        private DateTime createdOn;
-
-        public Review()
-        {
-            this.createdOn = DateTime.Now;
-        }
-
         [ForeignKey("Rating")]
         public int Id { get; set; }
 
@@ -27,12 +20,12 @@
 
         public virtual Product Product { get; set; }
 
-        public DateTime CreatedOn
-        {
-            get { return this.createdOn; }
-            set { this.createdOn = value; }
-        }
-
         public virtual Rating Rating { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
+        public bool PreserveCreatedOn { get; set; }
+
+        public DateTime? ModifiedOn { get; set; }
     }
 }
