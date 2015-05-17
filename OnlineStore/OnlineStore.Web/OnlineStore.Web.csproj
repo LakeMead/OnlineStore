@@ -268,6 +268,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlineStore.Common\OnlineStore.Common.csproj">
+      <Project>{24384460-173E-4774-804D-97DDD61CAD01}</Project>
+      <Name>OnlineStore.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlineStore.Data.Contracts\OnlineStore.Data.Contracts.csproj">
       <Project>{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}</Project>
       <Name>OnlineStore.Data.Contracts</Name>
