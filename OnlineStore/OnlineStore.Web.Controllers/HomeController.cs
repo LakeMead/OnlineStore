@@ -8,7 +8,7 @@
     [RequireHttps]
     public class HomeController : BaseController
     {
-        public HomeController(IOnlineStoreData data) : base (data)
+        public HomeController(IOnlineStoreData data) : base(data)
         {
         }
 

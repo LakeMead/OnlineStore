@@ -1,11 +1,10 @@
-﻿namespace OnlineStore.Web.Models
+﻿namespace OnlineStore.Web.Models.ViewModels.Account
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class ForgotPasswordViewModel
+    public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }

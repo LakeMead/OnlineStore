@@ -1,4 +1,4 @@
-﻿namespace OnlineStore.Web.Models
+﻿namespace OnlineStore.Web.Models.ViewModels.Account
 {
     public class FactorViewModel
     {
