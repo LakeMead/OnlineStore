@@ -397,9 +397,7 @@
             base.Dispose(disposing);
         }
 
-        #region Helpers
         // Used for XSRF protection when adding external logins
-
         private IAuthenticationManager AuthenticationManager
         {
             get
@@ -456,6 +454,5 @@
                 context.HttpContext.GetOwinContext().Authentication.Challenge(properties, this.LoginProvider);
             }
         }
-        #endregion
     }
 }

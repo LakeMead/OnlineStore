@@ -1,11 +1,10 @@
-﻿using OnlineStore.Common.Enumerations;
-
-namespace OnlineStore.Data.Repositories
+﻿namespace OnlineStore.Data.Repositories
 {
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Linq;
+
+    using OnlineStore.Common.Enumerations;
     using OnlineStore.Data.Models;
     using OnlineStore.Data.Repositories.Contracts;
 
@@ -40,10 +39,9 @@ namespace OnlineStore.Data.Repositories
         {
             throw new NotImplementedException();
 
-            //levelInstancesEntities = searchTerms.Aggregate(
-            //        levelInstancesEntities,
-            //        (current, element) => current.Where(x => x.NameEn.Contains(element) || x.NameBg.Contains(element)));
-
+            ////levelInstancesEntities = searchTerms.Aggregate(
+            ////        levelInstancesEntities,
+            ////        (current, element) => current.Where(x => x.NameEn.Contains(element) || x.NameBg.Contains(element)));
         }
 
         public IQueryable<Product> GetDiscounted()

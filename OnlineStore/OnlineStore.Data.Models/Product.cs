@@ -44,10 +44,10 @@
         public int? DiscountId { get; set; }
 
         public virtual Discount Discount { get; set; }
-        
+
         public int CategoryId { get; set; }
-        
-        public virtual Category Category {get; set; }
+
+        public virtual Category Category { get; set; }
 
         public string ImagePath { get; set; }
 

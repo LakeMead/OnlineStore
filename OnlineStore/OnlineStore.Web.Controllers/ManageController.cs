@@ -31,6 +31,17 @@
             this.SignInManager = signInManager;
         }
 
+        public enum ManageMessageId
+        {
+            AddPhoneSuccess,
+            ChangePasswordSuccess,
+            SetTwoFactorSuccess,
+            SetPasswordSuccess,
+            RemoveLoginSuccess,
+            RemovePhoneSuccess,
+            Error
+        }
+
         public ApplicationSignInManager SignInManager
         {
             get
@@ -38,9 +49,9 @@
                 return this.signInManager ?? this.HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
 
-            private set 
-            { 
-                this.signInManager = value; 
+            private set
+            {
+                this.signInManager = value;
             }
         }
 
@@ -202,11 +213,13 @@
             {
                 return this.RedirectToAction("Index", new { Message = ManageMessageId.Error });
             }
+
             var user = await this.UserManager.FindByIdAsync(this.User.Identity.GetUserId());
             if (user != null)
             {
                 await this.SignInManager.SignInAsync(user, false, false);
             }
+
             return this.RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
 
@@ -232,6 +245,7 @@
                 {
                     await this.SignInManager.SignInAsync(user, false, false);
                 }
+
                 return this.RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
 
@@ -280,6 +294,7 @@
             {
                 return this.View("Error");
             }
+
             var userLogins = await this.UserManager.GetLoginsAsync(this.User.Identity.GetUserId());
             var otherLogins = this.AuthenticationManager.GetExternalAuthenticationTypes().Where(auth => userLogins.All(ul => auth.AuthenticationType != ul.LoginProvider)).ToList();
             this.ViewBag.ShowRemoveButton = user.PasswordHash != null || userLogins.Count > 1;
@@ -321,7 +336,6 @@
             base.Dispose(disposing);
         }
 
-#region Helpers
         private IAuthenticationManager AuthenticationManager
         {
             get
@@ -360,17 +374,6 @@
             return false;
         }
 
-        public enum ManageMessageId
-        {
-            AddPhoneSuccess,
-            ChangePasswordSuccess,
-            SetTwoFactorSuccess,
-            SetPasswordSuccess,
-            RemoveLoginSuccess,
-            RemovePhoneSuccess,
-            Error
-        }
-
-#endregion
+        
     }
 }
