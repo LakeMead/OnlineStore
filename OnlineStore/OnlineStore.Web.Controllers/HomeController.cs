@@ -18,8 +18,7 @@
 
         public ActionResult Index()
         {
-            var a = this.data.Colors.All().ToList();
-            return this.View(a);
+               var a = this.data.Colors.All().ToList();            return this.View(a);
         }
 
         public ActionResult About()

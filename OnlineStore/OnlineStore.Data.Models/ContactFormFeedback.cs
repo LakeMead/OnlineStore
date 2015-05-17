@@ -10,16 +10,14 @@
         [Key]
         public int Id { get; set; }
 
-        [MinLength(5)]
-        [MaxLength(100)]
+        [StringLength(100, MinimumLength = 5)]
         public string Title { get; set; }
 
         [Required]
         public string Email { get; set; }
 
         [Required]
-        [MinLength(5)]
-        [MaxLength(100)]
+        [StringLength(1000, MinimumLength = 5)]
         public string Content { get; set; }
 
         public DateTime CreatedOn { get; set; }

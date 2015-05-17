@@ -1,6 +1,7 @@
 ﻿namespace OnlineStore.Data.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class StaticPage
     {
@@ -12,6 +13,7 @@
         }
 
         // TODO: Decide what will be the content of the Static Page
+        [Key]
         public int Id { get; set; }
 
         public virtual ICollection<StaticPageSection> StaticPageSections

@@ -32,10 +32,13 @@
             this.wishProducts = new HashSet<WishProduct>();
         }
 
+        [StringLength(50, MinimumLength = 2)]
         public string FirstName { get; set; }
-
+        
+        [StringLength(50, MinimumLength = 2)]
         public string LastName { get; set; }
 
+        [StringLength(100, MinimumLength = 5)]
         public string Address { get; set; }
 
         [Editable(false)]
