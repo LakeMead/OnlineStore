@@ -66,6 +66,7 @@
     <Compile Include="Repositories\DeletableEntityRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\ProductsRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnlineStore.Common\OnlineStore.Common.csproj">

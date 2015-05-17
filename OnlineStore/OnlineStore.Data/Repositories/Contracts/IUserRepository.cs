@@ -7,7 +7,7 @@
 
     public interface IUserRepository : IDeletableEntityRepository<User>
     {
-        IQueryable<User> GetAllOrderedProducts(string id);
+        IQueryable<Order> GetAllOrderedProducts(string id);
 
         IQueryable<User> GetAllWishProducts(string id);
 
