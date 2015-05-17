@@ -9,13 +9,16 @@
     [RequireHttps]
     public class HomeController : Controller
     {
+        private IOnlineStoreData data;
+
+        public HomeController(IOnlineStoreData data)
+        {
+            this.data = data;
+        }
+
         public ActionResult Index()
         {
-            var context = new OnlineStoreDbContext();
-
-            context.Colors.Add(new Color { Name = "Blueblue" });
-            context.SaveChanges();
-            var a = context.Colors.ToList();
+            var a = this.data.Colors.All().ToList();
             return this.View(a);
         }
 
