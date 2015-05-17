@@ -1,12 +1,11 @@
-﻿using System.Data.Entity;
-using OnlineStore.Data.Migrations;
-
-namespace OnlineStore.Data
+﻿namespace OnlineStore.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
 
     using OnlineStore.Data.Contracts;
+    using OnlineStore.Data.Migrations;
     using OnlineStore.Data.Models;
     using OnlineStore.Data.Repositories;
     using OnlineStore.Data.Repositories.Contracts;
