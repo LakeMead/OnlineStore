@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.AccessControl;
 
     using OnlineStore.Common.Enumerations;
     using OnlineStore.Data.Models;
@@ -56,7 +57,12 @@
 
         public IQueryable<Product> GetMostRated()
         {
-            return this.Context.Products.OrderByDescending(p => p.Ratings.Select(r => r.Type));
+            return this.Context.Products.OrderByDescending(p => p.Ratings.Average(r => (int)r.Type));
+        }
+
+        public double GetRating(int id)
+        {
+            return this.Context.Products.FirstOrDefault(p => p.Id == id).Ratings.Average(r => (int)r.Type);
         }
 
         public IQueryable<Product> GetMostOrdered()
