@@ -8,13 +8,14 @@
     [RequireHttps]
     public class HomeController : BaseController
     {
-        public HomeController(IOnlineStoreData data) : base(data)
+        public HomeController(IOnlineStoreData data)
+            : base(data)
         {
         }
 
         public ActionResult Index()
         {
-            var a = this.Data.Colors.All().ToList(); 
+            var a = this.Data.Colors.All().ToList();
             return this.View(a);
         }
 

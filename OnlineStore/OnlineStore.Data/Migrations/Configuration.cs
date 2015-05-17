@@ -1,15 +1,15 @@
-using System.Linq;
-using System.Security.Cryptography;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using OnlineStore.Common.Enumerations;
-
 namespace OnlineStore.Data.Migrations
 {
     using System;
     using System.Collections.Generic;
-    using OnlineStore.Data.Models;
     using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+
+    using OnlineStore.Common.Enumerations;
+    using OnlineStore.Data.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<OnlineStoreDbContext>
     {
@@ -21,19 +21,6 @@ namespace OnlineStore.Data.Migrations
 
         protected override void Seed(OnlineStoreDbContext context)
         {
-            ////  This method will be called after migrating to the latest version.
-
-            ////  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            ////  to avoid creating duplicate seed data. E.g.
-            ////
-            ////    context.People.AddOrUpdate(
-            ////      p => p.FullName,
-            ////      new Person { FullName = "Andrew Peters" },
-            ////      new Person { FullName = "Brice Lambson" },
-            ////      new Person { FullName = "Rowan Miller" }
-            ////    );
-            ////
-
             if (!context.Products.Any() || !context.Categories.Any())
             {
                 var cat1 = new Category { Name = "Accessories", Order = 1 };
@@ -42,11 +29,11 @@ namespace OnlineStore.Data.Migrations
 
                 context.Categories.AddOrUpdate(cat1, cat2, cat3);
 
-                var color1 = new Color { Name = "White" }; 
+                var color1 = new Color { Name = "White" };
                 var color2 = new Color { Name = "Black" };
                 var color3 = new Color { Name = "Red" };
                 var color4 = new Color { Name = "Green" };
-                var color5 = new Color { Name = "Blue" } ;
+                var color5 = new Color { Name = "Blue" };
                 var color6 = new Color { Name = "Yellow" };
 
                 context.Colors.AddOrUpdate(color1, color2, color3, color4, color5, color6);
@@ -64,10 +51,10 @@ namespace OnlineStore.Data.Migrations
                     ImagePath = null,
                     Colors = new List<Color>()
                     {
-                        color1, color6
+                        color1, 
+                        color6
                     }
                 };
-
 
                 var product2 = new Product
                 {
@@ -137,18 +124,19 @@ namespace OnlineStore.Data.Migrations
                 context.SaveChanges();
 
                 var userStore = new UserStore<User>(context);
-                var userManager = new UserManager<User>(userStore);
-
-                userManager.PasswordValidator = new PasswordValidator
+                var userManager = new UserManager<User>(userStore)
                 {
-                    RequiredLength = 2,
-                    RequireNonLetterOrDigit = false,
-                    RequireDigit = false,
-                    RequireLowercase = false,
-                    RequireUppercase = false,
+                    PasswordValidator = new PasswordValidator
+                    {
+                        RequiredLength = 2,
+                        RequireNonLetterOrDigit = false,
+                        RequireDigit = false,
+                        RequireLowercase = false,
+                        RequireUppercase = false,
+                    }
                 };
 
-                var user = new User()
+                var user = new User
                 {
                     CreatedOn = DateTime.Now,
                     UserName = "Pesho",
