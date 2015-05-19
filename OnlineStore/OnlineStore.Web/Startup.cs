@@ -23,7 +23,7 @@ namespace OnlineStore.Web
             this.ConfigureAuth(app);
         }
 
-        public void ConfigureAuth(IAppBuilder app)
+        private void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
             app.CreatePerOwinContext(OnlineStoreDbContext.Create);

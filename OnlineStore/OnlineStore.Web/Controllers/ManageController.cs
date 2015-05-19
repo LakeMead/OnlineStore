@@ -10,7 +10,6 @@
     using Microsoft.Owin.Security;
 
     using OnlineStore.Web.Config.IdentityConfig;
-    using OnlineStore.Web.Models;
     using OnlineStore.Web.Models.ViewModels.Account;
 
     [Authorize]
@@ -175,7 +174,7 @@
 
         public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
         {
-            var code = await this.UserManager.GenerateChangePhoneNumberTokenAsync(User.Identity.GetUserId(), phoneNumber);
+            var code = await this.UserManager.GenerateChangePhoneNumberTokenAsync(this.User.Identity.GetUserId(), phoneNumber);
 
             // Send an SMS through the SMS provider to verify the phone number
             return phoneNumber == null ? this.View("Error") : this.View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });

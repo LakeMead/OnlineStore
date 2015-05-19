@@ -34,6 +34,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Data.Models", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Services.Common", "OnlineStore.Services.Common\OnlineStore.Services.Common.csproj", "{680A882D-D6F8-41B5-BA93-A6D7CC82BECA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Web.AreasLibrary", "OnlineStore.Web.AreasLibrary\OnlineStore.Web.AreasLibrary.csproj", "{0F67EFE6-9022-4F12-A96B-6F7479FEEC71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,10 @@ Global
 		{680A882D-D6F8-41B5-BA93-A6D7CC82BECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{680A882D-D6F8-41B5-BA93-A6D7CC82BECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{680A882D-D6F8-41B5-BA93-A6D7CC82BECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F67EFE6-9022-4F12-A96B-6F7479FEEC71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F67EFE6-9022-4F12-A96B-6F7479FEEC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F67EFE6-9022-4F12-A96B-6F7479FEEC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F67EFE6-9022-4F12-A96B-6F7479FEEC71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,5 +90,6 @@ Global
 		{C204D1CC-2086-410E-858C-5BEEDD9288CE} = {80B50DE0-6072-4B48-8E40-4105B307208E}
 		{CE0DFB35-29AF-4B46-8559-F35335E02E67} = {C8C647FC-1531-4CF6-A868-B7DCA76978CA}
 		{680A882D-D6F8-41B5-BA93-A6D7CC82BECA} = {37D443F0-D08C-4DE6-946B-BFF4D3766604}
+		{0F67EFE6-9022-4F12-A96B-6F7479FEEC71} = {80B50DE0-6072-4B48-8E40-4105B307208E}
 	EndGlobalSection
 EndGlobal
