@@ -19,12 +19,14 @@
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bootstrap/bootstrap.min.js",
+                      "~/Scripts/bootstrap/bootswatch.js",
+                      "~/Scripts/bootstrap/html5shiv.js",
+                      "~/Scripts/bootstrap/respond.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap/bootstrap.css",
-                      "~/Content/css/site.css"));
+                      "~/Content/css/Site.css"));
         }
     }
 }
