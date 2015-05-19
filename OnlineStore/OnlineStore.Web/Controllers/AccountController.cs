@@ -11,7 +11,6 @@
 
     using OnlineStore.Data.Models;
     using OnlineStore.Web.Config.IdentityConfig;
-    using OnlineStore.Web.Models;
     using OnlineStore.Web.Models.ViewModels.Account;
 
     [Authorize]
