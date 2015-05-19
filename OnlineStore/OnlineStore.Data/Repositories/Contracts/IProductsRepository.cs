@@ -26,6 +26,8 @@
 
         double GetRating(int id);
 
+        IQueryable<Product> GetTheNewest();
+
         IQueryable<Product> GetMostOrdered();
 
         IQueryable<Product> GetByOrderId(int id);

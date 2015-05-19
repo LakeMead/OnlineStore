@@ -65,6 +65,11 @@
             return this.Context.Products.FirstOrDefault(p => p.Id == id).Ratings.Average(r => (int)r.Type);
         }
 
+        public IQueryable<Product> GetTheNewest()
+        {
+            return this.Context.Products.OrderByDescending(p => p.CreatedOn);
+        }
+
         public IQueryable<Product> GetMostOrdered()
         {
             return this.Context.Products.OrderByDescending(p => p.Orders.Count(o => o.OrderStatus == OrderStatus.Delivered));
