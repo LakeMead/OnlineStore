@@ -1,8 +1,9 @@
 ﻿namespace OnlineStore.Web.Models.ViewModels.Home
 {
+    using OnlineStore.Common.Mapping;
     using OnlineStore.Data.Models;
 
-    public class DiscountedProductsViewModel
+    public class DiscountedProductsViewModel : IMapFrom<Product>
     {
         public int Id { get; set; }
 

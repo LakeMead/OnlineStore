@@ -18,8 +18,24 @@
 
         public ActionResult Index()
         {
-            var newestProduct = this.Data.Products.GetTheNewest().Project().To<NewestProductsViewModel>().Take(1);
-            var model = new HomeViewModel { NewestProducts = newestProduct };
+            var newestProduct = this.Data.Products.GetTheNewest().Take(2).Project().To<NewestProductsViewModel>();
+            var discountedProducts =
+                this.Data.Products.GetDiscounted()
+                    .OrderByDescending(p => p.CreatedOn)
+                    .Take(2)
+                    .Project()
+                    .To<DiscountedProductsViewModel>();
+            var mostPopularProducts =
+                this.Data.Products.GetMostOrdered().Take(2).Project().To<MostPopularProductsViewModel>();
+            var topRatedProducts = this.Data.Products.GetMostRated().Take(2).Project().To<TopRatedProductsViewModel>();
+
+            var model = new HomeViewModel
+                        {
+                            NewestProducts = newestProduct,
+                            DiscountedProducts = discountedProducts,
+                            MostPopularProducts = mostPopularProducts,
+                            TopRatedProducts = topRatedProducts
+                        };
             return this.View(model);
         }
 
