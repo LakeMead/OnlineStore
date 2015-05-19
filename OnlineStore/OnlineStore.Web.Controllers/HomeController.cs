@@ -3,7 +3,10 @@
     using System.Linq;
     using System.Web.Mvc;
 
+    using AutoMapper.QueryableExtensions;
+
     using OnlineStore.Data;
+    using OnlineStore.Web.Models.ViewModels.Home;
 
     [RequireHttps]
     public class HomeController : BaseController
@@ -15,8 +18,9 @@
 
         public ActionResult Index()
         {
-            var a = this.Data.Colors.All().ToList();
-            return this.View(a);
+            var newestProduct = this.Data.Products.GetTheNewest().Project().To<NewestProductsViewModel>().Take(1);
+            var model = new HomeViewModel { NewestProducts = newestProduct };
+            return this.View(model);
         }
 
         public ActionResult About()

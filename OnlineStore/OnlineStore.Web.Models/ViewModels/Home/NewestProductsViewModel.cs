@@ -2,7 +2,10 @@
 {
     using System;
 
-    public class NewestProductsViewModel
+    using OnlineStore.Common.Mapping;
+    using OnlineStore.Data.Models;
+
+    public class NewestProductsViewModel : IMapFrom<Product>
     {
         public int Id { get; set; }
 

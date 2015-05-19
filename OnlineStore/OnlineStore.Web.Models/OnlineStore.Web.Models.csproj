@@ -89,6 +89,7 @@
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Home\MostPopularProductsViewModel.cs" />
     <Compile Include="ViewModels\Home\NewestProductsViewModel.cs" />
+    <Compile Include="ViewModels\Home\TopRatedProductsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InputModels\" />
