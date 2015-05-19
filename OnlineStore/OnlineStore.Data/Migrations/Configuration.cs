@@ -110,11 +110,23 @@ namespace OnlineStore.Data.Migrations
                     ImagePath = null,
                 };
 
+                var product6 = new Product
+                {
+                    Name = "hello kitty phone case",
+                    Description =
+                        "[HELLO KITTY] Armor cell phone case For iPhone 6/6 plus fit 4.7/5.5 inch. water/dirt/shock proof",
+                    Price = 1.47m,
+                    Quantity = 23,
+                    CategoryId = cat1.Id,
+                    ImagePath = null,
+                };
+
                 context.Products.AddOrUpdate(product1);
                 context.Products.AddOrUpdate(product2);
                 context.Products.AddOrUpdate(product3);
                 context.Products.AddOrUpdate(product4);
                 context.Products.AddOrUpdate(product5);
+                context.Products.AddOrUpdate(product6);
                 context.SaveChanges();
 
 
