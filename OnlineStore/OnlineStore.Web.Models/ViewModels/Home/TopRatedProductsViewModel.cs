@@ -17,7 +17,7 @@
 
         public string ImagePath { get; set; }
 
-        public double Rating { get; set; }
+        public double? Rating { get; set; }
 
         public void CreateMappings(IConfiguration configuration)
         {

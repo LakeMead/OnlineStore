@@ -1,7 +1,9 @@
 using OnlineStore.Web.Config;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
+using WebActivatorEx;
+
+[assembly: PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: ApplicationShutdownMethod(typeof(NinjectWebCommon), "Stop")]
 
 namespace OnlineStore.Web.Config
 {
@@ -15,7 +17,6 @@ namespace OnlineStore.Web.Config
     using Ninject;
     using Ninject.Web.Common;
 
-    using OnlineStore.Data;
     using OnlineStore.Web.Config.Registries.Contracts;
 
     public static class NinjectWebCommon 

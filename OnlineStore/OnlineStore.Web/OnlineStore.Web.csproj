@@ -282,10 +282,6 @@
       <Project>{7ED9F623-08F8-4B87-BD15-395F6395920E}</Project>
       <Name>OnlineStore.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OnlineStore.Web.AreasLibrary\OnlineStore.Web.AreasLibrary.csproj">
-      <Project>{0f67efe6-9022-4f12-a96b-6f7479feec71}</Project>
-      <Name>OnlineStore.Web.AreasLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OnlineStore.Web.Config\OnlineStore.Web.Config.csproj">
       <Project>{C204D1CC-2086-410E-858C-5BEEDD9288CE}</Project>
       <Name>OnlineStore.Web.Config</Name>
