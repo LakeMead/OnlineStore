@@ -5,7 +5,7 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class FrequentlyAskedQuestion : DeletableEntity, IAuditInfo
+    public class FrequentlyAskedQuestion : DeletableEntity
     {
         [Key]
         public int Id { get; set; }
@@ -19,11 +19,5 @@
         public string Content { get; set; }
 
         public int? DisplayOrder { get; set; }
-
-        public DateTime CreatedOn { get; set; }
-
-        public bool PreserveCreatedOn { get; set; }
-
-        public DateTime? ModifiedOn { get; set; }
     }
 }

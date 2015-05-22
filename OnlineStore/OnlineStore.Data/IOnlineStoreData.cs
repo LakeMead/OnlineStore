@@ -28,6 +28,14 @@
 
         IDeletableEntityRepository<Discount> Discounts { get; }
 
+        IGenericRepository<City> Cities { get; }
+
+        IGenericRepository<Country> Countries { get; }
+
+        IGenericRepository<Address> Addresses { get; }
+
+        IDeletableEntityRepository<CustomerInfo> CustomerInfos { get; }
+
         IWishProductRepository WishProducts { get; }
 
         IDeletableEntityRepository<ContactFormFeedback> ContactFormFeedbacks { get; }

@@ -161,10 +161,7 @@ namespace OnlineStore.Data.Migrations
                 {
                     CreatedOn = DateTime.Now,
                     UserName = "Pesho",
-                    Address = "Sofia",
                     Email = "user1@gmail.com",
-                    FirstName = "Pesho",
-                    LastName = "Peshov",
                 };
 
                 var userCreateResult1 = userManager.Create(user1, "Az-123456");
@@ -181,10 +178,7 @@ namespace OnlineStore.Data.Migrations
                 {
                     CreatedOn = DateTime.Now,
                     UserName = "Gosho",
-                    Address = "Sofia",
                     Email = "user2@gmail.com",
-                    FirstName = "Gosho",
-                    LastName = "Goshov",
                 };
 
                 var userCreateResult2 = userManager.Create(user2, "Az-123456");
@@ -229,21 +223,21 @@ namespace OnlineStore.Data.Migrations
                 var rating1 = new Rating
                     {
                         Type = RatingType.Excellent,
-                        Author = context.Users.FirstOrDefault(u => u.FirstName == "Pesho"),
+                        Author = context.Users.FirstOrDefault(u => u.UserName == "Pesho"),
                         ProductId = 1
                     };
 
                 var rating2 = new Rating
                 {
                     Type = RatingType.VeryBad,
-                    Author = context.Users.FirstOrDefault(u => u.FirstName == "Gosho"),
+                    Author = context.Users.FirstOrDefault(u => u.UserName == "Gosho"),
                     ProductId = 1
                 };
 
                 var rating3 = new Rating
                 {
                     Type = RatingType.VeryGood,
-                    Author = context.Users.FirstOrDefault(u => u.FirstName == "Gosho"),
+                    Author = context.Users.FirstOrDefault(u => u.UserName == "Gosho"),
                     ProductId = 5
                 };
 

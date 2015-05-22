@@ -6,7 +6,7 @@
     using OnlineStore.Common.Enumerations;
     using OnlineStore.Data.Contracts;
 
-    public class Rating : DeletableEntity, IAuditInfo
+    public class Rating : DeletableEntity
     {
         [Key]
         public int Id { get; set; }
@@ -26,11 +26,5 @@
         public int ReviewId { get; set; }
 
         public virtual Review Review { get; set; }
-
-        public DateTime CreatedOn { get; set; }
-
-        public bool PreserveCreatedOn { get; set; }
-
-        public DateTime? ModifiedOn { get; set; }
     }
 }

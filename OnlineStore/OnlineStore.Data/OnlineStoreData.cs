@@ -78,6 +78,26 @@
             get { return this.GetDeletableEntityRepository<Discount>(); }
         }
 
+        public IGenericRepository<City> Cities
+        {
+            get { return this.GetRepository<City>(); }
+        }
+
+        public IGenericRepository<Country> Countries
+        {
+            get { return this.GetRepository<Country>(); }
+        }
+
+        public IGenericRepository<Address> Addresses
+        {
+            get { return this.GetRepository<Address>(); }
+        }
+
+        public IDeletableEntityRepository<CustomerInfo> CustomerInfos
+        {
+            get { return this.GetDeletableEntityRepository<CustomerInfo>(); }
+        }
+
         public IWishProductRepository WishProducts
         {
             get { return (IWishProductRepository)this.GetDeletableEntityRepository<WishProduct>(); }

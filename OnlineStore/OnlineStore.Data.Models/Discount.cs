@@ -7,7 +7,7 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class Discount : DeletableEntity, IAuditInfo
+    public class Discount : DeletableEntity
     {
         private ICollection<Product> products;
 
@@ -30,12 +30,6 @@
         public DateTime EndDate { get; set; }
 
         public bool IsActive { get; set; }
-
-        public DateTime CreatedOn { get; set; }
-
-        public bool PreserveCreatedOn { get; set; }
-
-        public DateTime? ModifiedOn { get; set; }
 
         public virtual ICollection<Product> Products
         {

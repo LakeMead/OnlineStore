@@ -38,6 +38,14 @@
 
         public IDbSet<Discount> Discounts { get; set; }
 
+        public IDbSet<Address> Addresses { get; set; }
+
+        public IDbSet<City> Cities { get; set; }
+
+        public IDbSet<Country> Countries { get; set; }
+
+        public IDbSet<CustomerInfo> CustomerInfos { get; set; }
+
         public IDbSet<WishProduct> WishProducts { get; set; }
 
         public IDbSet<ContactFormFeedback> ContactFormFeedbacks { get; set; }

@@ -27,6 +27,14 @@
 
         IDbSet<Discount> Discounts { get; set; }
 
+        IDbSet<Address> Addresses { get; set; }
+
+        IDbSet<City> Cities { get; set; }
+
+        IDbSet<Country> Countries { get; set; }
+
+        IDbSet<CustomerInfo> CustomerInfos { get; set; }
+
         IDbSet<WishProduct> WishProducts { get; set; }
 
         IDbSet<ContactFormFeedback> ContactFormFeedbacks { get; set; }
