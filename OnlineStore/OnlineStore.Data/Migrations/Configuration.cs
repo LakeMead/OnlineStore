@@ -50,8 +50,8 @@ namespace OnlineStore.Data.Migrations
                     Price = 12.40m,
                     Quantity = 1,
                     CategoryId = cat2.Id,
-                    ImagePath = null,
-                    Colors = new List<Color>()
+                    ImagePath = "Content/images/ArduinoUnoRev3.jpg",
+                    Colors = new List<Color>
                     {
                         color1, 
                         color6
@@ -66,8 +66,8 @@ namespace OnlineStore.Data.Migrations
                     Price = 10.40m,
                     Quantity = 10,
                     CategoryId = cat2.Id,
-                    ImagePath = null,
-                    Colors = new List<Color>()
+                    ImagePath = "Content/images/ArduinoLeonardoWithHeaders.png",
+                    Colors = new List<Color>
                     {
                         color2, color3
                     }
@@ -81,8 +81,8 @@ namespace OnlineStore.Data.Migrations
                     Price = 33.94m,
                     Quantity = 100,
                     CategoryId = cat2.Id,
-                    ImagePath = null,
-                    Colors = new List<Color>()
+                    ImagePath = "Content/images/A13OLinuXino.jpg",
+                    Colors = new List<Color>
                     {
                         color4, color3
                     }
@@ -96,7 +96,7 @@ namespace OnlineStore.Data.Migrations
                     Price = 131.44m,
                     Quantity = 150,
                     CategoryId = cat1.Id,
-                    ImagePath = null,
+                    ImagePath = "Content/images/RaspberryPi.jpg",
                 };
 
                 var product5 = new Product
@@ -107,7 +107,7 @@ namespace OnlineStore.Data.Migrations
                     Price = 351.44m,
                     Quantity = 5,
                     CategoryId = cat1.Id,
-                    ImagePath = null,
+                    ImagePath = "Content/images/GenericACAdapterForAcer.jpg",
                 };
 
                 var product6 = new Product
@@ -118,7 +118,7 @@ namespace OnlineStore.Data.Migrations
                     Price = 1.47m,
                     Quantity = 23,
                     CategoryId = cat1.Id,
-                    ImagePath = null,
+                    ImagePath = "Content/images/HelloKittyPhoneCase.jpg",
                 };
 
                 context.Products.AddOrUpdate(product1);
@@ -134,7 +134,7 @@ namespace OnlineStore.Data.Migrations
                 var label1 = new Label
                 {
                     Content = "Electronics",
-                    Products = new List<Product>()
+                    Products = new List<Product>
                     {
                         product4, product1, product5, product2
                     }
@@ -143,7 +143,7 @@ namespace OnlineStore.Data.Migrations
                 var label2 = new Label
                 {
                     Content = "Gadgets",
-                    Products = new List<Product>()
+                    Products = new List<Product>
                     {
                         product2, product3, product5
                     }

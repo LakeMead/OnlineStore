@@ -5,7 +5,7 @@
 }
 
 <section class="row">
-    <h2>THIS WILL BE THE CAROUSELL</h2>
+    <h2>THIS WILL BE THE CAROUSEL</h2>
     <div class="col-xs-12 col-md-12 col-lg-12">
         <h3>Newest</h3>
         @foreach (var product in Model.NewestProducts)
@@ -25,18 +25,21 @@
         {
             <div class="panel panel-primary">
                 <header class="panel-heading">
-                    @Html.DisplayFor(p => product.Name)
+                    @product.Name
                 </header>
                 <div class="panel-body">
-                    <img src="../../Content/images/arduino-uno.jpg" alt="@Html.DisplayFor(p => product.Name)" width="240" height="240">
+                    <img src="../../@product.ImagePath" alt="@product.Name" width="240" height="240">
                 </div>
-                <div class="panel-body text-justify">Discount: @Html.DisplayFor(p => product.Discount.Percent)</div>
+                <div class="panel-body text-justify">Discount: @product.Discount.Percent</div>
                 <footer class="panel-footer">
-                    <strong>$@Html.DisplayFor(p => product.Price)</strong>
+                    <strong>$@product.Price</strong>
                     <a href="#" class="pull-right">View</a>
                 </footer>
             </div>
         }
+        <footer>
+            <a href="#" class="pull-right">View All Discounted</a>
+        </footer>
     </div>
     <div class="col-xs-12 col-md-4 col-lg-4">
         <h2>Most Popular</h2>
@@ -44,18 +47,21 @@
         {
             <div class="panel panel-primary">
                 <header class="panel-heading">
-                    @Html.DisplayFor(p => product.Name)
+                    @product.Name
                 </header>
                 <div class="panel-body">
-                    <img src="../../Content/images/arduino-uno.jpg" alt="@Html.DisplayFor(p => product.Name)" width="240" height="240">
+                    <img src="../../@product.ImagePath" alt="@product.Name" width="240" height="240">
                 </div>
-                <div class="panel-body text-justify">Rating: @Html.DisplayFor(p => product.Rating)</div>
+                <div class="panel-body text-justify">Rating: @product.Rating</div>
                 <footer class="panel-footer">
-                    <strong>$@Html.DisplayFor(p => product.Price)</strong>
+                    <strong>$@product.Price</strong>
                     <a href="#" class="pull-right">View</a>
                 </footer>
             </div>
         }
+    <footer>
+        <a href="#" class="pull-right">View All Most Popular</a>
+    </footer>
     </div>
 
     <div class="col-xs-12 col-md-4 col-lg-4">
@@ -64,17 +70,20 @@
             {
                 <div class="panel panel-primary">
                     <header class="panel-heading">
-                        @Html.DisplayFor(p => product.Name)
+                        @product.Name
                     </header>
                     <div class="panel-body">
-                        <img src="../../Content/images/arduino-uno.jpg" alt="@Html.DisplayFor(p => product.Name)" width="240" height="240">
+                        <img src="../../@product.ImagePath" alt="@product.Name" width="240" height="240">
                     </div>
-                    <div class="panel-body text-justify">Rating: @Html.DisplayFor(p => product.Rating)</div>
+                    <div class="panel-body text-justify">Rating: @product.Rating</div>
                     <footer class="panel-footer">
-                        <strong>$@Html.DisplayFor(p => product.Price)</strong>
+                        <strong>$@product.Price</strong>
                         <a href="#" class="pull-right">View</a>
                     </footer>
                 </div>
             }
+    <footer>
+        <a href="#" class="pull-right">View All Top Rated</a>
+    </footer>
     </div>
 </section>
