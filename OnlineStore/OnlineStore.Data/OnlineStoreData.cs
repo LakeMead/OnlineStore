@@ -33,6 +33,11 @@
             get { return (IOrderRepository)this.GetDeletableEntityRepository<Order>(); }
         }
 
+        public IDeletableEntityRepository<OrderDetail> OrderDetails
+        {
+            get { return this.GetDeletableEntityRepository<OrderDetail>(); }
+        }
+
         public IProductsRepository Products
         {
             get { return (IProductsRepository)this.GetDeletableEntityRepository<Product>(); }
@@ -76,6 +81,11 @@
         public IDeletableEntityRepository<Discount> Discounts
         {
             get { return this.GetDeletableEntityRepository<Discount>(); }
+        }
+
+        public IGenericRepository<ShoppingCart> ShoppingCarts
+        {
+            get { return this.GetRepository<ShoppingCart>(); }
         }
 
         public IGenericRepository<City> Cities

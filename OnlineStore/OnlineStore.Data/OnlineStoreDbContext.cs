@@ -20,6 +20,8 @@
 
         public IDbSet<Order> Orders { get; set; }
 
+        public IDbSet<OrderDetail> OrderDetails { get; set; }
+
         public IDbSet<Product> Products { get; set; }
 
         public IDbSet<Category> Categories { get; set; }
@@ -37,6 +39,8 @@
         public IDbSet<Attribute> Attributes { get; set; }
 
         public IDbSet<Discount> Discounts { get; set; }
+
+        public IDbSet<ShoppingCart> ShoppingCarts { get; set; }
 
         public IDbSet<Address> Addresses { get; set; }
 

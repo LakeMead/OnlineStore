@@ -32,6 +32,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +44,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IShoppingCartProvider.cs" />
+    <Compile Include="Contracts\IShoppingCartProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCartProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineStore.Data.Contracts\OnlineStore.Data.Contracts.csproj">
+      <Project>{FCAB7B76-B811-4CCF-B366-8AC2B14FE59B}</Project>
+      <Name>OnlineStore.Data.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Data.Models\OnlineStore.Data.Models.csproj">
+      <Project>{CE0DFB35-29AF-4B46-8559-F35335E02E67}</Project>
+      <Name>OnlineStore.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Data\OnlineStore.Data.csproj">
+      <Project>{7ED9F623-08F8-4B87-BD15-395F6395920E}</Project>
+      <Name>OnlineStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Services.Common\OnlineStore.Services.Common.csproj">
+      <Project>{680A882D-D6F8-41B5-BA93-A6D7CC82BECA}</Project>
+      <Name>OnlineStore.Services.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

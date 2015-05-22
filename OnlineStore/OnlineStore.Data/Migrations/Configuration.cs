@@ -129,7 +129,6 @@ namespace OnlineStore.Data.Migrations
                 context.Products.AddOrUpdate(product6);
                 context.SaveChanges();
 
-
                 // LABELS
                 var label1 = new Label
                 {
@@ -151,7 +150,6 @@ namespace OnlineStore.Data.Migrations
 
                 context.Labels.AddOrUpdate(label1, label2);
                 context.SaveChanges();
-
 
                 // USERS
                 var userStore = new UserStore<User>(context);
@@ -191,7 +189,6 @@ namespace OnlineStore.Data.Migrations
                     throw new Exception(string.Join("; ", userCreateResult2.Errors));
                 }
 
-
                 // ORDERS
                 var order1 = new Order
                 {
@@ -218,14 +215,13 @@ namespace OnlineStore.Data.Migrations
                 context.Orders.AddOrUpdate(order1);
                 context.Orders.AddOrUpdate(order2);
 
-
                 // RATINGS
                 var rating1 = new Rating
-                    {
-                        Type = RatingType.Excellent,
-                        Author = context.Users.FirstOrDefault(u => u.UserName == "Pesho"),
-                        ProductId = 1
-                    };
+                {
+                    Type = RatingType.Excellent,
+                    Author = context.Users.FirstOrDefault(u => u.UserName == "Pesho"),
+                    ProductId = 1
+                };
 
                 var rating2 = new Rating
                 {
@@ -245,15 +241,14 @@ namespace OnlineStore.Data.Migrations
                 context.Ratings.AddOrUpdate(rating2);
                 context.Ratings.AddOrUpdate(rating3);
 
-
                 // DISCOUNTS
                 var discount1 = new Discount
-                                {
-                                    Percent = 50,
-                                    StartDate = DateTime.Now,
-                                    EndDate = DateTime.Now.AddDays(7),
-                                    Products = new List<Product> { product1, product2 }
-                                };
+                {
+                    Percent = 50,
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now.AddDays(7),
+                    Products = new List<Product> { product1, product2 }
+                };
 
                 var discount2 = new Discount
                 {
@@ -265,7 +260,6 @@ namespace OnlineStore.Data.Migrations
 
                 context.Discounts.AddOrUpdate(discount1);
                 context.Discounts.AddOrUpdate(discount2);
-
 
                 context.SaveChanges();
             }

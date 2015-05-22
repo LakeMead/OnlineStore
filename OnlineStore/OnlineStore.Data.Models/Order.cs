@@ -11,9 +11,12 @@
     {
         private ICollection<Product> products;
 
+        private ICollection<OrderDetail> orderDetails;
+
         public Order()
         {
             this.products = new HashSet<Product>();
+            this.orderDetails = new HashSet<OrderDetail>();
         }
 
         [Key]
@@ -21,6 +24,8 @@
 
         [Index]
         public OrderStatus OrderStatus { get; set; }
+
+        public decimal Total { get; set; }
 
         [Required]
         public string UserId { get; set; }
@@ -35,6 +40,12 @@
         {
             get { return this.products; }
             set { this.products = value; }
+        }
+
+        public virtual ICollection<OrderDetail> OrderDetails
+        {
+            get { return this.orderDetails; }
+            set { this.orderDetails = value; }
         }
     }
 }

@@ -9,6 +9,8 @@
     {
         IDbSet<Order> Orders { get; set; }
 
+        IDbSet<OrderDetail> OrderDetails { get; set; }
+
         IDbSet<Product> Products { get; set; }
 
         IDbSet<Category> Categories { get; set; }
@@ -26,6 +28,8 @@
         IDbSet<Attribute> Attributes { get; set; }
 
         IDbSet<Discount> Discounts { get; set; }
+
+        IDbSet<ShoppingCart> ShoppingCarts { get; set; }
 
         IDbSet<Address> Addresses { get; set; }
 
