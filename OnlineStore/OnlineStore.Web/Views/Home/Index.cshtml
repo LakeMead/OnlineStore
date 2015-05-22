@@ -4,60 +4,77 @@
     ViewBag.Title = "Online Store";
 }
 
-<div class="jumbotron col-xs-12 col-md-6 col-lg-3">
-    <h3>Newest</h3>
-    @foreach (var product in Model.NewestProducts)
-    {
-        @Html.DisplayFor(p => product.Name);
-        <br />
-        @Html.DisplayFor(p => product.Id);
-        <br />
-        <hr />
-    }
-</div>
+<section class="row">
+    <h2>THIS WILL BE THE CAROUSELL</h2>
+    <div class="col-xs-12 col-md-12 col-lg-12">
+        <h3>Newest</h3>
+        @foreach (var product in Model.NewestProducts)
+        {
+            @Html.DisplayFor(p => product.Name);
+            <br />
+            @Html.DisplayFor(p => product.Id);
+            <br />
+            <hr />
+        }
+    </div>
+</section>
+<section class="row">
+    <div class="col-xs-12 col-md-4 col-lg-4">
+        <h2>Discounted</h2>
+        @foreach (var product in Model.DiscountedProducts)
+        {
+            <div class="panel panel-primary">
+                <header class="panel-heading">
+                    @Html.DisplayFor(p => product.Name)
+                </header>
+                <div class="panel-body">
+                    <img src="../../Content/images/arduino-uno.jpg" alt="@Html.DisplayFor(p => product.Name)" width="240" height="240">
+                </div>
+                <div class="panel-body text-justify">Discount: @Html.DisplayFor(p => product.Discount.Percent)</div>
+                <footer class="panel-footer">
+                    <strong>$@Html.DisplayFor(p => product.Price)</strong>
+                    <a href="#" class="pull-right">View</a>
+                </footer>
+            </div>
+        }
+    </div>
+    <div class="col-xs-12 col-md-4 col-lg-4">
+        <h2>Most Popular</h2>
+        @foreach (var product in Model.MostPopularProducts)
+        {
+            <div class="panel panel-primary">
+                <header class="panel-heading">
+                    @Html.DisplayFor(p => product.Name)
+                </header>
+                <div class="panel-body">
+                    <img src="../../Content/images/arduino-uno.jpg" alt="@Html.DisplayFor(p => product.Name)" width="240" height="240">
+                </div>
+                <div class="panel-body text-justify">Rating: @Html.DisplayFor(p => product.Rating)</div>
+                <footer class="panel-footer">
+                    <strong>$@Html.DisplayFor(p => product.Price)</strong>
+                    <a href="#" class="pull-right">View</a>
+                </footer>
+            </div>
+        }
+    </div>
 
-<div class="jumbotron col-xs-12 col-md-6 col-lg-3">
-    <h3>Discounted</h3>
-    @foreach (var product in Model.DiscountedProducts)
-    {
-        <p>Name: </p>
-        @Html.DisplayFor(p => product.Name);
-        <br />
-        <p>Id: </p>
-        @Html.DisplayFor(p => product.Id);
-        <br />
-        <p>Discount Percent: </p>
-        @Html.DisplayFor(p => product.Discount.Percent);
-        <br />
-    <hr />
-    }
-</div>
-
-<div class="jumbotron col-xs-12 col-md-6 col-lg-3">
-    <h3>Most Popular</h3>
-    @foreach (var product in Model.MostPopularProducts)
-    {
-        <p>Name: </p>
-        @Html.DisplayFor(p => product.Name);
-        <br />
-        <p>Id: </p>
-        @Html.DisplayFor(p => product.Id);
-        <br />
-        <p>Rating: </p>
-        @Html.DisplayFor(p => product.Rating);
-        <br />
-    <hr />
-    }
-</div>
-
-<div class="jumbotron col-xs-12 col-md-6 col-lg-3">
-    <h3>Top Rated</h3>
-    @foreach (var product in Model.TopRatedProducts)
-    {
-        @Html.DisplayFor(p => product.Name);
-        <br />
-        @Html.DisplayFor(p => product.Id);
-        <br />
-    <hr />
-    }
-</div>
+    <div class="col-xs-12 col-md-4 col-lg-4">
+        <h2>Top Rated</h2>
+            @foreach (var product in Model.TopRatedProducts)
+            {
+                <div class="panel panel-primary">
+                    <header class="panel-heading">
+                        @Html.DisplayFor(p => product.Name)
+                    </header>
+                    <div class="panel-body">
+                        <img src="../../Content/images/arduino-uno.jpg" alt="@Html.DisplayFor(p => product.Name)" width="240" height="240">
+                    </div>
+                    <div class="panel-body text-justify">Rating: @Html.DisplayFor(p => product.Rating)</div>
+                    <footer class="panel-footer">
+                        <strong>$@Html.DisplayFor(p => product.Price)</strong>
+                        <a href="#" class="pull-right">View</a>
+                    </footer>
+                </div>
+            }
+    </div>
+</section>
