@@ -277,7 +277,7 @@
     <!--=======-->
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MostPopularProductsViewModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\TopRatedProducts.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TopRatedProductsViewModel.cshtml" />
     <!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
   </ItemGroup>
   <ItemGroup />
