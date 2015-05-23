@@ -112,7 +112,7 @@ namespace OnlineStore.Data.Migrations
 
                 var product6 = new Product
                 {
-                    Name = "hello kitty phone case",
+                    Name = "Hello Kitty Phone Case",
                     Description =
                         "[HELLO KITTY] Armor cell phone case For iPhone 6/6 plus fit 4.7/5.5 inch. water/dirt/shock proof",
                     Price = 1.47m,
@@ -194,10 +194,6 @@ namespace OnlineStore.Data.Migrations
                 var order2 = new Order
                 {
                     OrderStatus = OrderStatus.Approved,
-                    Products = new List<Product>
-                    {
-                        product1, product5
-                    },
                     CustomerInfo = new CustomerInfo
                     {
                         UserId = user1.Id,
@@ -243,9 +239,17 @@ namespace OnlineStore.Data.Migrations
                     ProductId = 5
                 };
 
+                var rating4 = new Rating
+                {
+                    Type = RatingType.Excellent,
+                    Author = context.Users.FirstOrDefault(u => u.UserName == "Gosho"),
+                    ProductId = 6
+                };
+
                 context.Ratings.AddOrUpdate(rating1);
                 context.Ratings.AddOrUpdate(rating2);
                 context.Ratings.AddOrUpdate(rating3);
+                context.Ratings.AddOrUpdate(rating4);
                 context.SaveChanges();
 
                 // DISCOUNTS

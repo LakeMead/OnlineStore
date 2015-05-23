@@ -9,13 +9,10 @@
 
     public class Order : DeletableEntity
     {
-        private ICollection<Product> products;
-
         private ICollection<OrderDetail> orderDetails;
 
         public Order()
         {
-            this.products = new HashSet<Product>();
             this.orderDetails = new HashSet<OrderDetail>();
         }
 
@@ -30,12 +27,6 @@
         public int CustomerInfoId { get; set; }
 
         public virtual CustomerInfo CustomerInfo { get; set; }
-
-        public virtual ICollection<Product> Products
-        {
-            get { return this.products; }
-            set { this.products = value; }
-        }
 
         public virtual ICollection<OrderDetail> OrderDetails
         {

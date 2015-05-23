@@ -19,7 +19,7 @@
 
         public ActionResult Index()
         {
-            var newestProduct = this.Data.Products.GetTheNewest().Where(np => np.Discount == null).Take(2).Project().To<NewestProductsViewModel>();
+            var newestProduct = this.Data.Products.GetTheNewest().Take(2).Project().To<NewestProductsViewModel>();
             var discountedProducts =
                 this.Data.Products.GetDiscounted()
                     .OrderByDescending(p => p.CreatedOn)
@@ -27,8 +27,8 @@
                     .Project()
                     .To<DiscountedProductsViewModel>();
             var mostPopularProducts =
-                this.Data.Products.GetMostOrdered().Where(np => np.Discount == null).Take(2).Project().To<MostPopularProductsViewModel>();
-            var topRatedProducts = this.Data.Products.GetMostRated().Where(np => np.Discount == null).Take(2).Project().To<TopRatedProductsViewModel>();
+                this.Data.Products.GetMostOrdered().Take(2).Project().To<MostPopularProductsViewModel>();
+            var topRatedProducts = this.Data.Products.GetMostRated().Take(2).Project().To<TopRatedProductsViewModel>();
 
             var model = new HomeViewModel
                         {

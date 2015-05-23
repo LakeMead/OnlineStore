@@ -1,0 +1,49 @@
+﻿<div class="col-xs-12 col-md-12 col-lg-12">
+    @*<h3>Newest</h3>
+    @foreach (var product in Model.NewestProducts)
+    {
+        @Html.DisplayFor(p => product.Name);
+        <br />
+        @Html.DisplayFor(p => product.Id);
+        <br />
+        <hr />
+    }*@
+    
+    <div class="carousel_container">
+        <!-- Jssor Slider Begin -->
+        <div id="slider1_container" class="slider_container_1">
+            <!-- Loading Screen -->
+            <div u="loading" class="loading_screen">
+                <div class="loading_screen_1"></div>
+                <div class="loading_screen_2"></div>
+            </div>
+            <!-- Slides Container -->
+            <div u="slides" class="slides_container">
+                <div>
+                    <img u="image" src2="../../../Content/images/carousel/1920/red.jpg" />
+                </div>
+                <div>
+                    <img u="image" src2="../../../Content/images/carousel/1920/purple.jpg" />
+                </div>
+                <div>
+                    <img u="image" src2="../../../Content/images/carousel/1920/blue.jpg" />
+                </div>
+            </div>
+
+            <!-- bullet navigator container -->
+            <div u="navigator" class="jssorb21 jssorb21_1">
+                <!-- bullet navigator item prototype -->
+                <div u="prototype"></div>
+            </div>
+
+            <!-- Arrow Left -->
+            <span u="arrowleft" class="jssora21l arrow_left">
+            </span>
+            <!-- Arrow Right -->
+            <span u="arrowright" class="jssora21r arrow_right">
+            </span>
+
+        </div>
+        <!-- Jssor Slider End -->
+    </div>
+</div>
