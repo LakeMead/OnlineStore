@@ -7,5 +7,7 @@
         public const string CommonServices = "OnlineStore.Services.Common";
 
         public const string ShoppingCartServices = "OnlineStore.Services.ShoppingCartProvider";
+
+        public const string ImageResizer = "OnlineStore.Services.ImageResizer";
     }
 }
