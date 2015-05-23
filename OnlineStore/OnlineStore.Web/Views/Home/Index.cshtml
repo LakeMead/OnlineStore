@@ -23,19 +23,7 @@
         <h2>Discounted</h2>
         @foreach (var product in Model.DiscountedProducts)
         {
-            <div class="panel panel-primary">
-                <header class="panel-heading">
-                    @product.Name
-                </header>
-                <div class="panel-body">
-                    <img src="../../@product.ImagePath" alt="@product.Name" width="240" height="240">
-                </div>
-                <div class="panel-body text-justify">Discount: @product.Discount.Percent</div>
-                <footer class="panel-footer">
-                    <strong>$@product.NewPrice</strong>
-                    <a href="#" class="pull-right">View</a>
-                </footer>
-            </div>
+            @Html.DisplayFor(m => product)
         }
         <footer>
             <a href="#" class="pull-right">View All Discounted</a>
@@ -54,7 +42,7 @@
                 </div>
                 <div class="panel-body text-justify">Rating: @product.Rating</div>
                 <footer class="panel-footer">
-                    <strong>$@product.Price</strong>
+                    <strong>$@Html.DisplayFor(m => product.Price)</strong>
                     <a href="#" class="pull-right">View</a>
                 </footer>
             </div>

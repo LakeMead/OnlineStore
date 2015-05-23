@@ -1,0 +1,16 @@
+﻿@model OnlineStore.Web.Models.ViewModels.Home.DiscountedProductsViewModel
+
+<div class="panel panel-primary">
+    <header class="panel-heading">
+        @Model.Name
+    </header>
+    <div class="panel-body">
+        <img src="../../@Model.ImagePath" alt="@Model.Name" width="240" height="240">
+    </div>
+    <div class="panel-body text-justify">Discount: @Model.Discount.Percent %</div>
+    <footer class="panel-footer">
+        <strong>$@Model.NewPrice</strong>
+        <a href="#" class="pull-right">View</a>
+    </footer>
+</div>
+

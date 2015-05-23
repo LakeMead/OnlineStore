@@ -263,6 +263,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DiscountedProductsViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Double.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
