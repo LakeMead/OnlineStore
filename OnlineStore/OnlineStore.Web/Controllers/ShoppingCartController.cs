@@ -8,22 +8,21 @@
 
     public class ShoppingCartController : BaseController
     {
-        private IShoppingCartProvider shoppingCartService;
-
-        public ShoppingCartController(IOnlineStoreData data, IShoppingCartProvider shoppingCartService) : base(data)
+        public ShoppingCartController(IOnlineStoreData data , IShoppingCartProvider shoppingCartProvider)
+            : base(data, shoppingCartProvider)
         {
-            this.shoppingCartService = shoppingCartService;
         }
 
         public ActionResult Index()
         {
-            var cart = this.shoppingCartService.GetCart(this);
+            var cart = this.ShoppingCartProvider.GetCart(this);
             var product = this.Data.Products.All().FirstOrDefault();
-            this.shoppingCartService.AddToCart(product, 2);
+            this.ShoppingCartProvider.AddToCart(product, 2);
 
-            var cart2 = this.shoppingCartService.GetCartItems();
-            var countItems = this.shoppingCartService.GetCount();
-            var totalPrice = this.shoppingCartService.GetTotal();
+            var cart2 = this.ShoppingCartProvider.GetCartItems();
+            var countItems = this.ShoppingCartProvider.GetCount();
+            var totalPrice = this.ShoppingCartProvider.GetTotal();
+
             return this.View();
         }
     }

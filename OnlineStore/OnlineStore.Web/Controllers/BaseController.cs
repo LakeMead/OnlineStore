@@ -7,15 +7,19 @@
 
     using OnlineStore.Data;
     using OnlineStore.Data.Models;
+    using OnlineStore.Services.ShoppingCartProvider.Contracts;
 
-    public class BaseController : Controller
+    public abstract class BaseController : Controller
     {
-        public BaseController(IOnlineStoreData data)
+        protected BaseController(IOnlineStoreData data, IShoppingCartProvider shoppingCartProvider)
         {
             this.Data = data;
+            this.ShoppingCartProvider = shoppingCartProvider;
         }
 
         protected IOnlineStoreData Data { get; private set; }
+
+        protected IShoppingCartProvider ShoppingCartProvider { get; set; }
 
         protected User UserProfile { get; set; }
 
@@ -25,7 +29,14 @@
                                    .All()
                                    .FirstOrDefault(u => u.UserName == requestContext.HttpContext.User.Identity.Name);
 
+            this.PopulateViewData();
+
             return base.BeginExecute(requestContext, callback, state);
+        }
+
+        private void PopulateViewData()
+        {
+            this.ViewData["ShoppingCartItemsCount"] = this.ShoppingCartProvider.GetCount();
         }
     }
 }
