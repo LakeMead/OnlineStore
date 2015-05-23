@@ -195,12 +195,24 @@
   <ItemGroup>
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\css\carousel.css" />
     <Content Include="Content\css\font-awesome\font-awesome.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\A13OLinuXino.jpg" />
     <Content Include="Content\images\arduino-uno.jpg" />
     <Content Include="Content\images\ArduinoLeonardoWithHeaders.png" />
     <Content Include="Content\images\ArduinoUnoRev3.jpg" />
+    <Content Include="Content\images\carousel\1920\blue.jpg" />
+    <Content Include="Content\images\carousel\1920\purple.jpg" />
+    <Content Include="Content\images\carousel\1920\red.jpg" />
+    <Content Include="Content\images\carousel\a11.png" />
+    <Content Include="Content\images\carousel\a21.png" />
+    <Content Include="Content\images\carousel\b05.png" />
+    <Content Include="Content\images\carousel\b21.png" />
+    <Content Include="Content\images\carousel\home\01.jpg" />
+    <Content Include="Content\images\carousel\home\02.jpg" />
+    <Content Include="Content\images\carousel\home\03.jpg" />
+    <Content Include="Content\images\carousel\home\04.jpg" />
     <Content Include="Content\images\GenericACAdapterForAcer.jpg" />
     <Content Include="Content\images\HelloKittyPhoneCase.jpg" />
     <Content Include="Content\images\RaspberryPi.jpg" />
@@ -217,9 +229,13 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap\bootswatch.js" />
+    <Content Include="Scripts\bootstrap\docs.min.js" />
     <Content Include="Scripts\bootstrap\html5shiv.js" />
+    <Content Include="Scripts\bootstrap\ie10-viewport-bug-workaround.js" />
     <Content Include="Scripts\bootstrap\jquery-1.10.2.min.js" />
     <Content Include="Scripts\bootstrap\respond.min.js" />
+    <Content Include="Scripts\carousel\carousel.js" />
+    <Content Include="Scripts\carousel\jssor.slider.mini.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />
@@ -278,6 +294,7 @@
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MostPopularProductsViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\TopRatedProductsViewModel.cshtml" />
+    <Content Include="Views\Shared\_CarouselPartial.cshtml" />
     <!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
   </ItemGroup>
   <ItemGroup />
