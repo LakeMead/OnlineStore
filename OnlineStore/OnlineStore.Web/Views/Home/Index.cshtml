@@ -21,57 +21,25 @@
 <section class="row">
     <div class="col-xs-12 col-md-4 col-lg-4">
         <h2>Discounted</h2>
-        @foreach (var product in Model.DiscountedProducts)
-        {
-            @Html.DisplayFor(m => product)
-        }
+        @Html.DisplayFor(m => m.DiscountedProducts)
         <footer>
             <a href="#" class="pull-right">View All Discounted</a>
         </footer>
     </div>
+
     <div class="col-xs-12 col-md-4 col-lg-4">
         <h2>Most Popular</h2>
-        @foreach (var product in Model.MostPopularProducts)
-        {
-            <div class="panel panel-primary">
-                <header class="panel-heading">
-                    @product.Name
-                </header>
-                <div class="panel-body">
-                    <img src="../../@product.ImagePath" alt="@product.Name" width="240" height="240">
-                </div>
-                <div class="panel-body text-justify">Rating: @product.Rating</div>
-                <footer class="panel-footer">
-                    <strong>$@Html.DisplayFor(m => product.Price)</strong>
-                    <a href="#" class="pull-right">View</a>
-                </footer>
-            </div>
-        }
-    <footer>
-        <a href="#" class="pull-right">View All Most Popular</a>
-    </footer>
+        @Html.DisplayFor(m => m.MostPopularProducts)
+        <footer>
+            <a href="#" class="pull-right">View All Most Popular</a>
+        </footer>
     </div>
 
     <div class="col-xs-12 col-md-4 col-lg-4">
         <h2>Top Rated</h2>
-            @foreach (var product in Model.TopRatedProducts)
-            {
-                <div class="panel panel-primary">
-                    <header class="panel-heading">
-                        @product.Name
-                    </header>
-                    <div class="panel-body">
-                        <img src="../../@product.ImagePath" alt="@product.Name" width="240" height="240">
-                    </div>
-                    <div class="panel-body text-justify">Rating: @product.Rating</div>
-                    <footer class="panel-footer">
-                        <strong>$@product.Price</strong>
-                        <a href="#" class="pull-right">View</a>
-                    </footer>
-                </div>
-            }
-    <footer>
-        <a href="#" class="pull-right">View All Top Rated</a>
-    </footer>
+        @Html.DisplayFor(m => m.TopRatedProducts)
+        <footer>
+            <a href="#" class="pull-right">View All Top Rated</a>
+        </footer>
     </div>
 </section>

@@ -274,9 +274,10 @@
     <!--<<<<<<< HEAD-->
     <Content Include="Views\Shared\DisplayTemplates\DiscountedProductsViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\Double.cshtml" />
     <!--=======-->
     <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MostPopularProductsViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TopRatedProducts.cshtml" />
     <!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
   </ItemGroup>
   <ItemGroup />

@@ -14,7 +14,7 @@
 
         public string Name { get; set; }
 
-        public double NewPrice { get; set; }
+        public decimal NewPrice { get; set; }
 
         public int? DiscountId { get; set; }
 
@@ -25,7 +25,7 @@
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Product, DiscountedProductsViewModel>()
-                .ForMember(m => m.NewPrice, opt => opt.MapFrom(e => (double)e.Price * e.Discount.Percent / 100));
+                .ForMember(m => m.NewPrice, opt => opt.MapFrom(e => e.Price * e.Discount.Percent / 100));
         }
     }
 }
