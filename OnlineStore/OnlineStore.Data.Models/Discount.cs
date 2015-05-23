@@ -22,8 +22,7 @@
         [StringLength(50, MinimumLength = 5)]
         public string Title { get; set; }
 
-        [Index]
-        public double Percent { get; set; }
+        public decimal Percent { get; set; }
 
         public DateTime StartDate { get; set; }
 

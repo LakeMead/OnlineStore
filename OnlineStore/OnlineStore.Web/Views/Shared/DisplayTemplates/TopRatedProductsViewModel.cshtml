@@ -1,4 +1,4 @@
-﻿@model OnlineStore.Web.Models.ViewModels.Home.DiscountedProductsViewModel
+﻿@model OnlineStore.Web.Models.ViewModels.Home.TopRatedProductsViewModel
 
 <div class="panel panel-primary">
     <header class="panel-heading">
@@ -7,9 +7,9 @@
     <div class="panel-body">
         <img src="../../@Html.DisplayFor(m => m.ImagePath)" alt="@Html.DisplayFor(m => m.Name)" width="240" height="240">
     </div>
-    <div class="panel-body text-justify">Discount: @Html.DisplayFor(m => m.Discount.Percent) %</div>
+    <div class="panel-body text-justify">Rating: @Html.DisplayFor(m => m.Rating)</div>
     <footer class="panel-footer">
-        <strong>$@Html.DisplayFor(m => m.NewPrice)</strong>
+        <strong>$@Html.DisplayFor(m => m.Price)</strong>
         <a href="#" class="pull-right">View</a>
     </footer>
 </div>
