@@ -13,7 +13,7 @@
 
         public IQueryable<Order> GetAllOrderedProducts(string id)
         {
-            return this.Context.Orders.Where(o => o.UserId == id);
+            return this.Context.Orders.Where(o => o.CustomerInfo.UserId == id);
         }
 
         public IQueryable<WishProduct> GetAllWishProducts(string id)

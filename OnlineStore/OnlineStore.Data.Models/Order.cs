@@ -27,11 +27,6 @@
 
         public decimal Total { get; set; }
 
-        [Required]
-        public string UserId { get; set; }
-
-        public virtual User User { get; set; }
-
         public int CustomerInfoId { get; set; }
 
         public virtual CustomerInfo CustomerInfo { get; set; }

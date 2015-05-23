@@ -151,6 +151,8 @@ namespace OnlineStore.Data.Migrations
                 context.Labels.AddOrUpdate(label1, label2);
                 context.SaveChanges();
 
+                context.SaveChanges();
+
                 // USERS
                 var userStore = new UserStore<User>(context);
                 var userManager = new UserManager<User>(userStore);
@@ -190,29 +192,46 @@ namespace OnlineStore.Data.Migrations
                 }
 
                 // ORDERS
-                var order1 = new Order
-                {
-                    CreatedOn = DateTime.Now,
-                    OrderStatus = OrderStatus.Approved,
-                    Products = new List<Product>
-                    {
-                        product1, product2, product3
-                    },
-                    UserId = user1.Id
-                };
+                //var order1 = new Order
+                //{
+                //    OrderStatus = OrderStatus.Approved,
+                //    Products = new List<Product>
+                //    {
+                //        product1, product2, product3
+                //    },
+                //    UserId = user1.Id
+                //};
 
                 var order2 = new Order
                 {
-                    CreatedOn = DateTime.Now,
                     OrderStatus = OrderStatus.Approved,
                     Products = new List<Product>
                     {
                         product1, product5
                     },
-                    UserId = user2.Id
+                    CustomerInfo = new CustomerInfo
+                    {
+                        UserId = user1.Id,
+                        FirstName = "Peter",
+                        LastName = "Petrov",
+                        Address = new Address
+                        {
+                            City = new City
+                            {
+                                Name = "Sofia",
+                                Country = new Country
+                                {
+                                    Name = "Bulgaria"
+                                }
+                                
+                            },
+                            PostalCode = "1000"
+                        }
+                    }
                 };
 
-                context.Orders.AddOrUpdate(order1);
+                context.SaveChanges();
+                //context.Orders.AddOrUpdate(order1);
                 context.Orders.AddOrUpdate(order2);
 
                 // RATINGS
@@ -240,6 +259,7 @@ namespace OnlineStore.Data.Migrations
                 context.Ratings.AddOrUpdate(rating1);
                 context.Ratings.AddOrUpdate(rating2);
                 context.Ratings.AddOrUpdate(rating3);
+                context.SaveChanges();
 
                 // DISCOUNTS
                 var discount1 = new Discount

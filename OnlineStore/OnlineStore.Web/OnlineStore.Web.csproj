@@ -196,6 +196,7 @@
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\css\font-awesome\font-awesome.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\A13OLinuXino.jpg" />
     <Content Include="Content\images\arduino-uno.jpg" />
     <Content Include="Content\images\ArduinoLeonardoWithHeaders.png" />
@@ -208,6 +209,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\css\Site.css" />
     <Content Include="Icon.png" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap\bootswatch.js" />
@@ -265,13 +271,13 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-<!--<<<<<<< HEAD-->
+    <!--<<<<<<< HEAD-->
     <Content Include="Views\Shared\DisplayTemplates\DiscountedProductsViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Double.cshtml" />
-<!--=======-->
+    <!--=======-->
     <Content Include="Views\ShoppingCart\Index.cshtml" />
-<!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
+    <!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
