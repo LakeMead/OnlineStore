@@ -3,5 +3,20 @@
     ViewBag.Title = "Index";
 }
 
+@using (Html.BeginForm("AddImage", "ShoppingCart", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    <h4>Create a new account.</h4>
+    <hr />
+    <div class="form-group">
+        <label for="AvatarImg" class="col-lg-2 control-label">Avatar</label>
+        <div class="col-lg-10">
+            <input id="AvatarImg" name="image" type="file"/>
+        </div>
+    </div>
+    
+    <input type="text" value ="fasdagas" name="something"/>
+    <input type="submit" class="btn btn-primary" />
+}
+
 <h2>Index</h2>
 
