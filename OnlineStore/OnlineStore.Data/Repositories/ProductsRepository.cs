@@ -55,9 +55,10 @@
             return this.Context.Products.Where(p => p.DiscountId == id);
         }
 
+        // Discounted products are excluded
         public IQueryable<Product> GetMostRated()
         {
-            return this.Context.Products.OrderByDescending(p => p.Ratings.Average(r => (int)r.Type));
+            return this.Context.Products.Where(np => np.Discount == null).OrderByDescending(p => p.Ratings.Average(r => (int)r.Type)).ThenByDescending(p => p.Price);
         }
 
         public double GetRating(int id)
@@ -65,14 +66,16 @@
             return this.Context.Products.FirstOrDefault(p => p.Id == id).Ratings.Average(r => (int)r.Type);
         }
 
+        // Discounted products are excluded
         public IQueryable<Product> GetTheNewest()
         {
-            return this.Context.Products.OrderByDescending(p => p.CreatedOn);
+            return this.Context.Products.Where(np => np.Discount == null).OrderByDescending(p => p.CreatedOn);
         }
 
+        // Discounted products are excluded
         public IQueryable<Product> GetMostOrdered()
         {
-            return this.Context.Products.OrderByDescending(p => p.Orders.Count(o => o.OrderStatus == OrderStatus.Delivered));
+            return this.Context.Products.Where(np => np.Discount == null).OrderByDescending(p => p.Orders.Count(o => o.OrderStatus == OrderStatus.Delivered)).ThenByDescending(p => p.Price);
         }
 
         public IQueryable<Product> GetByOrderId(int id)

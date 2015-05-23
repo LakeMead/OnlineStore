@@ -19,10 +19,15 @@
 
         public double? Rating { get; set; }
 
+        public int TimesOrdered { get; set; }
+
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Product, MostPopularProductsViewModel>()
                 .ForMember(m => m.Rating, opt => opt.MapFrom(e => e.Ratings.Average(r => (int)r.Type)));
+
+            configuration.CreateMap<Product, MostPopularProductsViewModel>()
+                .ForMember(m => m.TimesOrdered, opt => opt.MapFrom(e => e.Orders.Count));
         }
     }
 }
