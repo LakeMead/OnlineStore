@@ -1,4 +1,4 @@
-﻿namespace ShoppingCartProvider
+﻿namespace OnlineStore.Services.ShoppingCartProvider
 {
     using System;
     using System.Collections.Generic;
@@ -6,10 +6,9 @@
     using System.Web;
     using System.Web.Mvc;
 
-    using global::ShoppingCartProvider.Contracts;
-
     using OnlineStore.Data;
     using OnlineStore.Data.Models;
+    using OnlineStore.Services.ShoppingCartProvider.Contracts;
 
     public class ShoppingCartProvider : IShoppingCartProvider
     {
@@ -26,9 +25,9 @@
 
         public void AddToCart(Product product, int count)
         {
-            var cartItem = this.data.ShoppingCarts.All().FirstOrDefault(
-                c => c.CartId == this.ShoppingCartId
-                && c.ProductId == product.Id);
+            var cartItem = this.data.ShoppingCarts
+                .All()
+                .FirstOrDefault(c => c.CartId == this.ShoppingCartId && c.ProductId == product.Id);
 
             if (cartItem == null)
             {
@@ -196,3 +195,4 @@
         }
     }
 }
+

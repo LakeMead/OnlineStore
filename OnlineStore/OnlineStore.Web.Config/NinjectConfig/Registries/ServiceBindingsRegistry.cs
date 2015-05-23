@@ -5,12 +5,13 @@
     using Ninject.Web.Common;
 
     using OnlineStore.Common.Constants;
+    using OnlineStore.Web.Config.Registries.Contracts;
 
-    public class ServiceBindingsRegistry
+    public class ServiceBindingsRegistry : INinjectRegistry
     {
         public void Register(IKernel kernel)
         {
-            kernel.Bind(s => s.From(Assemblies.CommonServices)
+            kernel.Bind(s => s.From(Assemblies.CommonServices, Assemblies.ShoppingCartServices)
                 .SelectAllClasses()
                 .BindAllInterfaces()
                 .Configure(c => c.InRequestScope()));

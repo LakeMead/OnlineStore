@@ -1,4 +1,4 @@
-﻿namespace ShoppingCartProvider.Contracts
+﻿namespace OnlineStore.Services.ShoppingCartProvider.Contracts
 {
     using System.Collections.Generic;
     using System.Web;
@@ -32,3 +32,4 @@
         void MigrateCart(string userName);
     }
 }
+

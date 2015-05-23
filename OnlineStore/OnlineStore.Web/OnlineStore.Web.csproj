@@ -264,10 +264,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\ShoppingCart\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -291,6 +290,14 @@
     <ProjectReference Include="..\OnlineStore.Data\OnlineStore.Data.csproj">
       <Project>{7ED9F623-08F8-4B87-BD15-395F6395920E}</Project>
       <Name>OnlineStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Services.Common\OnlineStore.Services.Common.csproj">
+      <Project>{680A882D-D6F8-41B5-BA93-A6D7CC82BECA}</Project>
+      <Name>OnlineStore.Services.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Services.ShoppingCartProvider\OnlineStore.Services.ShoppingCartProvider.csproj">
+      <Project>{823684FC-73BF-4DFC-8D1F-015C28AFF754}</Project>
+      <Name>OnlineStore.Services.ShoppingCartProvider</Name>
     </ProjectReference>
     <ProjectReference Include="..\OnlineStore.Web.Config\OnlineStore.Web.Config.csproj">
       <Project>{C204D1CC-2086-410E-858C-5BEEDD9288CE}</Project>
