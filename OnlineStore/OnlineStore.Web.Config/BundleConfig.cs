@@ -14,8 +14,9 @@
         private static void AddStyles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                    "~/Content/bootstrap/bootstrap.css",
-                    "~/Content/css/Site.css"));
+                "~/Content/css/font-awesome/font-awesome.css",
+                "~/Content/bootstrap/bootstrap.css",
+                "~/Content/css/Site.css"));
         }
 
         private static void AddScripts(BundleCollection bundles)
@@ -25,7 +26,7 @@
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
-          
+
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 

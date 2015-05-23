@@ -195,6 +195,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\css\font-awesome\font-awesome.css" />
     <Content Include="Content\images\A13OLinuXino.jpg" />
     <Content Include="Content\images\arduino-uno.jpg" />
     <Content Include="Content\images\ArduinoLeonardoWithHeaders.png" />
