@@ -265,7 +265,13 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Shared\DisplayTemplates\DiscountedProductsViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Double.cshtml" />
+=======
     <Content Include="Views\ShoppingCart\Index.cshtml" />
+>>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
