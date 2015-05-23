@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OnlineStore.Web.Controllers")]
+[assembly: AssemblyTitle("OnlineStore.Services.ShoppingCartProvider")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OnlineStore.Web.Controllers")]
+[assembly: AssemblyProduct("OnlineStore.Services.ShoppingCartProvider")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d6c0d558-06c3-4fb5-9db1-48aedb386758")]
+[assembly: Guid("e9abe643-9396-47da-8fa7-8291a168cbfe")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -7,7 +7,7 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class Label : DeletableEntity, IAuditInfo
+    public class Label : DeletableEntity
     {
         private ICollection<Product> products;
 
@@ -23,12 +23,6 @@
         [Required]
         [StringLength(50, MinimumLength = 5)]
         public string Content { get; set; }
-
-        public DateTime CreatedOn { get; set; }
-
-        public bool PreserveCreatedOn { get; set; }
-
-        public DateTime? ModifiedOn { get; set; }
 
         public virtual ICollection<Product> Products
         {

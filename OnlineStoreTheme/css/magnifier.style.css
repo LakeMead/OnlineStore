@@ -1,0 +1,25 @@
+.workspace{
+	width:300px;
+	position:absolute;
+	background:gray;
+}
+.magnifier{	
+	border:2px solid white;
+	position:absolute;
+	height:180px;
+	width:180px;
+	display:none;
+	background-repeat:no-repeat;
+	background-color:#fff;
+	cursor:url('img/invisible.cur'),default;	
+	-moz-box-shadow:0 0 5px #777, 0 0 10px #aaa inset;
+	-webkit-box-shadow:0 0 5px #777;
+	box-shadow:0 0 5px #777, 0 0 10px #aaa inset;
+	-moz-border-radius:90px;
+	-webkit-border-radius:90px;
+	border-radius:90px;
+}
+
+.magnifier.cursor_compatible{
+	cursor:url('img/invisible_chrome.cur'),default;
+}

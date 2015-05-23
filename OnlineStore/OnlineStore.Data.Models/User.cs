@@ -11,7 +11,7 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class User : IdentityUser, IDeletableEntity, IAuditInfo
+    public class User : IdentityUser, IDeletableEntity
     {
         private ICollection<Comment> comments;
 
@@ -23,6 +23,8 @@
 
         private ICollection<WishProduct> wishProducts;
 
+        private ICollection<CustomerInfo> customerInfos;
+
         public User()
         {
             this.CreatedOn = DateTime.Now;
@@ -31,16 +33,8 @@
             this.reviews = new HashSet<Review>();
             this.ratings = new HashSet<Rating>();
             this.wishProducts = new HashSet<WishProduct>();
+            this.customerInfos = new HashSet<CustomerInfo>();
         }
-
-        [StringLength(50, MinimumLength = 2)]
-        public string FirstName { get; set; }
-        
-        [StringLength(50, MinimumLength = 2)]
-        public string LastName { get; set; }
-
-        [StringLength(100, MinimumLength = 5)]
-        public string Address { get; set; }
 
         [Editable(false)]
         public bool IsDeleted { get; set; }
@@ -82,6 +76,12 @@
         {
             get { return this.wishProducts; }
             set { this.wishProducts = value; }
+        }
+
+        public virtual ICollection<CustomerInfo> CustomerInfos
+        {
+            get { return this.customerInfos; }
+            set { this.customerInfos = value; }
         }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)

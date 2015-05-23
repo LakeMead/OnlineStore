@@ -7,7 +7,7 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class Product : DeletableEntity, IAuditInfo
+    public class Product : DeletableEntity
     {
         private ICollection<Color> colors;
 
@@ -61,12 +61,6 @@
         public virtual Category Category { get; set; }
 
         public string ImagePath { get; set; }
-
-        public DateTime CreatedOn { get; set; }
-
-        public bool PreserveCreatedOn { get; set; }
-
-        public DateTime? ModifiedOn { get; set; }
 
         public virtual ICollection<Color> Colors
         {

@@ -6,7 +6,7 @@
 
     using OnlineStore.Data.Contracts;
 
-    public class WishProduct : DeletableEntity, IAuditInfo
+    public class WishProduct : DeletableEntity
     {
         private ICollection<User> users;
 
@@ -29,11 +29,5 @@
 
         [StringLength(50, MinimumLength = 3)]
         public string Comment { get; set; }
-
-        public DateTime CreatedOn { get; set; }
-
-        public bool PreserveCreatedOn { get; set; }
-
-        public DateTime? ModifiedOn { get; set; }
     }
 }

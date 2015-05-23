@@ -129,7 +129,6 @@ namespace OnlineStore.Data.Migrations
                 context.Products.AddOrUpdate(product6);
                 context.SaveChanges();
 
-
                 // LABELS
                 var label1 = new Label
                 {
@@ -152,7 +151,6 @@ namespace OnlineStore.Data.Migrations
                 context.Labels.AddOrUpdate(label1, label2);
                 context.SaveChanges();
 
-
                 // USERS
                 var userStore = new UserStore<User>(context);
                 var userManager = new UserManager<User>(userStore);
@@ -161,10 +159,7 @@ namespace OnlineStore.Data.Migrations
                 {
                     CreatedOn = DateTime.Now,
                     UserName = "Pesho",
-                    Address = "Sofia",
                     Email = "user1@gmail.com",
-                    FirstName = "Pesho",
-                    LastName = "Peshov",
                 };
 
                 var userCreateResult1 = userManager.Create(user1, "Az-123456");
@@ -181,10 +176,7 @@ namespace OnlineStore.Data.Migrations
                 {
                     CreatedOn = DateTime.Now,
                     UserName = "Gosho",
-                    Address = "Sofia",
                     Email = "user2@gmail.com",
-                    FirstName = "Gosho",
-                    LastName = "Goshov",
                 };
 
                 var userCreateResult2 = userManager.Create(user2, "Az-123456");
@@ -196,7 +188,6 @@ namespace OnlineStore.Data.Migrations
                 {
                     throw new Exception(string.Join("; ", userCreateResult2.Errors));
                 }
-
 
                 // ORDERS
                 var order1 = new Order
@@ -224,26 +215,25 @@ namespace OnlineStore.Data.Migrations
                 context.Orders.AddOrUpdate(order1);
                 context.Orders.AddOrUpdate(order2);
 
-
                 // RATINGS
                 var rating1 = new Rating
-                    {
-                        Type = RatingType.Excellent,
-                        Author = context.Users.FirstOrDefault(u => u.FirstName == "Pesho"),
-                        ProductId = 1
-                    };
+                {
+                    Type = RatingType.Excellent,
+                    Author = context.Users.FirstOrDefault(u => u.UserName == "Pesho"),
+                    ProductId = 1
+                };
 
                 var rating2 = new Rating
                 {
                     Type = RatingType.VeryBad,
-                    Author = context.Users.FirstOrDefault(u => u.FirstName == "Gosho"),
+                    Author = context.Users.FirstOrDefault(u => u.UserName == "Gosho"),
                     ProductId = 1
                 };
 
                 var rating3 = new Rating
                 {
                     Type = RatingType.VeryGood,
-                    Author = context.Users.FirstOrDefault(u => u.FirstName == "Gosho"),
+                    Author = context.Users.FirstOrDefault(u => u.UserName == "Gosho"),
                     ProductId = 5
                 };
 
@@ -251,15 +241,14 @@ namespace OnlineStore.Data.Migrations
                 context.Ratings.AddOrUpdate(rating2);
                 context.Ratings.AddOrUpdate(rating3);
 
-
                 // DISCOUNTS
                 var discount1 = new Discount
-                                {
-                                    Percent = 50,
-                                    StartDate = DateTime.Now,
-                                    EndDate = DateTime.Now.AddDays(7),
-                                    Products = new List<Product> { product1, product2 }
-                                };
+                {
+                    Percent = 50,
+                    StartDate = DateTime.Now,
+                    EndDate = DateTime.Now.AddDays(7),
+                    Products = new List<Product> { product1, product2 }
+                };
 
                 var discount2 = new Discount
                 {
@@ -271,7 +260,6 @@ namespace OnlineStore.Data.Migrations
 
                 context.Discounts.AddOrUpdate(discount1);
                 context.Discounts.AddOrUpdate(discount2);
-
 
                 context.SaveChanges();
             }

@@ -5,5 +5,7 @@
         public const string WebModels = "OnlineStore.Web.Models";
 
         public const string CommonServices = "OnlineStore.Services.Common";
+
+        public const string ShoppingCartServices = "OnlineStore.Services.ShoppingCartProvider";
     }
 }

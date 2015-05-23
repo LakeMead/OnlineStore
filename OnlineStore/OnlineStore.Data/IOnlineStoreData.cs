@@ -10,6 +10,8 @@
 
         IOrderRepository Orders { get; }
 
+        IDeletableEntityRepository<OrderDetail> OrderDetails { get; }
+
         IProductsRepository Products { get; }
 
         IDeletableEntityRepository<Category> Categories { get; }
@@ -27,6 +29,16 @@
         IDeletableEntityRepository<Attribute> Attributes { get; }
 
         IDeletableEntityRepository<Discount> Discounts { get; }
+
+        IGenericRepository<ShoppingCart> ShoppingCarts { get; }
+
+        IGenericRepository<City> Cities { get; }
+
+        IGenericRepository<Country> Countries { get; }
+
+        IGenericRepository<Address> Addresses { get; }
+
+        IDeletableEntityRepository<CustomerInfo> CustomerInfos { get; }
 
         IWishProductRepository WishProducts { get; }
 
