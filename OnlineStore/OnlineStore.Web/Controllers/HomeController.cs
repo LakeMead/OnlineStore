@@ -6,13 +6,14 @@
     using AutoMapper.QueryableExtensions;
 
     using OnlineStore.Data;
+    using OnlineStore.Services.ShoppingCartProvider.Contracts;
     using OnlineStore.Web.Models.ViewModels.Home;
 
     [RequireHttps]
     public class HomeController : BaseController
     {
-        public HomeController(IOnlineStoreData data)
-            : base(data)
+        public HomeController(IOnlineStoreData data, IShoppingCartProvider shoppingCartProvider)
+            : base(data, shoppingCartProvider)
         {
         }
 

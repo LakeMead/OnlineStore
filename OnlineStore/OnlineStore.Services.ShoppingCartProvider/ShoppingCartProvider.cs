@@ -14,7 +14,7 @@
     {
         private const string CartSessionKey = "CartId";
 
-        private IOnlineStoreData data;
+        private readonly IOnlineStoreData data;
 
         public ShoppingCartProvider(IOnlineStoreData data)
         {
