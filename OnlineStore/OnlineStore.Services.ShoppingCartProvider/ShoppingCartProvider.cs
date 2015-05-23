@@ -131,7 +131,7 @@
                 };
 
                 // Set the order total of the shopping cart
-                orderTotal += (item.Count * item.Product.Price);
+                orderTotal += item.Count * item.Product.Price;
 
                 this.data.OrderDetails.Add(orderDetail);
             }
@@ -162,6 +162,7 @@
                 {
                     // Generate a new random GUID using System.Guid class
                     var tempCartId = Guid.NewGuid();
+
                     // Send tempCartId back to client as a cookie
                     context.Session[CartSessionKey] = tempCartId.ToString();
                 }
@@ -195,4 +196,3 @@
         }
     }
 }
-

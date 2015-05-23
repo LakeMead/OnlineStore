@@ -32,4 +32,3 @@
         void MigrateCart(string userName);
     }
 }
-

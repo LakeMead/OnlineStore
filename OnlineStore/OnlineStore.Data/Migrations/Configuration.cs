@@ -191,17 +191,6 @@ namespace OnlineStore.Data.Migrations
                     throw new Exception(string.Join("; ", userCreateResult2.Errors));
                 }
 
-                // ORDERS
-                //var order1 = new Order
-                //{
-                //    OrderStatus = OrderStatus.Approved,
-                //    Products = new List<Product>
-                //    {
-                //        product1, product2, product3
-                //    },
-                //    UserId = user1.Id
-                //};
-
                 var order2 = new Order
                 {
                     OrderStatus = OrderStatus.Approved,
@@ -223,7 +212,6 @@ namespace OnlineStore.Data.Migrations
                                 {
                                     Name = "Bulgaria"
                                 }
-                                
                             },
                             PostalCode = "1000"
                         }
@@ -231,7 +219,6 @@ namespace OnlineStore.Data.Migrations
                 };
 
                 context.SaveChanges();
-                //context.Orders.AddOrUpdate(order1);
                 context.Orders.AddOrUpdate(order2);
 
                 // RATINGS
