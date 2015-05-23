@@ -90,6 +90,8 @@
     <Compile Include="ViewModels\Home\MostPopularProductsViewModel.cs" />
     <Compile Include="ViewModels\Home\NewestProductsViewModel.cs" />
     <Compile Include="ViewModels\Home\TopRatedProductsViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCart\ShoppingCartItemViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCart\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InputModels\" />

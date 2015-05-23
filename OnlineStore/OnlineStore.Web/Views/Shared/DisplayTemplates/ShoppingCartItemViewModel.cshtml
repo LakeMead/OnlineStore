@@ -1,0 +1,16 @@
+﻿@model OnlineStore.Web.Models.ViewModels.ShoppingCart.ShoppingCartItemViewModel
+
+<li>
+    <figure class="picture pull-left">
+        <a href="/products/@Model.ProductId" title="Show details @Model.ProductName">
+            <img alt="@Model.ProductName" src="../../../@Model.ProductImagePath" title="@Model.ProductName">
+        </a>
+    </figure>
+    <div class="quantity pull-left">@Model.Count<span class="times">x</span></div>
+    <div class="data pull-left">
+        <a class="name" href="/products/@Model.ProductId" title="@Model.ProductName">@Model.ProductName</a>
+    </div>
+    <div class="price pull-right">
+        @Model.ProductPrice
+    </div>
+</li>

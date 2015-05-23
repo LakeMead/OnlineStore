@@ -225,6 +225,8 @@
     <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery-2.1.4-vsdoc.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -278,6 +280,8 @@
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MostPopularProductsViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\TopRatedProductsViewModel.cshtml" />
+    <Content Include="Views\Shared\_ShoppingCartItems.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ShoppingCartItemViewModel.cshtml" />
     <!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
   </ItemGroup>
   <ItemGroup />
@@ -308,6 +312,10 @@
     <ProjectReference Include="..\OnlineStore.Services.Common\OnlineStore.Services.Common.csproj">
       <Project>{680A882D-D6F8-41B5-BA93-A6D7CC82BECA}</Project>
       <Name>OnlineStore.Services.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Services.ImageResizer\OnlineStore.Services.ImageResizer.csproj">
+      <Project>{B6EAEBF6-46A6-45FD-B028-ED5997361762}</Project>
+      <Name>OnlineStore.Services.ImageResizer</Name>
     </ProjectReference>
     <ProjectReference Include="..\OnlineStore.Services.ShoppingCartProvider\OnlineStore.Services.ShoppingCartProvider.csproj">
       <Project>{823684FC-73BF-4DFC-8D1F-015C28AFF754}</Project>

@@ -1,0 +1,11 @@
+﻿@model OnlineStore.Web.Models.ViewModels.ShoppingCart.ShoppingCartViewModel
+
+@{
+    ViewBag.Title = "_ShoppingCartItem";
+}
+
+<ul>
+    @Html.DisplayFor(m => m.ShoppingCartItems)
+</ul>
+<span> @Model.CartTotal</span>
+

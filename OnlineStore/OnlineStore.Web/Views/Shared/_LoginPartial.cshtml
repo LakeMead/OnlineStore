@@ -1,25 +1,49 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using OnlineStore.Web.Controllers
+
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
-        <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @using (Ajax.BeginForm<ShoppingCartController>(
+                sc => sc.GetItems(),
+                null,
+                new AjaxOptions
+                {
+                    HttpMethod = "Get",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "shopping-cart-items-container",
+                    OnComplete = "showWindow"
+                }))
+            {
+                <button type="submit"><i class="fa fa-shopping-cart"></i><span class="label label-primary">@ViewData["ShoppingCartItemsCount"]</span></button>
+            }
+
+            <div id="shopping-cart-items-container" class="hidden"></div>
+        </li>
+        <li><a href="#"><i class="fa fa-user"></i></a></li>
+        @using (Html.BeginForm<AccountController>(c => c.LogOff(), FormMethod.Post, null, new { id = "logoutForm", @class = "navbar-right" }))
+        {
             @Html.AntiForgeryToken()
 
-            <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart <span class="label label-primary">@ViewData["ShoppingCartItemsCount"]</span></a></li>
-            <li><a href="#"><i class="fa fa-user"></i>User</a></li>
-            @*<li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>*@
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-        </ul>
-    }
+            <li><input type="submit" value="Log off" /></li>
+        }
+    </ul>
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"> <i class="fa fa-shopping-cart"></i> Cart <span class="label label-primary">@ViewData["ShoppingCartItemsCount"]</span></a></li>
+        <li><a href="#"> <i class="fa fa-shopping-cart"></i><span class="label label-primary">@ViewData["ShoppingCartItemsCount"]</span></a></li>
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
+}
+
+<script>
+    function showWindow(ev) {
+        $('#shopping-cart-items-container').toggleClass('hidden');
+    }
+</script>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
 }
