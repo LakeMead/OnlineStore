@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("OnlineStore.Services.ImageResizer")]
+[assembly: AssemblyTitle("OnlineStore.Services.ImageManagement")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OnlineStore.Services.ImageResizer")]
+[assembly: AssemblyProduct("OnlineStore.Services.ImageManagement")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("de355e6a-6b19-40c1-8f36-ee81cdd83209")]
+[assembly: Guid("ccb9ed6f-43f5-4346-a974-fe890bade37e")]
 
 // Version information for an assembly consists of the following four values:
 //

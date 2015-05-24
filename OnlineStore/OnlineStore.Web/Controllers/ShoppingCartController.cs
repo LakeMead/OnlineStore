@@ -7,7 +7,7 @@
     using AutoMapper.QueryableExtensions;
 
     using OnlineStore.Data;
-    using OnlineStore.Services.ImageResizer.Contracts;
+    using OnlineStore.Services.ImageManagement.Contracts;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
     using OnlineStore.Web.Models.ViewModels.ShoppingCart;
 

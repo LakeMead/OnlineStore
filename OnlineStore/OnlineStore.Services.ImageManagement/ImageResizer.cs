@@ -1,10 +1,10 @@
-﻿namespace OnlineStore.Services.ImageResizer
+﻿namespace OnlineStore.Services.ImageManagement
 {
     using System;
     using System.IO;
     using System.Web;
 
-    using OnlineStore.Services.ImageResizer.Contracts;
+    using OnlineStore.Services.ImageManagement.Contracts;
 
     public class ImageResizer : IImageResizer
     {

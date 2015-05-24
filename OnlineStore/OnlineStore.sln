@@ -36,7 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Services.Common
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Services.ShoppingCartProvider", "OnlineStore.Services.ShoppingCartProvider\OnlineStore.Services.ShoppingCartProvider.csproj", "{823684FC-73BF-4DFC-8D1F-015C28AFF754}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Services.ImageResizer", "OnlineStore.Services.ImageResizer\OnlineStore.Services.ImageResizer.csproj", "{B6EAEBF6-46A6-45FD-B028-ED5997361762}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineStore.Services.ImageManagement", "OnlineStore.Services.ImageManagement\OnlineStore.Services.ImageManagement.csproj", "{85D542F4-FDD5-4DF6-863E-A4A38885F31F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,10 +80,10 @@ Global
 		{823684FC-73BF-4DFC-8D1F-015C28AFF754}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{823684FC-73BF-4DFC-8D1F-015C28AFF754}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{823684FC-73BF-4DFC-8D1F-015C28AFF754}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6EAEBF6-46A6-45FD-B028-ED5997361762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6EAEBF6-46A6-45FD-B028-ED5997361762}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6EAEBF6-46A6-45FD-B028-ED5997361762}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6EAEBF6-46A6-45FD-B028-ED5997361762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85D542F4-FDD5-4DF6-863E-A4A38885F31F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D542F4-FDD5-4DF6-863E-A4A38885F31F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D542F4-FDD5-4DF6-863E-A4A38885F31F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D542F4-FDD5-4DF6-863E-A4A38885F31F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +97,6 @@ Global
 		{CE0DFB35-29AF-4B46-8559-F35335E02E67} = {C8C647FC-1531-4CF6-A868-B7DCA76978CA}
 		{680A882D-D6F8-41B5-BA93-A6D7CC82BECA} = {37D443F0-D08C-4DE6-946B-BFF4D3766604}
 		{823684FC-73BF-4DFC-8D1F-015C28AFF754} = {37D443F0-D08C-4DE6-946B-BFF4D3766604}
-		{B6EAEBF6-46A6-45FD-B028-ED5997361762} = {37D443F0-D08C-4DE6-946B-BFF4D3766604}
+		{85D542F4-FDD5-4DF6-863E-A4A38885F31F} = {37D443F0-D08C-4DE6-946B-BFF4D3766604}
 	EndGlobalSection
 EndGlobal

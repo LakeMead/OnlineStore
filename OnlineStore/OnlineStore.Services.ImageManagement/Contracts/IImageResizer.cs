@@ -1,4 +1,4 @@
-﻿namespace OnlineStore.Services.ImageResizer.Contracts
+﻿namespace OnlineStore.Services.ImageManagement.Contracts
 {
     using System.Web;
 
