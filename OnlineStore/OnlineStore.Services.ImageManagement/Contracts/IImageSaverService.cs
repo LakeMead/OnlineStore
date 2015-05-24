@@ -4,10 +4,8 @@
 
     using OnlineStore.Services.Common;
 
-    public interface IImageResizer : IService
+    public interface IImageSaverService : IService
     {
-        void ResizeImage();
-
         string GetUploadedFilePath(HttpPostedFileBase image, string mainFolder, string subFolder);
     }
 }

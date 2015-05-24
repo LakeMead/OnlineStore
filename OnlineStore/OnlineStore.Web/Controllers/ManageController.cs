@@ -9,6 +9,7 @@
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
 
+    using OnlineStore.Web.Common.HttpStatusCodeResults;
     using OnlineStore.Web.Config.IdentityConfig;
     using OnlineStore.Web.Models.ViewModels.Account;
 
@@ -65,6 +66,14 @@
             private set
             {
                 this.userManager = value;
+            }
+        }
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return this.HttpContext.GetOwinContext().Authentication;
             }
         }
 
@@ -310,7 +319,7 @@
         public ActionResult LinkLogin(string provider)
         {
             // Request a redirect to the external login provider to link a login for the current user
-            return new AccountController.ChallengeResult(provider, this.Url.Action("LinkLoginCallback", "Manage"), this.User.Identity.GetUserId());
+            return new ChallengeResult(provider, this.Url.Action("LinkLoginCallback", "Manage"), this.User.Identity.GetUserId());
         }
 
         public async Task<ActionResult> LinkLoginCallback()
@@ -334,14 +343,6 @@
             }
 
             base.Dispose(disposing);
-        }
-
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
-                return this.HttpContext.GetOwinContext().Authentication;
-            }
         }
 
         private void AddErrors(IdentityResult result)

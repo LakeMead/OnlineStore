@@ -8,6 +8,6 @@
 
         public const string ShoppingCartServices = "OnlineStore.Services.ShoppingCartProvider";
 
-        public const string ImageResizer = "OnlineStore.Services.ImageResizer";
+        public const string ImageResizer = "OnlineStore.Services.ImageManagement";
     }
 }

@@ -6,13 +6,8 @@
 
     using OnlineStore.Services.ImageManagement.Contracts;
 
-    public class ImageResizer : IImageResizer
+    public class ImageSaverServiceService : IImageSaverService
     {
-        public void ResizeImage()
-        {
-           throw new NotImplementedException();
-        }
-
         public string GetUploadedFilePath(HttpPostedFileBase file, string mainFolder, string subfolderName)
         {
             var fileExtension = this.GetFileExtension(file);
