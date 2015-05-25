@@ -7,7 +7,7 @@
 
     using OnlineStore.Data;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
-    using OnlineStore.Web.Models.ViewModels.Products;
+    using OnlineStore.Web.Models.ViewModels.Base.Products;
 
     public class ProductsController : BaseController
     {

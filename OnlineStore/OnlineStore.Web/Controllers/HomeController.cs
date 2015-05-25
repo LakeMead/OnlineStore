@@ -7,7 +7,7 @@
 
     using OnlineStore.Data;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
-    using OnlineStore.Web.Models.ViewModels.Home;
+    using OnlineStore.Web.Models.ViewModels.Base.Home;
 
     [RequireHttps]
     public class HomeController : BaseController

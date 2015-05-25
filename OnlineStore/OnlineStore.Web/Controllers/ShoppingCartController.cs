@@ -9,7 +9,7 @@
     using OnlineStore.Data;
     using OnlineStore.Services.ImageManagement.Contracts;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
-    using OnlineStore.Web.Models.ViewModels.ShoppingCart;
+    using OnlineStore.Web.Models.ViewModels.Base.ShoppingCart;
 
     public class ShoppingCartController : BaseController
     {

@@ -46,10 +46,8 @@
         [StringLength(1000, MinimumLength = 5)]
         public string Description { get; set; }
 
-        [Index]
         public decimal Price { get; set; }
 
-        [Index]
         public int Quantity { get; set; }
 
         public int? DiscountId { get; set; }

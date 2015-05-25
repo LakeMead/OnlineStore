@@ -1,7 +1,5 @@
 ﻿namespace OnlineStore.Web.Controllers
 {
-    using System.Web.Mvc;
-
     using OnlineStore.Data;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
 

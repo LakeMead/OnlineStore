@@ -188,6 +188,7 @@
   <ItemGroup>
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration_Products\Administration_ProductsAreaRegistration.cs" />
+    <Compile Include="Areas\Administration_Products\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminBaseController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -303,6 +304,7 @@
     <Content Include="Content\kendo\textures\stripe6.png" />
     <Content Include="Content\kendo\textures\transparency.png" />
     <Content Include="Content\kendo\textures\transtexture.png" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -329,6 +331,9 @@
     <Content Include="Content\kendo\images\kendoui.ttf" />
     <Content Include="Content\kendo\images\kendoui.woff" />
     <Content Include="Areas\Administration_Products\Views\web.config" />
+    <Content Include="Areas\Administration_Products\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration_Products\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Administration_Products\Views\Products\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap\bootswatch.js" />
@@ -417,8 +422,6 @@
   <ItemGroup>
     <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="Areas\Administration_Products\Controllers\" />
-    <Folder Include="Areas\Administration_Products\Views\Shared\" />
     <Folder Include="Views\AdminBase\" />
     <Folder Include="Views\Default\" />
     <Folder Include="Views\KendoGridAdministration\" />
@@ -466,6 +469,10 @@
     <ProjectReference Include="..\OnlineStore.Web.Config\OnlineStore.Web.Config.csproj">
       <Project>{C204D1CC-2086-410E-858C-5BEEDD9288CE}</Project>
       <Name>OnlineStore.Web.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Web.Infrastructure\OnlineStore.Web.Infrastructure.csproj">
+      <Project>{26A4469F-43E0-45BB-8091-18C7625D1987}</Project>
+      <Name>OnlineStore.Web.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\OnlineStore.Web.Models\OnlineStore.Web.Models.csproj">
       <Project>{FC9D2B92-79A8-4C28-AC78-6CB9051B8CA5}</Project>

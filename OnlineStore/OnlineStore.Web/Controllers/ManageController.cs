@@ -11,7 +11,7 @@
 
     using OnlineStore.Web.Common.HttpStatusCodeResults;
     using OnlineStore.Web.Config.IdentityConfig;
-    using OnlineStore.Web.Models.ViewModels.Account;
+    using OnlineStore.Web.Models.ViewModels.Base.Account;
 
     [Authorize]
     public class ManageController : Controller
