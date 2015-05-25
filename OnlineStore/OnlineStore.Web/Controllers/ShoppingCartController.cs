@@ -64,7 +64,7 @@
             var name = image.FileName;
 
             // Test file upload
-            this.resizerService.Resize(stream, 200, 200, "png", "max");
+            this.resizerService.Resize(stream, 200, 200, "png", "max"); 
             return this.View();
         }
     }
