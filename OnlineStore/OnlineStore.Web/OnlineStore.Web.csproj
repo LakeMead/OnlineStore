@@ -187,6 +187,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -217,6 +218,16 @@
     <Content Include="Content\images\carousel\home\04.jpg" />
     <Content Include="Content\images\GenericACAdapterForAcer.jpg" />
     <Content Include="Content\images\HelloKittyPhoneCase.jpg" />
+    <Content Include="Content\images\icons\1432329803_contact.png" />
+    <Content Include="Content\images\icons\1432329874_favorite-empty.png" />
+    <Content Include="Content\images\icons\1432330009_help.png" />
+    <Content Include="Content\images\icons\1432330319_Twitter.png" />
+    <Content Include="Content\images\icons\1432330322_Facebook.png" />
+    <Content Include="Content\images\icons\1432330323_Google_.png" />
+    <Content Include="Content\images\icons\1432330947_Cart.png" />
+    <Content Include="Content\images\icons\1432331009_09.png" />
+    <Content Include="Content\images\icons\1432331012_27.Phone.png" />
+    <Content Include="Content\images\icons\five-stars-rating-symbols.gif" />
     <Content Include="Content\images\RaspberryPi.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
@@ -301,6 +312,8 @@
     <Content Include="Views\Shared\_ShoppingCartItems.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ShoppingCartItemViewModel.cshtml" />
     <Content Include="Views\Shared\_CarouselPartial.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
     <!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
   </ItemGroup>
   <ItemGroup>

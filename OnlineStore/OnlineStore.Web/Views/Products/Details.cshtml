@@ -1,0 +1,143 @@
+﻿@model OnlineStore.Web.Models.ViewModels.Products.ProductDetailsViewModel
+
+@{
+    ViewBag.Title = "Product details";
+}
+
+<h2></h2>
+<div class="container">
+    
+        <h2 class="col-lg-offset-1"><strong>@Model.Name</strong></h2>
+
+        <hr>
+        <div class="col-lg-6">
+            <div class="img-rounded">
+
+                <img src="@Model.ImagePath" width="480" height="300" class="img-thumbnail">
+
+                <div class="img-rounded">
+                    @*<img src="images/1432311382_camera.png" width="64" height="64" class="img-thumbnail" />
+                        <img src="images/1432311382_camera.png" width="64" height="64" class="img-thumbnail" />
+                        <img src="images/1432311382_camera.png" width="64" height="64" class="img-thumbnail" />
+                        <img src="images/1432311382_camera.png" width="64" height="64" class="img-thumbnail" />
+                        <img src="images/1432311382_camera.png" width="64" height="64" class="img-thumbnail" />*@
+                </div>
+            </div>
+        </div>
+
+    <div class="col-lg-6">
+        <div class="text-justify">
+            <div class="col-lg-6 pull-left">
+                <h3 class="pull-left">
+                    <div class="col-lg-6">
+                        <label class="control-label" for="inputDefault">Quantity:</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="number" class="form-control text-right" id="inputDefault" value="1">
+                    </div>
+                </h3>
+            </div>
+            <div class="col-lg-6 ">
+                <h3 class="pull-right">Price: <strong>$ @Model.Price</strong>
+                </h3>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <h6></h6>
+            <a href="#" class="btn btn-primary btn-lg nav-justified">Add to cart</a>
+
+            <hr>
+            <div class="col-lg-2">
+                <h4 class="">Color: </h4>
+            </div>
+            <div class="col-lg-10">
+                @foreach (var color in Model.Colors)
+                {
+                    <p>@color</p>
+                    @*<img src="images/colors_2.png" class="color-pick">*@
+                }
+            </div>
+            <div class="clearfix"></div>
+
+        </div>
+        <hr>
+        <div class="col-lg-6">
+            <!--https://www.iconfinder.com/iconsets/pictype-free-vector-icons-->
+            <a href="#"><img src="../../Content/images/icons/1432329803_contact.png"> Email a friend</a>
+            <br>
+            <a href="#"><img src="../../Content/images/icons/1432330009_help.png"> Question about product?</a>
+            <br>
+            
+            <a href="#"><img src="../../Content/images/icons/1432329874_favorite-empty.png"> Add to wishlist</a>
+        </div>
+        <div class="col-lg-6 text-right">
+            <img src="../../Content/images/icons/1432330322_Facebook.png" alt="facebook"/>
+            <img src="../../Content/images/icons/1432330319_Twitter.png" alt="twitter"/>
+            <img src="../../Content/images/icons/1432330323_Google_.png" alt="google"/>
+        </div>
+        <hr>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 id="nav-tabs">Details</h2>
+            <div class="bs-component">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#details" data-toggle="tab" aria-expanded="true">Details</a></li>
+                    <li class=""><a href="#reviews" data-toggle="tab" aria-expanded="false">Reviews</a></li>
+                </ul>
+
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="details">
+                        <h4>Some title</h4>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                        <img src="images/arduino-uno.jpg" class="center-block" width="480" height="300">
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+
+                    </div>
+                    <div class="tab-pane fade" id="reviews">
+
+                        <h3>Rating: <img src="images/3stars.gif" class="" height="40"></h3>
+
+                        <hr>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a href="#">Pesho </a>
+                                <img src="images/4stars.gif" height="22" />
+                            </div>
+                            <div class="panel-body">
+                                Raw denim you probably haven't heard of them jean shorts Austin.
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a href="#">Pesho </a>
+                                <img src="images/4stars.gif" height="22" />
+                            </div>
+                            <div class="panel-body">
+                                Raw denim you probably haven't heard of them jean shorts Austin.
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a href="#">Pesho </a>
+                                <img src="images/4stars.gif" height="22" />
+                            </div>
+                            <div class="panel-body">
+                                Raw denim you probably haven't heard of them jean shorts Austin.
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
