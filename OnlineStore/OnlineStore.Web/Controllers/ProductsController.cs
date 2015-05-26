@@ -34,7 +34,7 @@
 
             var product = this.Data.Products.All().Where(x => x.Id == id).Project().To<ProductDetailsViewModel>().FirstOrDefault();
 
-            if (null == product)
+            if (product == null)
             {
                 return this.RedirectToAction("Index");
             }
