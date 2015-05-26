@@ -424,7 +424,6 @@
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Views\AdminBase\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\KendoGridAdministration\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
