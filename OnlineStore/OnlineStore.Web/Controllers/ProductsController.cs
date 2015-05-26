@@ -5,6 +5,8 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using Microsoft.Ajax.Utilities;
+
     using OnlineStore.Data;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
     using OnlineStore.Web.Models.ViewModels.Base.Products;
@@ -23,9 +25,19 @@
             return this.View(products);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
+            if (id == null)
+            {
+                return this.RedirectToAction("Index");
+            }
+
             var product = this.Data.Products.All().Where(x => x.Id == id).Project().To<ProductDetailsViewModel>().FirstOrDefault();
+
+            if (null == product)
+            {
+                return this.RedirectToAction("Index");
+            }
 
             return this.View(product);
         }
