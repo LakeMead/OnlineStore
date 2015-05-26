@@ -6,6 +6,8 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using Kendo.Mvc.UI;
+
     using OnlineStore.Data;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
     using OnlineStore.Web.Controllers;
@@ -23,6 +25,18 @@
             return this.View();
         }
 
+        [HttpPost]
+        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, ProductGridViewModel model)
+        {
+            if (model != null)
+            {
+                this.Data.Products.DeleteById(model.Id);
+                this.Data.SaveChanges();
+            }
+
+            return this.GridOperation(model, request);
+        }
+
         protected override IEnumerable GetData()
         {
             return this.Data.Products.All().Project().To<ProductGridViewModel>();
@@ -30,7 +44,7 @@
 
         protected override T GetById<T>(object id)
         {
-            throw new System.NotImplementedException();
+            return this.Data.Products.GetById(id) as T;
         }
     }
 }
