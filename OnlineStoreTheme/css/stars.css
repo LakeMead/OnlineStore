@@ -1,0 +1,28 @@
+.rating-holder{
+    margin: 10px;
+}
+
+.stars-one{
+    position: absolute;
+    clip: rect(84px,100px,105px,0px);
+}
+
+.stars-two{
+    position: absolute;
+    clip: rect(63px,100px,84px,0px);
+}
+
+.stars-three{
+    position: absolute;
+    clip: rect(42px,100px,63px,0px);
+}
+
+.stars-four{
+    position: absolute;
+    clip: rect(21px,100px,42px,0px);
+}
+
+.stars-five {
+    position: absolute;
+    clip: rect(0px,100px,21px,0px);
+}
