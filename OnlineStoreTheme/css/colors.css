@@ -1,0 +1,37 @@
+.color{
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    content: '';
+    margin: 7px;
+    border: 1px solid #333333;
+    border-radius: 3px;
+}
+
+.color-black{
+    background: #000000;
+}
+
+.color-red{
+    background: #FF4136;
+    border-color: red;
+}
+
+.color-green{
+    background: #28B62C;
+    border-color: green;
+}
+
+.color-blue{
+    background: #158CBA;
+    border-color: blue;
+}
+
+.color-yellow{
+    background: #FFFF00;
+    border-color: yellow;
+}
+
+.color-white{
+    background: #ffffff;
+}

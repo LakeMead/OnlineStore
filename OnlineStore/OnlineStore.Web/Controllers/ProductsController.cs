@@ -5,6 +5,8 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using Microsoft.Ajax.Utilities;
+
     using OnlineStore.Data;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
     using OnlineStore.Web.Models.ViewModels.Base.Products;
@@ -26,6 +28,11 @@
         public ActionResult Details(int id)
         {
             var product = this.Data.Products.All().Where(x => x.Id == id).Project().To<ProductDetailsViewModel>().FirstOrDefault();
+
+            if (product == null)
+            {
+                return this.RedirectToAction("Index");
+            }
 
             return this.View(product);
         }

@@ -7,7 +7,8 @@
 <h2></h2>
 <div class="container">
     
-        <h2 class="col-lg-offset-1"><strong>@Model.Name</strong></h2>
+        <h2 class="col-lg-offset-1"><strong>@Model.Name</strong> <span class="pull-right">Overall rating: @Model.OverallRating</span>
+</h2>
 
         <hr>
         <div class="col-lg-6">
@@ -37,6 +38,7 @@
                     </div>
                 </h3>
             </div>
+
             <div class="col-lg-6 ">
                 <h3 class="pull-right">Price: <strong>$ @Model.Price</strong>
                 </h3>
@@ -44,9 +46,7 @@
 
             <div class="clearfix"></div>
 
-            <h6></h6>
-            <a href="#" class="btn btn-primary btn-lg nav-justified">Add to cart</a>
-
+            <div class="clearfix"></div>
             <hr>
             <div class="col-lg-2">
                 <h4 class="">Color: </h4>
@@ -59,6 +59,11 @@
                 }
             </div>
             <div class="clearfix"></div>
+
+            <h6></h6>
+            <a href="#" class="btn btn-primary btn-lg nav-justified">Add to cart</a>
+
+            
 
         </div>
         <hr>
@@ -91,50 +96,27 @@
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="details">
-                        <h4>Some title</h4>
-                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-                        <img src="images/arduino-uno.jpg" class="center-block" width="480" height="300">
-                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                        <h4>Product description</h4>
+                        <p>
+                            @Model.Description
+                        </p>
 
                     </div>
                     <div class="tab-pane fade" id="reviews">
-
-                        <h3>Rating: <img src="images/3stars.gif" class="" height="40"></h3>
-
-                        <hr>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a href="#">Pesho </a>
-                                <img src="images/4stars.gif" height="22" />
+                        @foreach (var review in @Model.Reviews)
+                        {
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <a href="#">@review.Author </a>
+                                    <p>Review: @review.Rating / Stars count:  @review.Rating.GetHashCode()</p>
+                                    @*<img src="images/4stars.gif" height="22"/>*@
+                                </div>
+                                <div class="panel-body">
+                                    @review.Content
+                                </div>
                             </div>
-                            <div class="panel-body">
-                                Raw denim you probably haven't heard of them jean shorts Austin.
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a href="#">Pesho </a>
-                                <img src="images/4stars.gif" height="22" />
-                            </div>
-                            <div class="panel-body">
-                                Raw denim you probably haven't heard of them jean shorts Austin.
-                            </div>
-                        </div>
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <a href="#">Pesho </a>
-                                <img src="images/4stars.gif" height="22" />
-                            </div>
-                            <div class="panel-body">
-                                Raw denim you probably haven't heard of them jean shorts Austin.
-                            </div>
-                        </div>
-
-
+                        }
                     </div>
-
                     <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
                 </div>
             </div>
