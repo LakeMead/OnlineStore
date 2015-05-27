@@ -7,7 +7,8 @@
 <h2></h2>
 <div class="container">
     
-        <h2 class="col-lg-offset-1"><strong>@Model.Name</strong></h2>
+        <h2 class="col-lg-offset-1"><strong>@Model.Name</strong> <span class="pull-right">Overall rating: @Model.OverallRating</span>
+</h2>
 
         <hr>
         <div class="col-lg-6">
@@ -37,6 +38,7 @@
                     </div>
                 </h3>
             </div>
+
             <div class="col-lg-6 ">
                 <h3 class="pull-right">Price: <strong>$ @Model.Price</strong>
                 </h3>
@@ -44,9 +46,7 @@
 
             <div class="clearfix"></div>
 
-            <h6></h6>
-            <a href="#" class="btn btn-primary btn-lg nav-justified">Add to cart</a>
-
+            <div class="clearfix"></div>
             <hr>
             <div class="col-lg-2">
                 <h4 class="">Color: </h4>
@@ -59,6 +59,11 @@
                 }
             </div>
             <div class="clearfix"></div>
+
+            <h6></h6>
+            <a href="#" class="btn btn-primary btn-lg nav-justified">Add to cart</a>
+
+            
 
         </div>
         <hr>
@@ -98,9 +103,6 @@
 
                     </div>
                     <div class="tab-pane fade" id="reviews">
-                        <h3>Overall rating: @*<img src="images/3stars.gif" class="" height="40">*@</h3>
-                        <hr>
-
                         @foreach (var review in @Model.Reviews)
                         {
                             <div class="panel panel-default">

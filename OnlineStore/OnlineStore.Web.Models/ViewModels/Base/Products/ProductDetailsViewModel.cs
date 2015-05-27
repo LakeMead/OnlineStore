@@ -13,8 +13,10 @@
         public int Id { get; set; }
         
         public string Name { get; set; }
-        
+
         public decimal Price { get; set; }
+
+        public double? OverallRating { get; set; }
 
         public int Quantity { get; set; }
 
@@ -33,7 +35,8 @@
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Product, ProductDetailsViewModel>()
-                .ForMember(m => m.Colors, opt => opt.MapFrom(e => e.Colors.Select(c => c.Name)));
+                .ForMember(m => m.Colors, opt => opt.MapFrom(e => e.Colors.Select(c => c.Name)))
+                .ForMember(m => m.OverallRating, opt => opt.MapFrom(e => e.Ratings.Select(r => (int)r.Type).Average()));
         }
     }
 }
