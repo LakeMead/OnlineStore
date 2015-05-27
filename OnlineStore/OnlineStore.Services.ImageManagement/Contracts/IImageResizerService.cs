@@ -3,6 +3,7 @@
     using System.IO;
 
     using OnlineStore.Services.Common;
+    using OnlineStore.Services.Common.Contracts;
 
     public interface IImageResizerService : IService
     {

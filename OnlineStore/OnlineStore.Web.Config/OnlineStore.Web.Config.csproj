@@ -14,7 +14,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <NuGetPackageImportStamp>7c065af3</NuGetPackageImportStamp>
-	<StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -119,6 +119,7 @@
     <Compile Include="IdentityConfig\MessageServices\SmsService.cs" />
     <Compile Include="NinjectConfig\Registries\Contracts\INinjectRegistry.cs" />
     <Compile Include="NinjectConfig\Registries\DataBindingRegistry.cs" />
+    <Compile Include="NinjectConfig\Registries\FiltersRegistry.cs" />
     <Compile Include="NinjectConfig\Registries\ServiceBindingsRegistry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteConfig.cs" />
@@ -143,6 +144,10 @@
     <ProjectReference Include="..\OnlineStore.Data\OnlineStore.Data.csproj">
       <Project>{7ED9F623-08F8-4B87-BD15-395F6395920E}</Project>
       <Name>OnlineStore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Web.Infrastructure\OnlineStore.Web.Infrastructure.csproj">
+      <Project>{26A4469F-43E0-45BB-8091-18C7625D1987}</Project>
+      <Name>OnlineStore.Web.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

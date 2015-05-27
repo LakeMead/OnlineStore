@@ -334,6 +334,7 @@
     <Content Include="Areas\Administration_Products\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration_Products\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration_Products\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Administration_Products\Views\Products\Add.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap\bootswatch.js" />
@@ -417,6 +418,7 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Scripts\kendo\kendo.all.min.js.map" />
     <Content Include="Scripts\kendo\kendo.aspnetmvc.min.js.map" />
+    <Content Include="Views\Shared\Upload.cshtml" />
     <!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
   </ItemGroup>
   <ItemGroup>

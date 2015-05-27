@@ -6,6 +6,7 @@
 
     using OnlineStore.Data.Models;
     using OnlineStore.Services.Common;
+    using OnlineStore.Services.Common.Contracts;
 
     public interface IShoppingCartProvider : IService
     {

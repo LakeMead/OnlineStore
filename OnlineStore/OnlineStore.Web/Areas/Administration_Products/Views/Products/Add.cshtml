@@ -1,0 +1,26 @@
+﻿@using OnlineStore.Services.Common.Populators.Models
+@model OnlineStore.Web.Models.ViewModels.AdministrationProducts.ProductInputModel
+
+@{
+    ViewBag.Title = "Add";
+}
+
+
+@{
+    var a = ViewBag;
+    var categories = ViewBag.ProductCategories as IEnumerable<ProductsCategoriesModel>;
+}
+
+
+
+
+
+@Html.EditorFor(m => m.Name)
+
+@Html.EditorFor(m => m.Description)
+
+@Html.EditorFor(m => m.Price)
+
+@Html.EditorFor(m => m.Quantity)
+
+@Html.EditorFor(m => m.Image)

@@ -1,16 +1,17 @@
 ﻿namespace OnlineStore.Web.Areas.Administration_Products.Controllers
 {
     using System.Collections;
-    using System.Linq;
     using System.Web.Mvc;
 
     using AutoMapper.QueryableExtensions;
 
     using Kendo.Mvc.UI;
 
+    using OnlineStore.Common.Constants;
     using OnlineStore.Data;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
     using OnlineStore.Web.Controllers;
+    using OnlineStore.Web.Infrastructure.Attributes;
     using OnlineStore.Web.Models.ViewModels.AdministrationProducts;
 
     public class ProductsController : KendoGridAdministrationController
@@ -23,6 +24,19 @@
         public ActionResult Index()
         {
             return this.View();
+        }
+
+        [HttpGet]
+        public ActionResult Add()
+        {
+            return this.View(new ProductInputModel());
+        }
+
+        [HttpPost]
+        [PopulateFromCache(CacheIds.ProductCategories)]
+        public ActionResult Add(ProductInputModel inputModel)
+        {
+            return this.View(inputModel);
         }
 
         [HttpPost]

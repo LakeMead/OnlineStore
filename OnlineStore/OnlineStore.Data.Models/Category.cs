@@ -8,11 +8,13 @@
 
     public class Category : DeletableEntity
     {
-        private ICollection<Product> products;
+        private ICollection<Product> products; 
+        private ICollection<Category> subCategories;
 
         public Category()
         {
             this.products = new HashSet<Product>();
+            this.subCategories = new HashSet<Category>();
         }
 
         [Key]
@@ -25,10 +27,20 @@
 
         public int Order { get; set; }
 
+        public int? ParentCategoryId { get; set; }
+
+        public virtual Category ParentCategory { get; set; }
+
         public virtual ICollection<Product> Products
         {
             get { return this.products; }
             set { this.products = value; }
+        }
+
+        public virtual ICollection<Category> SubCategories
+        {
+            get { return this.subCategories; }
+            set { this.subCategories = value; }
         }
     }
 }

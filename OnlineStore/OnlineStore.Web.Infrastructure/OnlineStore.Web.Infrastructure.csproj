@@ -47,8 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\PopulateFromCacheAttribute.cs" />
+    <Compile Include="Filters\ProductsCategoriesCacheFilter.cs" />
     <Compile Include="Helpers\KendoGridHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OnlineStore.Common\OnlineStore.Common.csproj">
+      <Project>{24384460-173E-4774-804D-97DDD61CAD01}</Project>
+      <Name>OnlineStore.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Services.Common\OnlineStore.Services.Common.csproj">
+      <Project>{680A882D-D6F8-41B5-BA93-A6D7CC82BECA}</Project>
+      <Name>OnlineStore.Services.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
