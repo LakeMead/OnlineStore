@@ -25,8 +25,9 @@
         {
             return this.View();
         }
-
+        
         [HttpGet]
+        [PopulateFromCache(CacheIds.ProductCategories)]
         public ActionResult Add()
         {
             return this.View(new ProductInputModel());

@@ -24,7 +24,8 @@
                 new[]
                 {
                     Assembly.GetExecutingAssembly(),
-                    Assembly.Load(Assemblies.WebModels)
+                    Assembly.Load(Assemblies.WebModels),
+                    Assembly.Load(Assemblies.CommonServices)
                 });
             autoMapperConfig.Execute();
         }
