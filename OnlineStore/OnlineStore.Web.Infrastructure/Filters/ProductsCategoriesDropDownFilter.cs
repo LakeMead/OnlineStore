@@ -5,11 +5,11 @@
     using OnlineStore.Common.Constants;
     using OnlineStore.Services.Common.Contracts;
 
-    public class ProductsCategoriesCacheFilter : IActionFilter
+    public class ProductsCategoriesDropDownFilter : IActionFilter
     {
         private readonly ICacheProvider cacheProvider;
 
-        public ProductsCategoriesCacheFilter(ICacheProvider cacheProvider)
+        public ProductsCategoriesDropDownFilter(ICacheProvider cacheProvider)
         {
             this.cacheProvider = cacheProvider;
         }
@@ -20,7 +20,8 @@
 
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            filterContext.Controller.ViewData[CacheIds.ProductCategories] = this.cacheProvider.GetProductCategories();
+            filterContext.Controller.ViewData[CacheIds.ProductCategoriesDropDown] = this.cacheProvider.GetDropDownProductsCategories();
         }
+
     }
 }

@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
+    using System.Web.Mvc;
 
     using AutoMapper;
 
@@ -11,12 +12,12 @@
     using OnlineStore.Services.Common.Contracts;
     using OnlineStore.Services.Common.Populators.Models;
 
-    public class CachePopulator : ICachePopulator
+    public class CacheProvider : ICacheProvider
     {
         private readonly ICacheService cacheService;
         private readonly IOnlineStoreData data;
 
-        public CachePopulator(IOnlineStoreData data, ICacheService cashService)
+        public CacheProvider(IOnlineStoreData data, ICacheService cashService)
         {
             this.cacheService = cashService;
             this.data = data;
@@ -43,6 +44,26 @@
                 cacheMinutes);
 
             return productCategories;
+        }
+
+        public IEnumerable<ProductCategoriesDropDownModel> GetDropDownProductsCategories(int cacheMinutes = 0)
+        {
+            var categories = this.cacheService.Get<IEnumerable<ProductCategoriesDropDownModel>>(
+                CacheIds.ProductCategoriesDropDown,
+                () =>
+                {
+                    return this.data.Categories
+                        .All()
+                        .Select(c => new ProductCategoriesDropDownModel
+                        {
+                            Id = c.Id,
+                            Name = c.Name
+                        })
+                        .ToList();
+                },
+                0);
+
+            return categories;
         }
     }
 }

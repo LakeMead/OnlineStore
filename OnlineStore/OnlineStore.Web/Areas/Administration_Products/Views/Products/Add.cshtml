@@ -7,13 +7,14 @@
 
 
 @{
+    
     var a = ViewBag;
-    var categories = ViewBag.ProductCategories as IEnumerable<ProductsCategoriesModel>;
+    var categories = ViewBag.ProductCategoriesDropDown as IEnumerable<ProductCategoriesDropDownModel>;
 }
 
 
 
-
+@Html.EditorFor(m => m.CategoryId)
 
 @Html.EditorFor(m => m.Name)
 

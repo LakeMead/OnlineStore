@@ -12,10 +12,12 @@
 
         public string Description { get; set; }
 
+        [UIHint("DecimalPrice")]
         public decimal Price { get; set; }
 
         public int Quantity { get; set; }
 
+        [UIHint("ProductCategoriesDropDownModel")]
         public int CategoryId { get; set; }
 
         public string CategoryName { get; set; }

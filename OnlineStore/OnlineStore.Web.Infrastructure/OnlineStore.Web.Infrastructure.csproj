@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Attributes\PopulateFromCacheAttribute.cs" />
     <Compile Include="Filters\ProductsCategoriesCacheFilter.cs" />
+    <Compile Include="Filters\ProductsCategoriesDropDownFilter.cs" />
     <Compile Include="Helpers\KendoGridHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

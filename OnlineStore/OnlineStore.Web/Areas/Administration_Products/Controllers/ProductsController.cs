@@ -27,14 +27,14 @@
         }
         
         [HttpGet]
-        [PopulateFromCache(CacheIds.ProductCategories)]
+        [PopulateFromCache(CacheIds.ProductCategoriesDropDown)]
         public ActionResult Add()
         {
             return this.View(new ProductInputModel());
         }
 
         [HttpPost]
-        [PopulateFromCache(CacheIds.ProductCategories)]
+        [PopulateFromCache(CacheIds.ProductCategoriesDropDown)]
         public ActionResult Add(ProductInputModel inputModel)
         {
             return this.View(inputModel);

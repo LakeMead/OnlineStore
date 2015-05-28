@@ -19,6 +19,11 @@
                .When((controllerContext, actionDescriptor) => actionDescriptor
                    .GetCustomAttributes(typeof(PopulateFromCacheAttribute), true)
                    .Any(attr => ((PopulateFromCacheAttribute)attr).ViewBagPropIds.Contains(CacheIds.ProductCategories)));
+
+            kernel.BindFilter<ProductsCategoriesDropDownFilter>(FilterScope.Action, 0)
+              .When((controllerContext, actionDescriptor) => actionDescriptor
+                  .GetCustomAttributes(typeof(PopulateFromCacheAttribute), true)
+                  .Any(attr => ((PopulateFromCacheAttribute)attr).ViewBagPropIds.Contains(CacheIds.ProductCategoriesDropDown)));
         }
     }
 }
