@@ -1,0 +1,12 @@
+﻿@using System.Collections
+@using OnlineStore.Common.Constants
+
+@model int
+
+@(Html.Kendo()
+    .DropDownListFor(m => m)
+    .BindTo((IEnumerable)ViewData[CacheIds.ProductCategoriesDropDown])
+    .DataValueField("Id")
+    .DataTextField("Name")
+    .HtmlAttributes(new { style = "width: 50%;", data_value_primitive = "true" })
+)
