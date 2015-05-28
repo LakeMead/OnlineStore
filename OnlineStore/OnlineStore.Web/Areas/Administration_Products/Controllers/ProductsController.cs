@@ -2,30 +2,37 @@
 {
     using System.Collections;
     using System.Web.Mvc;
+    using System.Web.Mvc.Expressions;
 
+    using AutoMapper;
     using AutoMapper.QueryableExtensions;
 
     using Kendo.Mvc.UI;
 
     using OnlineStore.Common.Constants;
     using OnlineStore.Data;
+    using OnlineStore.Data.Models;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
+    using OnlineStore.Services.ValidationService.Contracts;
     using OnlineStore.Web.Controllers;
     using OnlineStore.Web.Infrastructure.Attributes;
     using OnlineStore.Web.Models.ViewModels.AdministrationProducts;
 
     public class ProductsController : KendoGridAdministrationController
     {
-        public ProductsController(IOnlineStoreData data, IShoppingCartProvider shoppingCartProvider)
+        private readonly IImageValidationService imageValidator;
+
+        public ProductsController(IOnlineStoreData data, IShoppingCartProvider shoppingCartProvider, IImageValidationService imageValidator)
             : base(data, shoppingCartProvider)
         {
+            this.imageValidator = imageValidator;
         }
-     
+
         public ActionResult Index()
         {
             return this.View();
         }
-        
+
         [HttpGet]
         [PopulateFromCache(CacheIds.ProductCategoriesDropDown)]
         public ActionResult Add()
@@ -37,6 +44,19 @@
         [PopulateFromCache(CacheIds.ProductCategoriesDropDown)]
         public ActionResult Add(ProductInputModel inputModel)
         {
+            this.imageValidator.ValidateProductPictures(inputModel.Images, this);
+
+            if (this.ModelState.IsValid)
+            {
+                var entity = Mapper.Map<Product>(inputModel);
+
+                this.Data.Products.Add(entity);
+                this.Data.SaveChanges();
+
+                return this.RedirectToAction(c => c.Add());
+            }
+
+            inputModel.Images = null;
             return this.View(inputModel);
         }
 
