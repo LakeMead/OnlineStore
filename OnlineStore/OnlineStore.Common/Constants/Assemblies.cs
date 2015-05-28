@@ -9,5 +9,7 @@
         public const string ShoppingCartServices = "OnlineStore.Services.ShoppingCartProvider";
 
         public const string ImageResizer = "OnlineStore.Services.ImageManagement";
+
+        public const string ValidationService = "OnlineStore.Services.ValidationService";
     }
 }

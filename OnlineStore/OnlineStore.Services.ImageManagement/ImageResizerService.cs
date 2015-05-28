@@ -1,7 +1,6 @@
 ﻿namespace OnlineStore.Services.ImageManagement
 {
     using System.IO;
-    using System.Web;
 
     using ImageResizer;
 

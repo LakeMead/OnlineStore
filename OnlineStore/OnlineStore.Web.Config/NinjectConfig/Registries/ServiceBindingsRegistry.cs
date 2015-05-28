@@ -11,7 +11,11 @@
     {
         public void Register(IKernel kernel)
         {
-            kernel.Bind(s => s.From(Assemblies.CommonServices, Assemblies.ShoppingCartServices, Assemblies.ImageResizer)
+            kernel.Bind(s => s.From(
+                Assemblies.CommonServices, 
+                Assemblies.ShoppingCartServices, 
+                Assemblies.ImageResizer, 
+                Assemblies.ValidationService)
                 .SelectAllClasses()
                 .BindAllInterfaces()
                 .Configure(c => c.InRequestScope()));

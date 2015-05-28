@@ -683,6 +683,10 @@
   <ItemGroup>
     <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Scripts\Views\Account\" />
+    <Folder Include="Scripts\Views\Home\" />
+    <Folder Include="Scripts\Views\Manage\" />
+    <Folder Include="Scripts\Views\Shared\" />
     <Folder Include="Views\AdminBase\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
@@ -721,6 +725,10 @@
     <ProjectReference Include="..\OnlineStore.Services.ShoppingCartProvider\OnlineStore.Services.ShoppingCartProvider.csproj">
       <Project>{823684FC-73BF-4DFC-8D1F-015C28AFF754}</Project>
       <Name>OnlineStore.Services.ShoppingCartProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlineStore.Services.ValidationService\OnlineStore.Services.ValidationService.csproj">
+      <Project>{24FE0B05-79DF-4D63-BBC5-15533C792FFC}</Project>
+      <Name>OnlineStore.Services.ValidationService</Name>
     </ProjectReference>
     <ProjectReference Include="..\OnlineStore.Web.Common\OnlineStore.Web.Common.csproj">
       <Project>{1d35f787-8cec-4fc1-aea9-3e68c09eae9f}</Project>
