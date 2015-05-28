@@ -1,27 +1,71 @@
-﻿@using OnlineStore.Services.Common.Populators.Models
+﻿@using System.Web.Optimization
+@using OnlineStore.Services.Common.Populators.Models
 @model OnlineStore.Web.Models.ViewModels.AdministrationProducts.ProductInputModel
 
 @{
     ViewBag.Title = "Add";
 }
 
+@Scripts.Render("~/Scripts/ckeditor/ckeditor.js")
+@Styles.Render("~/Scripts/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css")
 
+
+<style>
+    form {
+        width: 700px;
+        margin: 0 auto;
+    }
+</style>
 @{
-    
+
     var a = ViewBag;
     var categories = ViewBag.ProductCategoriesDropDown as IEnumerable<ProductCategoriesDropDownModel>;
 }
 
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Legend</legend>
+        <div class="form-group text-center">
+            <div class="col-lg-3">@Html.LabelFor(m => m.Name)</div>
+            <div class="col-lg-9">@Html.EditorFor(m => m.Name)</div>
+
+            <div>@Html.ValidationMessageFor(m => m.Name)</div>
+        </div>
+        <div class="form-group text-center">
+            <div class="col-lg-3">@Html.LabelFor(m => m.Description)</div>
+            <div class="col-lg-9">@Html.EditorFor(m => m.Description)</div>
+            <div>@Html.ValidationMessageFor(m => m.Description)</div>
+        </div>
+        <div class="form-group text-center">
+            <div class="col-lg-3">@Html.LabelFor(m => m.CategoryId)</div>
+            <div class="col-lg-9">@Html.EditorFor(m => m.CategoryId)</div>
+            <div>@Html.ValidationMessageFor(m => m.CategoryId)</div>
+        </div>
+        <div class="form-group text-center">
+            <div class="col-lg-3">@Html.LabelFor(m => m.Price)</div>
+            <div class="col-lg-9">@Html.EditorFor(m => m.Price)</div>
+            <div>@Html.ValidationMessageFor(m => m.Price)</div>
+        </div>
+        <div class="form-group text-center">
+            <div class="col-lg-3">@Html.LabelFor(m => m.Quantity)</div>
+            <div class="col-lg-9">@Html.EditorFor(m => m.Quantity)</div>
+            <div>@Html.ValidationMessageFor(m => m.Quantity)</div>
+        </div>
+        <div class="form-group text-center">
+            <div class="col-lg-3">@Html.LabelFor(m => m.Image)</div>
+            <div class="col-lg-9">@Html.EditorFor(m => m.Image)</div>
+            <div>@Html.ValidationMessageFor(m => m.Image)</div>
+        </div>
+        <div class="form-group text-center">
+            <div class="col-lg-12">
+                <input type="reset" value="Cancel" class="btn btn-default" />
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+    </fieldset>
+</form>
 
 
-@Html.EditorFor(m => m.CategoryId)
-
-@Html.EditorFor(m => m.Name)
-
-@Html.EditorFor(m => m.Description)
-
-@Html.EditorFor(m => m.Price)
-
-@Html.EditorFor(m => m.Quantity)
-
-@Html.EditorFor(m => m.Image)
+<script>
+    CKEDITOR.replace('Description');
+</script>

@@ -1,3 +1,17 @@
-﻿@model object 
+﻿@model string
 
-@Html.Kendo().TextBoxFor(model => model)
+@{
+    var placeholder = string.Empty;
+    if (ViewData.ModelMetadata.AdditionalValues.ContainsKey("placeholder"))
+    {
+        placeholder = ViewData.ModelMetadata.AdditionalValues["placeholder"] as string;
+    }
+
+    var htmlAttributes = new
+    {
+        placeholder = placeholder,
+        @class = "form-control",
+    };
+}
+
+@Html.TextBoxFor(m => m, htmlAttributes)

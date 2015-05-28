@@ -10,17 +10,18 @@
     {
         public string Name { get; set; }
 
+        [UIHint("TextArea")]
         public string Description { get; set; }
 
         [UIHint("DecimalPrice")]
         public decimal Price { get; set; }
 
+        [UIHint("Integer")]
         public int Quantity { get; set; }
 
         [UIHint("ProductCategoriesDropDownModel")]
+        [Display(Name = "Category")]
         public int CategoryId { get; set; }
-
-        public string CategoryName { get; set; }
 
         [UIHint("Upload")]
         public HttpPostedFileBase Image { get; set; }

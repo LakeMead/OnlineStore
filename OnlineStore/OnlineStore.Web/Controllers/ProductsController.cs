@@ -5,8 +5,6 @@
 
     using AutoMapper.QueryableExtensions;
 
-    using Microsoft.Ajax.Utilities;
-
     using OnlineStore.Data;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
     using OnlineStore.Web.Models.ViewModels.Base.Products;
