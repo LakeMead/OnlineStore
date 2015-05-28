@@ -1,8 +1,10 @@
 ﻿namespace OnlineStore.Web.Models.ViewModels.AdministrationProducts
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Web;
+    using System.Web.Mvc;
 
     using OnlineStore.Common.Constants;
     using OnlineStore.Common.Mapping;
@@ -17,6 +19,7 @@
             ErrorMessage = ErrorMessages.ProductNameLengthErrorMessage)]
         public string Name { get; set; }
 
+        [AllowHtml]
         [UIHint("TextArea")]
         [StringLength(
             ValidationConstants.ProductDescriptionMaxLength,
@@ -43,6 +46,6 @@
         public int CategoryId { get; set; }
 
         [UIHint("Upload")]
-        public HttpPostedFileBase Image { get; set; }
+        public IEnumerable<HttpPostedFileBase> Images { get; set; }
     }
 }
