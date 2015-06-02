@@ -48,13 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IImageResizerService.cs" />
+    <Compile Include="Contracts\IImageManipulatingService.cs" />
     <Compile Include="Contracts\IImageSaverService.cs" />
-    <Compile Include="ImageResizerService.cs" />
+    <Compile Include="ImageManipulatingServiceService.cs" />
     <Compile Include="ImageSaverService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlineStore.Common\OnlineStore.Common.csproj">
+      <Project>{24384460-173E-4774-804D-97DDD61CAD01}</Project>
+      <Name>OnlineStore.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlineStore.Services.Common\OnlineStore.Services.Common.csproj">
       <Project>{680A882D-D6F8-41B5-BA93-A6D7CC82BECA}</Project>
       <Name>OnlineStore.Services.Common</Name>
