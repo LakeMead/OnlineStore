@@ -1,27 +1,35 @@
 ﻿@model IEnumerable<OnlineStore.Web.Models.ViewModels.Base.Products.ProductDetailsViewModel>
 
+<div class="col-md-3">
+    <section id="socialLoginForm">
+        @Html.Partial("_Categoriespartial")
+    </section>
+</div>
+
 @{
     ViewBag.Title = "List of products";
 }
+<div class="col-lg-9">
+    <h2>List of products</h2>
+    <hr/>
+    <div class="bs-component">
 
-<h2>List of products</h2>
-<div class="bs-component">
-
-    @foreach (var product in Model)
-    {
-        <div class="col-lg-3">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    @product.Name
-                </div>
-                <div class="panel-body">
-                    <img src="/@product.ImagePath" alt="@product.Name" width="128" height="128" class="center-block">
-                </div>
-                <div class="panel-footer">
-                    <strong>$ @product.Price</strong>
-                    <a href="/products/details/@product.Id" class="pull-right">View</a>
+        @foreach (var product in Model)
+        {
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        @product.Name
+                    </div>
+                    <div class="panel-body">
+                        <img src="/@product.ImagePath" alt="@product.Name" width="128" height="128" class="center-block">
+                    </div>
+                    <div class="panel-footer">
+                        <strong>$ @product.Price</strong>
+                        <a href="/products/details/@product.Id" class="pull-right">View</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>
