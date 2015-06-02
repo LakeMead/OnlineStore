@@ -10,6 +10,6 @@
     <div class="panel-body text-justify">Ordered: @Html.DisplayFor(m => m.TimesOrdered) times</div>
     <footer class="panel-footer">
         <strong>$@Html.DisplayFor(m => m.Price)</strong>
-        <a href="#" class="pull-right">View</a>
+        <a href="/products/details/@Html.DisplayFor(m => m.Id)" class=" pull-right">View</a>
     </footer>
 </div>

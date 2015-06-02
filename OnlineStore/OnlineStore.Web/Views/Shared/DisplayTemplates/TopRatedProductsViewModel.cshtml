@@ -4,12 +4,12 @@
     <header class="panel-heading">
         @Html.DisplayFor(m => m.Name)
     </header>
-    <div class="panel-body">
+    <div class="panel-body text-center">
         <img src="../../@Html.DisplayFor(m => m.ImagePath)" alt="@Html.DisplayFor(m => m.Name)" width="240" height="240">
     </div>
     <div class="panel-body text-justify">Rating: @Html.DisplayFor(m => m.Rating)</div>
     <footer class="panel-footer">
         <strong>$@Html.DisplayFor(m => m.Price)</strong>
-        <a href="#" class="pull-right">View</a>
+        <a href="/products/details/@Html.DisplayFor(m => m.Id)" class=" pull-right">View</a>
     </footer>
 </div>
