@@ -7,6 +7,7 @@
 
     using OnlineStore.Common.Mapping;
     using OnlineStore.Data.Models;
+    using OnlineStore.Services.Common.Populators.Models;
 
     public class ProductDetailsViewModel : IMapFrom<Product>, IHaveCustomMappings
     {
@@ -31,7 +32,9 @@
         public IEnumerable<ProductReviewViewModel> Reviews { get; set; }
         
         public IEnumerable<ProductCommentViewModel> Comments { get; set; }
-        
+
+        public IEnumerable<ProductsCategoriesModel> ProductsCategories { get; set; }
+
         public void CreateMappings(IConfiguration configuration)
         {
             configuration.CreateMap<Product, ProductDetailsViewModel>()

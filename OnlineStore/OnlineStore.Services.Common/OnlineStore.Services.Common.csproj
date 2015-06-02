@@ -58,7 +58,7 @@
     <Compile Include="Contracts\ICacheService.cs" />
     <Compile Include="Contracts\ICachePopulator.cs" />
     <Compile Include="Contracts\IService.cs" />
-    <Compile Include="Populators\CachePopulator.cs" />
+    <Compile Include="Populators\CacheProvider.cs" />
     <Compile Include="Populators\Models\ProductCategoriesDropDownModel.cs" />
     <Compile Include="Populators\Models\ProductCategoriesModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

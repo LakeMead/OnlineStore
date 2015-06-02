@@ -5,8 +5,10 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using OnlineStore.Common.Constants;
     using OnlineStore.Data;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
+    using OnlineStore.Web.Infrastructure.Attributes;
     using OnlineStore.Web.Models.ViewModels.Base.Products;
 
     public class ProductsController : BaseController
@@ -16,6 +18,7 @@
         {
         }
 
+        [PopulateFromCache(CacheIds.ProductCategories)]
         public ActionResult Index()
         {
             var products = this.Data.Products.All().Project().To<ProductDetailsViewModel>().ToList();
