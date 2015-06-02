@@ -14,13 +14,13 @@
     public class ShoppingCartController : BaseController
     {
         private readonly IImageSaverService saverService;
-        private readonly IImageResizerService resizerService;
+        private readonly IImageManipulatingService manipulatingService;
 
-        public ShoppingCartController(IOnlineStoreData data, IShoppingCartProvider shoppingCartProvider, IImageSaverService imageSaverService, IImageResizerService resizerService)
+        public ShoppingCartController(IOnlineStoreData data, IShoppingCartProvider shoppingCartProvider, IImageSaverService imageSaverService, IImageManipulatingService manipulatingService)
             : base(data, shoppingCartProvider)
         {
             this.saverService = imageSaverService;
-            this.resizerService = resizerService;
+            this.manipulatingService = manipulatingService;
         }
 
         public ActionResult Index()
@@ -61,10 +61,19 @@
         public ActionResult AddImage(string something, HttpPostedFileBase image)
         {
             var stream = image.InputStream;
+            var imageWidth = 0;
+            var imageHeight = 0;
+
+            using (var picture = System.Drawing.Image.FromStream(stream, true, true))
+            {
+                imageWidth = picture.Width;
+                imageHeight = picture.Height;
+            }
+
             var name = image.FileName;
 
-            // Test file upload
-            this.resizerService.Resize(stream, 200, 200, "png", "max"); 
+            //// Test file upload
+            ////this.manipulatingService.ResizeAndSave(stream, 200, 200, "png", "max", "~/uploads/products/file"); 
             return this.View();
         }
     }

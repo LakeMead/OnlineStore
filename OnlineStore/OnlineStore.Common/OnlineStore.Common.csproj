@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Constants\Assemblies.cs" />
     <Compile Include="Constants\CacheIds.cs" />
+    <Compile Include="Constants\ConfigurationsConstants.cs" />
     <Compile Include="Constants\ErrorMessages.cs" />
     <Compile Include="Constants\ValidationConstants.cs" />
     <Compile Include="Enumerations\OrderStatus.cs" />
