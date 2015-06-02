@@ -42,14 +42,14 @@
 
         public ActionResult About()
         {
-            this.ViewBag.Message = "Your application description page.";
+            this.ViewBag.Message = "This is an Online Store.";
 
             return this.View();
         }
 
         public ActionResult Contact()
         {
-            this.ViewBag.Message = "Your contact page.";
+            this.ViewBag.Message = "Contact us:";
 
             return this.View();
         }
