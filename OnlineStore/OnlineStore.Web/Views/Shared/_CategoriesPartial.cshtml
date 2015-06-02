@@ -1,0 +1,27 @@
+﻿@model IEnumerable<OnlineStore.Services.Common.Populators.Models.ProductsCategoriesModel>
+
+<h2>Categories</h2>
+<hr />
+<div>
+    <ul class="list-group">
+        @foreach (var category in Model)
+        {
+            <li class="list-group-item">
+                <span class="badge">@category.ProductsCount</span>
+                <a href="#"><b>@category.Name</b></a>
+                @if (category.SubCategories.Any())
+                {
+                    <ul>
+                        @foreach (var subcategory in category.SubCategories)
+                        {
+                            <li class="list-unstyled">
+                                <span class="badge">@subcategory.ProductsCount</span>
+                                <a href="#">@subcategory.Name</a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+</div>

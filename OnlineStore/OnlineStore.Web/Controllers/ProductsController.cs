@@ -21,9 +21,10 @@
         [PopulateFromCache(CacheIds.ProductCategories)]
         public ActionResult Index()
         {
-            var products = this.Data.Products.All().Project().To<ProductDetailsViewModel>().ToList();
+            var products = this.Data.Products.All().Project().To<ProductIndexViewModel>().ToList();
+            var viewModel = new ProductsIndexViewModel { Products = products };
 
-            return this.View(products);
+            return this.View(viewModel);
         }
 
         public ActionResult Details(int id)

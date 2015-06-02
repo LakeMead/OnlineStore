@@ -109,7 +109,9 @@
     <Compile Include="ViewModels\Base\Home\TopRatedProductsViewModel.cs" />
     <Compile Include="ViewModels\Base\Products\ProductCommentViewModel.cs" />
     <Compile Include="ViewModels\Base\Products\ProductDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Base\Products\ProductIndexViewModel.cs" />
     <Compile Include="ViewModels\Base\Products\ProductReviewViewModel.cs" />
+    <Compile Include="ViewModels\Base\Products\ProductsIndexViewModel.cs" />
     <Compile Include="ViewModels\Base\ShoppingCart\ShoppingCartItemViewModel.cs" />
     <Compile Include="ViewModels\Base\ShoppingCart\ShoppingCartViewModel.cs" />
   </ItemGroup>
