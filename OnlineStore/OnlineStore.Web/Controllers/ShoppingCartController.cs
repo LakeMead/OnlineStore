@@ -13,20 +13,18 @@
 
     public class ShoppingCartController : BaseController
     {
-        private readonly IImageSaverService saverService;
         private readonly IImageManipulatingService manipulatingService;
 
-        public ShoppingCartController(IOnlineStoreData data, IShoppingCartProvider shoppingCartProvider, IImageSaverService imageSaverService, IImageManipulatingService manipulatingService)
+        public ShoppingCartController(IOnlineStoreData data, IShoppingCartProvider shoppingCartProvider, IImageManipulatingService manipulatingService)
             : base(data, shoppingCartProvider)
         {
-            this.saverService = imageSaverService;
             this.manipulatingService = manipulatingService;
         }
 
         public ActionResult Index()
         {
             var cart = this.ShoppingCartProvider.GetCart(this);
-            var product = this.Data.Products.All().FirstOrDefault();
+            var product = this.Data.Products.All().FirstOrDefault(x => x.Id == 7);
             this.ShoppingCartProvider.AddToCart(product, 2);
 
             var cart2 = this.ShoppingCartProvider.GetCartItems();
@@ -34,6 +32,21 @@
             var totalPrice = this.ShoppingCartProvider.GetTotal();
 
             return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddToCart(int id, int quantity)
+        {
+            this.ShoppingCartProvider.GetCart(this);
+            var product = this.Data.Products.All().FirstOrDefault(x => x.Id == id);
+
+            if (product != null)
+            {
+                this.ShoppingCartProvider.AddToCart(product, quantity);
+            }
+
+            return this.Json("You successfully added product to shopping cart", JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -47,6 +60,13 @@
                 .Project()
                 .To<ShoppingCartItemViewModel>()
                 .ToList();
+
+            foreach (var shoppingCartItem in shoppingCartItems)
+            {
+                var productDirectoryPath = this.manipulatingService.GetProductImageDirectory(shoppingCartItem.ProductId);
+                var productName = this.manipulatingService.GetFirstThumbnailPath(productDirectoryPath);
+                shoppingCartItem.ProductImagePath = productDirectoryPath + productName;
+            }
 
             var viewModel = new ShoppingCartViewModel
             {
@@ -75,6 +95,15 @@
             //// Test file upload
             ////this.manipulatingService.ResizeAndSave(stream, 200, 200, "png", "max", "~/uploads/products/file"); 
             return this.View();
+        }
+
+        [HttpGet]
+        public ActionResult DeleteAllItems()
+        {
+            this.ShoppingCartProvider.GetCart(this);
+            
+            this.ShoppingCartProvider.EmptyCart();
+            return new EmptyResult();
         }
     }
 }

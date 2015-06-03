@@ -1,7 +1,8 @@
 ﻿namespace OnlineStore.Services.ImageManagement
 {
-    using System;
     using System.IO;
+    using System.Linq;
+    using System.Web.Hosting;
 
     using ImageResizer;
 
@@ -50,6 +51,16 @@
         public void SaveFullSizeImage(byte[] image, string directory)
         {
             this.ResizeAndSave(image, null, null, "max", directory);
+        }
+
+        public string GetFirstThumbnailPath(string productDirectoryPath)
+        {
+            var path = HostingEnvironment.MapPath(productDirectoryPath);
+            var productImagePath = Directory.EnumerateFiles(path).FirstOrDefault(file => file.Contains("thumbnail"));
+
+            var productImageName = productImagePath != null ? productImagePath.Replace(path, string.Empty) : "default";
+
+            return productImageName;
         }
     }
 }

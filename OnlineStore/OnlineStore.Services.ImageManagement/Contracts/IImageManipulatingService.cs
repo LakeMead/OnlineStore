@@ -13,5 +13,7 @@
         void SavePreviewImage(byte[] image, string directory);
 
         void SaveFullSizeImage(byte[] image, string directory);
+
+        string GetFirstThumbnailPath(string productDirectoryPath);
     }
 }
