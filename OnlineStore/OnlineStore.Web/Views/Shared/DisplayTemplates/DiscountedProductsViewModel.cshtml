@@ -1,15 +1,33 @@
 ﻿@model OnlineStore.Web.Models.ViewModels.Base.Home.DiscountedProductsViewModel
 
-<div class="panel panel-primary">
-    <header class="panel-heading">
-        @Html.DisplayFor(m => m.Name)
-    </header>
-    <div class="panel-body text-center">
-        <img src="../../@Html.DisplayFor(m => m.ImagePath)" alt="@Html.DisplayFor(m => m.Name)" width="240" height="240">
-    </div>
-    <div class="panel-body text-justify">Discount: @Html.DisplayFor(m => m.Discount.Percent) %</div>
-    <footer class="panel-footer">
-        <strong>$@Html.DisplayFor(m => m.NewPrice)</strong>
-        <a href="/products/details/@Html.DisplayFor(m => m.Id)" class=" pull-right">View</a>
-    </footer>
+@*<div class="panel panel-primary">
+        <header class="panel-heading">
+            @Html.DisplayFor(m => m.Name)
+        </header>
+        <div class="panel-body text-center">
+            <img src="../../@Html.DisplayFor(m => m.ImagePath)" alt="@Html.DisplayFor(m => m.Name)" width="75" height="75">
+        </div>
+        <div class="panel-body text-justify">Discount: @Html.DisplayFor(m => m.Discount.Percent) %</div>
+        <footer class="panel-footer">
+            <strong>$@Html.DisplayFor(m => m.NewPrice)</strong>
+            <a href="/products/details/@Html.DisplayFor(m => m.Id)" class=" pull-right">View</a>
+        </footer>
+    </div>*@
+
+<div class="col-lg-12">
+    <a href="/products/details/@Html.DisplayFor(m => m.Id)" class="pull-right btn btn-info btn-block">
+        <div class="col-lg-4">
+            <img class="img-circle" src="../../@Html.DisplayFor(m => m.ImagePath)" width="75" height="75">
+        </div>
+        <div class="col-lg-8">
+            <p class="text-center text-success">
+                @Html.DisplayFor(m => m.Name)
+            </p>
+            <p class="text-center">Discount: @Html.DisplayFor(m => m.Discount.Percent)%</p>
+            <p class="text-center">$@Html.DisplayFor(m => m.NewPrice)</p>
+        </div>
+        <div class="clearfix"></div>
+    </a>
 </div>
+<div class="clearfix"></div>
+<h3></h3>
