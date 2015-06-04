@@ -20,11 +20,16 @@
             <img class="img-circle" src="../../@Html.DisplayFor(m => m.ImagePath)" width="75" height="75">
         </div>
         <div class="col-lg-8">
-            <p class="text-center text-success">
-                @Html.DisplayFor(m => m.Name)
+            <p class="text-center">
+                <strong>@Html.DisplayFor(m => m.Name)</strong>
             </p>
-            <p class="text-center">Discount: @Html.DisplayFor(m => m.Discount.Percent)%</p>
-            <p class="text-center">$@Html.DisplayFor(m => m.NewPrice)</p>
+            <p class="text-center">- @Html.DisplayFor(m => m.Discount.Percent)%</p>
+            <p class="text-center product-price">
+                $@Html.DisplayFor(m => m.NewPrice) /
+                <span class="text-center text-danger" style="text-decoration: line-through;">
+                    $@Html.DisplayFor(m => m.Price)
+                </span>
+            </p>
         </div>
         <div class="clearfix"></div>
     </a>

@@ -20,11 +20,11 @@
             <img class="img-thumbnail" src="../../@Html.DisplayFor(m => m.ImagePath)" width="75" height="75">
         </div>
         <div class="col-lg-8">
-            <p class="text-center text-success">
-                @Html.DisplayFor(m => m.Name)
+            <p class="text-center">
+                <strong>@Html.DisplayFor(m => m.Name)</strong>
             </p>
             <p class="text-center">Rating: @Html.DisplayFor(m => m.Rating)</p>
-            <p class="text-center">$@Html.DisplayFor(m => m.Price)</p>
+            <p class="text-center product-price">$@Html.DisplayFor(m => m.Price)</p>
         </div>
         <div class="clearfix"></div>
     </a>
