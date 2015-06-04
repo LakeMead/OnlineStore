@@ -619,6 +619,15 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="uploads\products\1\1\full-size-Cars %2854%29.jpg" />
+    <Content Include="uploads\products\1\1\preview-Cars %2854%29.jpg" />
+    <Content Include="uploads\products\1\1\thumbnail-Cars %2854%29.jpg" />
+    <Content Include="uploads\products\6\6\full-size-Anime %283%29.jpg" />
+    <Content Include="uploads\products\6\6\full-size-Anime %284%29.jpg" />
+    <Content Include="uploads\products\6\6\preview-Anime %283%29.jpg" />
+    <Content Include="uploads\products\6\6\preview-Anime %284%29.jpg" />
+    <Content Include="uploads\products\6\6\thumbnail-Anime %283%29.jpg" />
+    <Content Include="uploads\products\6\6\thumbnail-Anime %284%29.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

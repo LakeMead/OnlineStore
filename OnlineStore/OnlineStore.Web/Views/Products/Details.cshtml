@@ -112,7 +112,7 @@
     <div class="row">
         <div class="col-lg-12">
             <h2 id="nav-tabs">Details</h2>
-            <div class="bs-component">
+            <div>
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#details" data-toggle="tab" aria-expanded="true">Details</a></li>
                     <li class=""><a href="#reviews" data-toggle="tab" aria-expanded="false">Reviews</a></li>
@@ -122,7 +122,7 @@
                     <div class="tab-pane fade active in" id="details">
                         <h4>Product description</h4>
                         <p>
-                            @Model.Description
+                            @Html.Raw(Model.Description)
                         </p>
 
                     </div>
@@ -132,7 +132,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <a href="#">@review.Author </a>
-                                    <p>Review: @review.Rating / Stars count: @review.Rating.GetHashCode()</p>
+                                    <p>Review: @review.Rating</p>
                                     @*<img src="images/4stars.gif" height="22"/>*@
                                 </div>
                                 <div class="panel-body">
