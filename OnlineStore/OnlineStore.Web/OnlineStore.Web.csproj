@@ -187,6 +187,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration_Orders\Administration_OrdersAreaRegistration.cs" />
+    <Compile Include="Areas\Administration_Orders\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Administration_Products\Administration_ProductsAreaRegistration.cs" />
     <Compile Include="Areas\Administration_Products\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -347,6 +349,10 @@
     <Content Include="Scripts\ckeditor\README.md" />
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
     <Content Include="Areas\Administration_Products\Views\Products\AddImagesToProduct.cshtml" />
+    <Content Include="Areas\Administration_Orders\Views\web.config" />
+    <Content Include="Areas\Administration_Orders\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration_Orders\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Administration_Orders\Views\Orders\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap\bootswatch.js" />
@@ -684,18 +690,19 @@
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
     <Content Include="Views\Shared\_CategoriesPartial.cshtml" />
     <Content Include="Views\Users\AddCustomerInfo.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
     <!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Administration_Orders\Models\" />
     <Folder Include="Scripts\Views\Account\" />
     <Folder Include="Scripts\Views\Home\" />
     <Folder Include="Scripts\Views\Manage\" />
     <Folder Include="Scripts\Views\Shared\" />
     <Folder Include="Views\AdminBase\" />
     <Folder Include="Views\Default\" />
-    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />

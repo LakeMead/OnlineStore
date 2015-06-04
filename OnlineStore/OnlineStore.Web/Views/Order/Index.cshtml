@@ -1,0 +1,28 @@
+﻿@model OnlineStore.Web.Models.ViewModels.Base.Order.OrderInputModel
+
+@{
+    ViewBag.Title = "Order";
+}
+
+
+<h2>Order</h2>
+
+<div class="panel panel-info text-center">
+    <div class="row">
+        @Html.HiddenFor(m => m.CustomerInfoId, new { @class = "text-center" })  
+    </div>
+    <div class="panel-heading">
+        @Html.DisplayFor(m => m.FirstName, new { @class = "text-center" })         @Html.DisplayFor(m => m.LastName, new { @class = "text-center" })
+    </div>
+    <div class="panel-body">
+        @Html.DisplayFor(m => m.AddressName, new { @class = "text-center" })
+    </div>
+    <div class="panel-body">
+        @Html.DisplayFor(m => m.Street, new { @class = "text-center" })
+    </div>
+    <div class="panel-body">
+        @Html.DisplayFor(m => m.PostalCode, new { @class = "text-center" })
+    </div>
+
+</div>
+@Html.Partial("_ShoppingCartItems", Model.ShoppingCart)

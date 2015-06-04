@@ -7,9 +7,12 @@
 
     using AutoMapper.QueryableExtensions;
 
+    using OnlineStore.Common.Enumerations;
     using OnlineStore.Data;
+    using OnlineStore.Data.Models;
     using OnlineStore.Services.ImageManagement.Contracts;
     using OnlineStore.Services.ShoppingCartProvider.Contracts;
+    using OnlineStore.Web.Models.ViewModels.Base.Order;
     using OnlineStore.Web.Models.ViewModels.Base.ShoppingCart;
 
     public class ShoppingCartController : BaseController
@@ -98,6 +101,7 @@
             return this.View();
         }
 
+        [HttpPost]
         public ActionResult Buy()
         {
             if (!this.User.Identity.IsAuthenticated)
@@ -105,14 +109,28 @@
                 return this.RedirectToAction<ShoppingCartController, AccountController>(c => c.Register());
             }
 
-            return this.RedirectToAction<ShoppingCartController, OrderController>(c => c.Index());
+            this.ShoppingCartProvider.GetCart(this);
+
+            var order = new Order
+            {
+                CustomerInfo = this.Data.CustomerInfos.All().FirstOrDefault(x => x.UserId == this.UserProfile.Id),
+                OrderStatus = OrderStatus.NotProcessed,
+                Total = this.ShoppingCartProvider.GetTotal()
+            };
+
+            this.Data.Orders.Add(order);
+            this.Data.SaveChanges();
+
+            var orderId = this.ShoppingCartProvider.CreateOrder(order);
+
+            return this.RedirectToAction<ShoppingCartController, HomeController>(c => c.Index());
         }
 
         [HttpGet]
         public ActionResult DeleteAllItems()
         {
             this.ShoppingCartProvider.GetCart(this);
-            
+
             this.ShoppingCartProvider.EmptyCart();
             return new EmptyResult();
         }

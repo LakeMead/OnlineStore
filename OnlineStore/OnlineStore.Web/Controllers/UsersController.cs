@@ -51,7 +51,8 @@
                 var customerInfo = new CustomerInfo
                 {
                     FirstName = inputModel.FistName,
-                    LastName = inputModel.LastName
+                    LastName = inputModel.LastName,
+                    UserId = this.UserProfile.Id
                 };
 
                 this.Data.CustomerInfos.Add(customerInfo);

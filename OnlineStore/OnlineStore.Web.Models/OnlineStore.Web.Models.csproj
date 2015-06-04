@@ -85,6 +85,8 @@
     <Compile Include="ViewModels\AdministrationProducts\Products\ProductGridViewModel.cs" />
     <Compile Include="ViewModels\AdministrationProducts\Products\ProductInputModel.cs" />
     <Compile Include="ViewModels\AdministrationProducts\Products\UpdateImagesInputModel.cs" />
+    <Compile Include="ViewModels\Administration_Orders\CustomerInfoViewModel.cs" />
+    <Compile Include="ViewModels\Administration_Orders\OrderDetailsGridViewModel.cs" />
     <Compile Include="ViewModels\Base\Account\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\Base\Account\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Base\Account\ChangePasswordViewModel.cs" />
