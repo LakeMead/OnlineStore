@@ -18,18 +18,19 @@
         @foreach (var product in Model.Products)
         {
             <div class="col-lg-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        @product.Name
+                <a href="/products/details/@product.Id">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            @product.Name
+                        </div>
+                        <div class="panel-body">
+                            <img src="/@product.ImagePath" alt="@product.Name" width="128" height="128" class="center-block img-rounded">
+                        </div>
+                        <div class="panel-footer text-center">
+                            <strong>$ @product.Price</strong>
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <img src="/@product.ImagePath" alt="@product.Name" width="128" height="128" class="center-block">
-                    </div>
-                    <div class="panel-footer">
-                        <strong>$ @product.Price</strong>
-                        <a href="/products/details/@product.Id" class="pull-right">View</a>
-                    </div>
-                </div>
+                </a>
             </div>
         }
     </div>
