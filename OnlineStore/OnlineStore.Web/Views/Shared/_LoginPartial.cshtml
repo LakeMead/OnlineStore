@@ -20,7 +20,11 @@
 
             <div id="shopping-cart-items-container" class="hidden"></div>
         </li>
-        <li><a href="#"><i class="fa fa-user"></i></a></li>
+        <li>
+            <a href="/users/AddCustomerInfo">
+                <i class="fa fa-user"></i>
+            </a>
+        </li>
         @using (Html.BeginForm<AccountController>(c => c.LogOff(), FormMethod.Post, null, new { id = "logoutForm", @class = "navbar-right" }))
         {
             @Html.AntiForgeryToken()

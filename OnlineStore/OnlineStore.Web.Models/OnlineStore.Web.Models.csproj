@@ -82,8 +82,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewModels\AdministrationProducts\ProductGridViewModel.cs" />
-    <Compile Include="ViewModels\AdministrationProducts\ProductInputModel.cs" />
+    <Compile Include="ViewModels\AdministrationProducts\Products\ProductGridViewModel.cs" />
+    <Compile Include="ViewModels\AdministrationProducts\Products\ProductInputModel.cs" />
+    <Compile Include="ViewModels\AdministrationProducts\Products\UpdateImagesInputModel.cs" />
     <Compile Include="ViewModels\Base\Account\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\Base\Account\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Base\Account\ChangePasswordViewModel.cs" />
@@ -107,6 +108,8 @@
     <Compile Include="ViewModels\Base\Home\MostPopularProductsViewModel.cs" />
     <Compile Include="ViewModels\Base\Home\NewestProductsViewModel.cs" />
     <Compile Include="ViewModels\Base\Home\TopRatedProductsViewModel.cs" />
+    <Compile Include="ViewModels\Base\Order\CustomerOrderDetailsInputModel.cs" />
+    <Compile Include="ViewModels\Base\Order\OrderInputModel.cs" />
     <Compile Include="ViewModels\Base\Products\ProductCommentViewModel.cs" />
     <Compile Include="ViewModels\Base\Products\ProductDetailsViewModel.cs" />
     <Compile Include="ViewModels\Base\Products\ProductIndexViewModel.cs" />
@@ -114,6 +117,7 @@
     <Compile Include="ViewModels\Base\Products\ProductsIndexViewModel.cs" />
     <Compile Include="ViewModels\Base\ShoppingCart\ShoppingCartItemViewModel.cs" />
     <Compile Include="ViewModels\Base\ShoppingCart\ShoppingCartViewModel.cs" />
+    <Compile Include="ViewModels\Base\Users\CustomerInfoInputModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InputModels\" />

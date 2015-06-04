@@ -1,7 +1,10 @@
 ﻿namespace OnlineStore.Web.Areas.Administration_Products.Controllers
 {
     using System.Collections;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
+    using System.Web;
     using System.Web.Mvc;
     using System.Web.Mvc.Expressions;
 
@@ -19,6 +22,7 @@
     using OnlineStore.Web.Controllers;
     using OnlineStore.Web.Infrastructure.Attributes;
     using OnlineStore.Web.Models.ViewModels.AdministrationProducts;
+    using OnlineStore.Web.Models.ViewModels.AdministrationProducts.Products;
 
     public class ProductsController : KendoGridAdministrationController
     {
@@ -62,23 +66,7 @@
 
                 this.Data.SaveChanges();
 
-                var productImagesCategory = this.imageManipulatingService.GetProductImageDirectory(entity.Id);
-
-                foreach (var image in inputModel.Images)
-                {
-                    var filename = image.FileName;
-
-                    using (var ms = new MemoryStream())
-                    {
-                        image.InputStream.CopyTo(ms);
-                        ms.Position = 0;
-                        var byteArray = ms.ToArray();
-
-                        this.imageManipulatingService.SaveThumbnailImage(byteArray, productImagesCategory + "thumbnail-" + filename);
-                        this.imageManipulatingService.SavePreviewImage(byteArray, productImagesCategory + "preview-" + filename);
-                        this.imageManipulatingService.SaveFullSizeImage(byteArray, productImagesCategory + "full-size-" + filename);
-                    }
-                }
+                this.UploadPictureToProductId(inputModel.Images, entity.Id);
 
                 this.Data.SaveChanges();
 
@@ -86,6 +74,30 @@
             }
 
             inputModel.Images = null;
+            return this.View(inputModel);
+        }
+
+        [HttpGet]
+        public ActionResult AddImagesToProduct()
+        {
+            return this.View(new UpdateImagesInputModel());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddImagesToProduct(UpdateImagesInputModel inputModel)
+        {
+            if (this.Data.Products.All().Any(p => p.Id == inputModel.ProductId))
+            {
+                this.imageValidator.ValidateProductPictures(inputModel.Images, this);
+
+                if (this.ModelState.IsValid)
+                {
+                    this.UploadPictureToProductId(inputModel.Images, inputModel.ProductId);
+                    return this.RedirectToAction(c => c.AddImagesToProduct());
+                }
+            }
+
             return this.View(inputModel);
         }
 
@@ -109,6 +121,27 @@
         protected override T GetById<T>(object id)
         {
             return this.Data.Products.GetById(id) as T;
+        }
+
+        private void UploadPictureToProductId(IEnumerable<HttpPostedFileBase> images, int id)
+        {
+            var productImagesCategory = this.imageManipulatingService.GetProductImageDirectory(id);
+
+            foreach (var image in images)
+            {
+                var filename = image.FileName;
+
+                using (var ms = new MemoryStream())
+                {
+                    image.InputStream.CopyTo(ms);
+                    ms.Position = 0;
+                    var byteArray = ms.ToArray();
+
+                    this.imageManipulatingService.SaveThumbnailImage(byteArray, productImagesCategory + "thumbnail-" + filename);
+                    this.imageManipulatingService.SavePreviewImage(byteArray, productImagesCategory + "preview-" + filename);
+                    this.imageManipulatingService.SaveFullSizeImage(byteArray, productImagesCategory + "full-size-" + filename);
+                }
+            }
         }
     }
 }

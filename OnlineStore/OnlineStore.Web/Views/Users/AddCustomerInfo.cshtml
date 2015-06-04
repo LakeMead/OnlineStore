@@ -1,0 +1,38 @@
+﻿@using OnlineStore.Web.Controllers
+@model OnlineStore.Web.Models.ViewModels.Base.Users.CustomerInfoInputModel
+
+@{
+    ViewBag.Title = "Add Customer Info";
+    //var counties = ViewBag.Countries as IEnumerable<SelectListItem>;
+    var cities = ViewBag.Cities as IEnumerable<SelectListItem>;
+}
+
+<h2>AddAddress</h2>
+
+@using (Html.BeginForm<UsersController>(c => c.AddCustomerInfo(null), FormMethod.Post, null, new { @class = "form-horizontal"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.Kendo().DropDownListFor(m => m.CityId).DataValueField("Value").DataTextField("Text").BindTo(cities)
+
+    <div class="row">
+        @Html.LabelFor(m => m.PostalCode)
+        @Html.EditorFor(m => m.PostalCode)
+    </div>
+
+    <div class="row">
+        @Html.LabelFor(m => m.Street)
+        @Html.EditorFor(m => m.Street)
+    </div>
+
+    <div class="row">
+        @Html.LabelFor(m => m.FistName)
+        @Html.EditorFor(m => m.FistName)
+    </div>
+
+    <div class="row">
+        @Html.LabelFor(m => m.LastName)
+        @Html.EditorFor(m => m.LastName)
+    </div>
+
+    <input type="submit" value="Add Address" class ="btn btn-lg btn-success"/>
+}

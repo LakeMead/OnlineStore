@@ -1,7 +1,21 @@
-﻿@model OnlineStore.Web.Models.ViewModels.Base.ShoppingCart.ShoppingCartViewModel
+﻿@using System.Web.Mvc.Expressions
+@using OnlineStore.Web.Controllers
 
-<ul>
-    @Html.DisplayFor(m => m.ShoppingCartItems)
-</ul>
-<span> @Model.CartTotal</span>
+@model OnlineStore.Web.Models.ViewModels.Base.ShoppingCart.ShoppingCartViewModel
+
+<div class="well">
+    <ul>
+        @Html.DisplayFor(m => m.ShoppingCartItems)
+    </ul>
+
+    <div class="top-buffer">
+        @using (Html.BeginForm<ShoppingCartController>(c => c.Buy(), FormMethod.Post))
+        {
+            <input type="submit" class="pull-right btn btn-success btn-sm" value="Buy">
+        }
+       
+        <p class="shopping-cart-total-price pull-right text-info"> $ @Model.CartTotal</p>
+    </div>
+    <div class="clearfix"></div>
+</div>
 

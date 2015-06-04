@@ -15,7 +15,7 @@
         [StringLength(50, MinimumLength = 2)]
         public string LastName { get; set; }
 
-        public int AddressId { get; set; }
+        public int? AddressId { get; set; }
 
         public Address Address { get; set; }
 

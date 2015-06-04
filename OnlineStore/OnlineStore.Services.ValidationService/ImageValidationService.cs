@@ -10,7 +10,7 @@
 
     public class ImageValidationService : IImageValidationService
     {
-        public Controller ValidateProductPictures(IEnumerable<HttpPostedFileBase> pictures, Controller controller)
+        public void ValidateProductPictures(IEnumerable<HttpPostedFileBase> pictures, Controller controller)
         {
             foreach (var picture in pictures)
             {
@@ -28,8 +28,6 @@
                     }
                 }
             }
-
-            return controller;
         }
     }
 }

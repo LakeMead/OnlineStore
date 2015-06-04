@@ -8,6 +8,6 @@
 
     public interface IImageValidationService : IService
     {
-        Controller ValidateProductPictures(IEnumerable<HttpPostedFileBase> pictures, Controller controller);
+        void ValidateProductPictures(IEnumerable<HttpPostedFileBase> pictures, Controller controller);
     }
 }

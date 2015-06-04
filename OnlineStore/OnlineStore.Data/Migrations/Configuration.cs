@@ -23,6 +23,36 @@ namespace OnlineStore.Data.Migrations
         {
             if (!context.Products.Any() || !context.Categories.Any())
             {
+                // COUNTRIES
+                var country = new Country
+                {
+                    Name = "Bulgaria"
+                };
+
+                context.Countries.Add(country);
+                context.SaveChanges();
+
+                // Cities
+                context.Cities.Add(new City
+                {
+                    Name = "Sofia",
+                    CountryId = country.Id,
+                });
+
+                context.Cities.Add(new City
+                {
+                    Name = "Plovdiv",
+                    CountryId = 1,
+                });
+
+                context.Cities.Add(new City
+                {
+                    Name = "Varna",
+                    CountryId = 1,
+                });
+
+                context.SaveChanges();
+
                 // CATEGORIES
                 var cat1 = new Category { Name = "Accessories", Order = 1 };
                 var cat2 = new Category { Name = "DIY", Order = 3 };

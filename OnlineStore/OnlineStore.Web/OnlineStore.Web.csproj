@@ -195,8 +195,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KendoGridAdministrationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -208,6 +210,7 @@
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\css\carousel.css" />
     <Content Include="Content\css\font-awesome\font-awesome.css" />
+    <Content Include="Content\css\shopping-cart\shopping-cart.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\A13OLinuXino.jpg" />
     <Content Include="Content\images\arduino-uno.jpg" />
@@ -343,6 +346,7 @@
     <Content Include="Scripts\ckeditor\plugins\wsc\README.md" />
     <Content Include="Scripts\ckeditor\README.md" />
     <Content Include="Scripts\ckeditor\skins\moono\readme.md" />
+    <Content Include="Areas\Administration_Products\Views\Products\AddImagesToProduct.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap\bootswatch.js" />
@@ -647,7 +651,7 @@
     <Content Include="Views\Shared\DisplayTemplates\DiscountedProductsViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
     <!--=======-->
-    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Order.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MostPopularProductsViewModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\TopRatedProductsViewModel.cshtml" />
     <Content Include="Views\Shared\_ShoppingCartItems.cshtml" />
@@ -679,6 +683,7 @@
     <Content Include="Views\Shared\EditorTemplates\DecimalPrice.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\TextArea.cshtml" />
     <Content Include="Views\Shared\_CategoriesPartial.cshtml" />
+    <Content Include="Views\Users\AddCustomerInfo.cshtml" />
     <!-->>>>>>> 99e75e2a352603a5ae9d5704eaaaecf95fc35024-->
   </ItemGroup>
   <ItemGroup>
@@ -690,6 +695,7 @@
     <Folder Include="Scripts\Views\Shared\" />
     <Folder Include="Views\AdminBase\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />

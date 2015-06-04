@@ -3,6 +3,7 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
+    using System.Web.Mvc.Expressions;
 
     using AutoMapper.QueryableExtensions;
 
@@ -21,18 +22,18 @@
             this.manipulatingService = manipulatingService;
         }
 
-        public ActionResult Index()
-        {
-            var cart = this.ShoppingCartProvider.GetCart(this);
-            var product = this.Data.Products.All().FirstOrDefault(x => x.Id == 7);
-            this.ShoppingCartProvider.AddToCart(product, 2);
+        ////public ActionResult Index()
+        ////{
+        ////    var cart = this.ShoppingCartProvider.GetCart(this);
+        ////    var product = this.Data.Products.All().FirstOrDefault(x => x.Id == 7);
+        ////    this.ShoppingCartProvider.AddToCart(product, 2);
 
-            var cart2 = this.ShoppingCartProvider.GetCartItems();
-            var countItems = this.ShoppingCartProvider.GetCount();
-            var totalPrice = this.ShoppingCartProvider.GetTotal();
+        ////    var cart2 = this.ShoppingCartProvider.GetCartItems();
+        ////    var countItems = this.ShoppingCartProvider.GetCount();
+        ////    var totalPrice = this.ShoppingCartProvider.GetTotal();
 
-            return this.View();
-        }
+        ////    return this.View();
+        ////}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -95,6 +96,16 @@
             //// Test file upload
             ////this.manipulatingService.ResizeAndSave(stream, 200, 200, "png", "max", "~/uploads/products/file"); 
             return this.View();
+        }
+
+        public ActionResult Buy()
+        {
+            if (!this.User.Identity.IsAuthenticated)
+            {
+                return this.RedirectToAction<ShoppingCartController, AccountController>(c => c.Register());
+            }
+
+            return this.RedirectToAction<ShoppingCartController, OrderController>(c => c.Index());
         }
 
         [HttpGet]

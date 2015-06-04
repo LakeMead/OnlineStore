@@ -27,6 +27,22 @@
             }
         }
 
+        public Stream Resize(Stream image, int? width, int? height, string mode)
+        {
+            var destinationStream = new MemoryStream();
+            var resizedImage = new ImageJob(
+                    image,
+                    destinationStream,
+                    new Instructions("width=" + width + ";height=" + height + ";mode=" + mode))
+            {
+                CreateParentDirectory = true
+            };
+
+            resizedImage.Build();
+
+            return destinationStream;
+        }
+
         public string GetProductImageDirectory(int id)
         {
             var parrentDirectory = (id % 1000).ToString();

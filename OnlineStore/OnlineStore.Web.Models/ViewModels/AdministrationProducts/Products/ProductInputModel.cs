@@ -1,6 +1,5 @@
-﻿namespace OnlineStore.Web.Models.ViewModels.AdministrationProducts
+﻿namespace OnlineStore.Web.Models.ViewModels.AdministrationProducts.Products
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Web;
