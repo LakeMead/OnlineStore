@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using System.Web.Mvc;
+    using System.Web.Mvc.Expressions;
 
     using AutoMapper.QueryableExtensions;
 
@@ -33,7 +34,7 @@
 
             if (product == null)
             {
-                return this.RedirectToAction("Index");
+                return this.RedirectToAction(c => c.Index());
             }
 
             return this.View(product);
