@@ -127,9 +127,9 @@
         {
             var productImagesCategory = this.imageManipulatingService.GetProductImageDirectory(id);
 
-            foreach (var image in images)
+            for (var index = 0; index < images.Count(); index++)
             {
-                var filename = image.FileName;
+                var image = images.ElementAt(index);
 
                 using (var ms = new MemoryStream())
                 {
@@ -137,9 +137,9 @@
                     ms.Position = 0;
                     var byteArray = ms.ToArray();
 
-                    this.imageManipulatingService.SaveThumbnailImage(byteArray, productImagesCategory + "thumbnail-" + filename);
-                    this.imageManipulatingService.SavePreviewImage(byteArray, productImagesCategory + "preview-" + filename);
-                    this.imageManipulatingService.SaveFullSizeImage(byteArray, productImagesCategory + "full-size-" + filename);
+                    this.imageManipulatingService.SaveThumbnailImage(byteArray, productImagesCategory + "thumbnail" + (index + 1) + ".jpg");
+                    this.imageManipulatingService.SavePreviewImage(byteArray, productImagesCategory + "preview" + (index + 1) + ".jpg");
+                    this.imageManipulatingService.SaveFullSizeImage(byteArray, productImagesCategory + "full-size" + (index + 1) + ".jpg");
                 }
             }
         }

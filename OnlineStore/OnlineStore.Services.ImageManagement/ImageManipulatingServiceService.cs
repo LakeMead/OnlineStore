@@ -18,7 +18,7 @@
                   var resizedImage = new ImageJob(
                     stream,
                     directory,
-                    new Instructions("width=" + width + ";height=" + height + ";mode=" + mode))
+                    new Instructions("width=" + width + ";height=" + height + ";mode=" + mode + ";format=jpg"))
                 {
                     CreateParentDirectory = true
                 };

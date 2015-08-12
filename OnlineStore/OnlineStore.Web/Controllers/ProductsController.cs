@@ -27,7 +27,7 @@
 
             return this.View(viewModel);
         }
-
+        
         public ActionResult Details(int id)
         {
             var product = this.Data.Products.All().Where(x => x.Id == id).Project().To<ProductDetailsViewModel>().FirstOrDefault();
