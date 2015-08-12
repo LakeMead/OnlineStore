@@ -21,8 +21,12 @@
                 "~/Content/css/Site.css"));
 
             bundles.Add(new StyleBundle("~/Content/kendo/css").Include(
-            "~/Content/kendo/kendo.common-bootstrap.min.css",
-            "~/Content/kendo/kendo.bootstrap.min.css"));
+                "~/Content/kendo/kendo.common-bootstrap.min.css",
+                "~/Content/kendo/kendo.bootstrap.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/header").Include(
+               "~/Content/css/header.css",
+               "~/Content/css/navigations.css"));
         }
 
         private static void AddScripts(BundleCollection bundles)

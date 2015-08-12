@@ -3,7 +3,7 @@
 @if (Request.IsAuthenticated)
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>
+        <li class="top-buffer">
             @using (Ajax.BeginForm<ShoppingCartController>(
                 sc => sc.GetItems(),
                 null,
@@ -15,13 +15,13 @@
                     OnComplete = "showWindow"
                 }))
             {
-                <button type="submit"><i class="fa fa-shopping-cart"></i><span class="label label-primary">@ViewData["ShoppingCartItemsCount"]</span></button>
+                <button type="submit" class="link-button"><i class="fa fa-shopping-cart icon-with-padding"></i><span class="label label-primary">@ViewBag.ShoppingCartItemsCount</span></button>
             }
 
             <div id="shopping-cart-items-container" class="hidden"></div>
         </li>
         <li>
-            <a href="/users/AddCustomerInfo">
+            <a href="/users/AddCustomerInfo" class="header-link">
                 <i class="fa fa-user"></i>
             </a>
         </li>
@@ -29,7 +29,7 @@
         {
             @Html.AntiForgeryToken()
 
-            <li><input type="submit" value="Log off" /></li>
+            <li class="top-buffer"><input type="submit" value="Log off" class="link-button" /></li>
         }
     </ul>
 }
