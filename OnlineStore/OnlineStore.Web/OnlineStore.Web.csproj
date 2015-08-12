@@ -217,6 +217,8 @@
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\css\carousel.css" />
     <Content Include="Content\css\font-awesome\font-awesome.css" />
+    <Content Include="Content\css\header.css" />
+    <Content Include="Content\css\navigations.css" />
     <Content Include="Content\css\shopping-cart\shopping-cart.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\images\A13OLinuXino.jpg" />

@@ -27,6 +27,10 @@ textarea {
     margin-top: 15px;
 }
 
+.icon-with-padding {
+    padding: 5px;
+}
+
 div#shopping-cart-items-container {
     position: absolute;
     width: 300px;
